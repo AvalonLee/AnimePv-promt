@@ -1,0 +1,253 @@
+# AstraForge Visual Component Library — Style
+# Style 解决「这个 PV 应该长什么样？」
+# 采用 Style Stack：base + premium + special
+# P0：2D base style 从赛璐璐扩展为 7 套画风，见 core/style-anchor.md
+
+components:
+  - id: style.modern.cel.v1
+    slug: modern-cel
+    name: Modern Anime Cel Style
+    layer: base
+    category: animation_style
+    description: 日本动画与日本 JRPG 语法优先的现代手游赛璐璐风，默认基础风格
+    keywords: [Japanese anime, Japanese JRPG, clean cel shading, hard shadow, crisp Japanese lineart, vibrant flat color]
+    animation: 2D cel animation
+    line: medium clean outline
+    lighting: flat cel lighting with graphic highlight
+    prompt_block: >
+      Japanese anime and Japanese JRPG character design language,
+      Japanese anime facial proportions and expressive anime eyes,
+      modern anime cel shading style,
+      clean crisp Japanese lineart,
+      vibrant flat colors,
+      hard shadow,
+      pure 2D animation
+    forbidden: [western cartoon, American animation, Disney-like, Pixar-like, DreamWorks-like, western comic-book style, realistic photography, PBR material, 3D character rendering]
+    risk: low
+
+  - id: style.retro.cel.v1
+    slug: retro-cel
+    name: Retro Cel Style
+    layer: base
+    category: animation_style
+    description: 90 年代赛璐璐动画风
+    keywords: [90s cel animation, film grain, halftone, limited palette]
+    animation: 12fps limited animation
+    line: hand-drawn black outline
+    lighting: flat color blocks with halftone accents
+    prompt_block: >
+      90s Japanese retro anime cel animation,
+      Japanese JRPG character concept art language,
+      film grain texture,
+      halftone shading,
+      limited animation feel
+    forbidden: [western cartoon, American animation, modern motion blur, digital gloss, 3D CGI]
+    conflicts_with: [mobile-game-premium]
+    risk: low
+
+  - id: style.painterly.anime.v1
+    slug: painterly-anime
+    name: Painterly Anime Style
+    layer: base
+    category: animation_style
+    description: 半写实厚涂二维动画风，国创/日系动画电影质感
+    keywords: [semi-realistic 2D anime, painterly brushwork, soft shadow, rim light, 24fps animation, thin soft line]
+    animation: 24fps fluid 2D painted animation
+    line: thin soft line or line-less
+    lighting: painterly layered lighting, soft gradient shadows, subtle rim light
+    prompt_block: >
+      semi-realistic 2D painted anime style,
+      painterly brushwork with soft color transitions,
+      layered lighting with soft shadows and subtle rim light,
+      thin soft linework or line-less rendering,
+      premium Chinese / Japanese animated film quality,
+      fluid 24fps 2D animation
+    forbidden: [cel shading, flat color blocks, hard-edged shadows, thick clean ink outlines, realistic photography, PBR material, 3D CGI, live action camera]
+    conflicts_with: [modern-cel, retro-cel]
+    risk: medium
+
+  - id: style.watercolor.ink.v1
+    slug: watercolor-ink
+    name: Watercolor Ink Style
+    layer: base
+    category: animation_style
+    description: 水墨/淡彩国风二维动画
+    keywords: [watercolor wash, Chinese ink brush, paper grain, negative space, ethereal palette]
+    animation: 12fps limited 2D animation with hand-drawn flow
+    line: expressive ink-brush linework
+    lighting: translucent watercolor wash, soft paper grain
+    prompt_block: >
+      Chinese ink-and-watercolor 2D animation,
+      translucent watercolor washes,
+      expressive ink-brush linework,
+      paper grain texture,
+      negative-space composition,
+      restrained ethereal color palette
+    forbidden: [hard cel shading, flat color blocks, thick clean anime outlines, heavy impasto, realistic rendering, western cartoon, 3D CGI]
+    conflicts_with: [modern-cel, retro-cel, western-comic]
+    risk: medium
+
+  - id: style.vector.flat.v1
+    slug: vector-flat
+    name: Vector Flat Style
+    layer: base
+    category: animation_style
+    description: 矢量潮流扁平动画风，海报/动效设计语言
+    keywords: [clean vector, flat graphic color, uniform outline, limited palette, motion design]
+    animation: 12-24fps vector motion design
+    line: smooth uniform vector line
+    lighting: flat graphic lighting with subtle gradient mesh
+    prompt_block: >
+      clean vector 2D animation,
+      flat graphic color fields,
+      smooth uniform outlines,
+      limited bold palette,
+      poster-grade composition,
+      kinetic typography and graphic UI accents
+    forbidden: [painterly brush texture, watercolor wash, airbrush gradient shading, photo texture, realistic rendering, 3D CGI, thick cel-style anime lineart]
+    conflicts_with: [painterly-anime, korean-manhwa]
+    risk: low
+
+  - id: style.korean.manhwa.v1
+    slug: korean-manhwa
+    name: Korean Manhwa Style
+    layer: base
+    category: animation_style
+    description: 韩漫/条漫风二维动画，手游宣传常用
+    keywords: [manhwa, webtoon, fine lineart, airbrush gradient, glossy highlight, elegant proportions]
+    animation: 24fps limited 2D animation
+    line: fine delicate lineart
+    lighting: airbrush gradient shading with glossy highlights
+    prompt_block: >
+      Korean manhwa / webtoon-inspired 2D animation,
+      fine delicate lineart,
+      airbrush gradient shading with glossy highlights,
+      elegant elongated proportions,
+      clean luminous faces,
+      soft romantic lighting
+    forbidden: [hard cel shading, flat color blocks, thick outlines, painterly heavy texture, western exaggerated cartoon anatomy, realistic photography, 3D CGI]
+    conflicts_with: [retro-cel, western-comic, vector-flat]
+    risk: medium
+
+  - id: style.western.comic.v1
+    slug: western-comic
+    name: Western Comic Style
+    layer: base
+    category: animation_style
+    description: 美式漫画/动画风，允许欧美脸部比例与夸张动态
+    keywords: [western comic book, bold ink linework, halftone, hatching, exaggerated anatomy, comic panels]
+    animation: 12-24fps snappy 2D animation
+    line: bold expressive ink linework
+    lighting: halftone dots and dramatic hatching
+    prompt_block: >
+      western comic-book 2D animation,
+      bold expressive ink linework,
+      halftone dots and dramatic hatching,
+      dynamic exaggerated anatomy and foreshortening,
+      comic panel language with action lines and onomatopoeia
+    forbidden: [Japanese anime facial proportions, cel-shading flat anime colors, korean manhwa airbrush gradients, painterly realistic rendering, realistic photography, 3D CGI]
+    conflicts_with: [modern-cel, retro-cel, korean-manhwa, watercolor-ink]
+    risk: medium
+
+  - id: style.mobile.game.premium.v1
+    slug: mobile-game-premium
+    name: Mobile Game Premium
+    layer: premium
+    category: visual_polish
+    description: 高级手游 PV 质感（米哈游式）
+    keywords: [premium polish, cinematic lighting, refined particle, UI integration]
+    prompt_block: >
+      premium mobile game character trailer quality,
+      cinematic lighting,
+      refined effects,
+      high production value anime PV
+    risk: low
+
+  - id: style.y2k.graphic.v1
+    slug: y2k-graphic
+    name: Y2K Graphic Style
+    layer: special
+    category: personality_style
+    description: Y2K 潮流图形风
+    keywords: [pink palette, sticker graphics, chrome type, playful layout]
+    prompt_block: >
+      Y2K graphic anime style,
+      pink and chrome palette,
+      playful sticker graphics,
+      trendy fashion editing
+    balance_rule: { character_priority: 70%, graphic_element: 30% }
+    conflicts_with: [dark-cinematic-cel]
+    risk: low
+
+  - id: style.fantasy.anime.v1
+    slug: fantasy-anime
+    name: Fantasy Anime Style
+    layer: special
+    category: personality_style
+    description: 幻想动画风
+    keywords: [ornate detail, magical glow, noble palette, ethereal light]
+    prompt_block: >
+      fantasy anime style,
+      ornate magical detail,
+      ethereal glowing light,
+      noble color palette
+    risk: low
+
+  - id: style.dark.cinematic.cel.v1
+    slug: dark-cinematic-cel
+    name: Dark Cinematic Cel
+    layer: special
+    category: personality_style
+    description: 暗黑电影感赛璐璐
+    keywords: [high contrast, deep shadow, dramatic rim light, desaturated base]
+    prompt_block: >
+      dark cinematic anime cel style,
+      high contrast deep shadows,
+      dramatic rim lighting,
+      moody atmosphere
+    conflicts_with: [y2k-graphic]
+    risk: low
+
+  - id: style.motion.comic.v1
+    slug: motion-comic
+    name: Motion Comic Layer
+    layer: special
+    category: presentation_layer
+    description: 动态漫画处理层，可叠加于任意 2D base style
+    keywords: [comic panels, onomatopoeia, halftone animation, panel cuts, camera pan on illustration]
+    prompt_block: >
+      motion comic presentation layer,
+      comic panel layouts with dynamic panel cuts,
+      illustrated stills brought alive by camera push / pull and parallax,
+      onomatopoeia and action lines animated in 2D,
+      limited frame animation for poses and expressions
+    balance_rule: { character_priority: 70%, panel_graphic: 30% }
+    risk: low
+
+style_stack_default:
+  base: modern-cel
+  premium: mobile-game-premium
+  special: null
+
+roadmap_v2d:
+  completed_p0_2d_styles:
+    - painterly-anime
+    - watercolor-ink
+    - vector-flat
+    - korean-manhwa
+    - western-comic
+    - motion-comic
+  planned_2d:
+    - fantasy-luxury
+    - sci-fi-anime
+    - urban-neon
+    - historical-anime
+    - chinese-xianxia
+    - retro-flash
+  planned_next_phase:
+    - toon-shading-3d
+    - realistic-3d-cg
+    - live-action-vfx
+
+
+

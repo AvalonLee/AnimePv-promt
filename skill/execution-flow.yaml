@@ -1,0 +1,123 @@
+execution:
+  version: 2.5.0
+  source_of_truth: skill/execution-flow.yaml
+  principle: character_consistency > core_visual_effect > motion_camera_rhythm > effect_complexity
+  stages:
+  - id: character_and_key_visual
+    steps:
+    - task_classification
+    - character_input_selection
+    - character_analysis
+    - character_identity_lock
+    - cast_resolution
+    - key_visual_design
+    confirmation_gate: character_and_key_visual_confirmed
+  - id: direction_and_video_design
+    steps:
+    - content_type_selection
+    - creative_direction_selection
+    - presentation_strategy_selection
+    - style_resolution
+    - performance_direction
+    - camera_motivation
+    - environment_interaction
+    - director_composition
+    - rhythm_planning
+    - component_matching
+    - shot_planning
+    - shot_difference_check
+    - text_strategy_selection
+    - editorial_planning
+    - audio_beat_planning
+    confirmation_gate: video_text_sound_confirmed
+  - id: validation_and_platform_delivery
+    steps:
+    - platform_selection
+    - generation_mode_selection
+    - material_registration
+    - build_director_plan
+    - director_plan_validation
+    - phase_risk_evaluation
+    - quality_scoring
+    - automatic_revision
+    - revised_plan_validation
+    - platform_prompt_compilation
+    - final_quality_check
+    confirmation_gate: final_prompt_confirmed
+  tasks:
+    create_video:
+    - character_and_key_visual
+    - direction_and_video_design
+    - validation_and_platform_delivery
+    optimize_prompt:
+    - task_classification
+    - director_plan_validation
+    - quality_scoring
+    - automatic_revision
+    - platform_prompt_compilation
+    compile_platform_prompt:
+    - director_plan_validation
+    - platform_prompt_compilation
+    - final_quality_check
+    analyze_reference:
+    - task_classification
+    - reference_analysis
+    - case_ingestion
+    ingest_case:
+    - case_ingestion
+    - case_validation
+    - index_update
+    character_profile:
+    - character_input_selection
+    - character_analysis
+    - character_identity_lock
+    - key_visual_design
+  choices:
+    platforms:
+    - jimeng
+    - minimax_h3_official
+    - minimax_h3_self_hosted
+    generation_modes:
+    - T2VA
+    - I2VA
+    - L2VA
+    - FL2VA
+    - Ref2VA
+    text_strategies:
+    - post_production
+    - model_generated
+    - none
+    content_types:
+    - action
+    - daily
+    - magic
+    - story
+    - poster_motion
+    - multi_character
+    presentation_strategies:
+    - action_burst
+    - emotional_showcase
+    - ability_showcase
+    - relationship_interaction
+    - story_scene
+    - poster_motion
+  gates:
+    require_confirmation_in_order: true
+    require_strict_director_plan: true
+    require_quality_pass_before_compile: true
+    require_revision_recheck: true
+    generation_requires_explicit_user_confirmation: true
+  runtime:
+    director_plan_schema: schema/director-plan.schema.yaml
+    director_plan_validator: tools/validate_director_plan.py
+    quality_evaluator: tools/evaluate_director_plan.py
+    platform_compiler: tools/compile_platform_prompt.py
+    platform_adapter_validator: tools/validate_platform_adapters.py
+    execution_kernel_validator: tools/validate_execution_kernel.py
+  fallback:
+    missing_style: modern-cel-cn
+    missing_duration: ask_user
+    missing_platform: ask_user
+    missing_generation_mode: recommend_then_confirm
+    insufficient_character_info: request_clarification
+    quality_failure: revise_then_recheck

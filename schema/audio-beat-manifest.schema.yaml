@@ -1,0 +1,10 @@
+audio_beat_manifest:
+  soundscape: string
+  music: string
+  bpm: number
+  events:
+    - time: number
+      sound: string
+  rules:
+    bpm_must_equal_rhythm_bpm: true
+    event_time_must_fit_duration: true

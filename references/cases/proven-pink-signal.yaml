@@ -1,0 +1,66 @@
+# 实证案例：御姐甜妹 · PINK SIGNAL
+# 来源：角色pv教程和提示词2.md（MiniMax H3 实测直出效果）
+# 状态：已验证产出成片
+
+case_id: case.proven.pink.signal.v1
+source: verified_production
+model: minimax-h3
+image_model: seedream5.0lite
+duration: 15s
+aspect_ratio: "16:9"
+
+character_archetype: cool_female
+persona_tag: 性感
+genre: daily
+theme: sweet-y2k-girl
+
+creative_position: 都市潮流 JRPG 角色宣传
+pv_title: "PINK SIGNAL / 桃色失控信号"
+
+character_dna:
+  hair: 白金色短至中短层次碎发，发尾及耳侧大面积荧光玫红挑染
+  eyes: 紫粉色明亮瞳孔，浓密睫毛，略微上挑眼型
+  accessory: 黑色发夹、多枚银色耳骨饰品、黑色铆钉choker、银色叠层项链
+  outfit: 白色修身短袖T恤 + 黑色修身皮质短裙，腰间银色链条与金属扣件
+  tattoo: 手臂黑色花卉纹身
+  palette: [白金, 荧光玫红, 纯黑, 银灰, 少量冷蓝]
+  personality: [性感, 甜酷, 自信, 俏皮, 轻微挑衅, 带一点坏笑的御姐甜妹感]
+
+world_elements:
+  - 荧光粉电波
+  - 心形符号
+  - 金属链条
+  - 涂鸦
+  - 故障UI
+
+selling_points:
+  primary: 白金+荧光玫红发色识别度
+  secondary: 御姐甜妹反差气质
+  tertiary: 大透视多机位
+
+camera_patterns:
+  - 高机位俯拍近景
+  - 超低机位仰拍
+  - 贴脸超近距离特写
+  - 半身斜侧视角
+  - 大广角自拍视角
+  - 坐姿/蹲姿大透视
+  - 转身回头视角
+  - 手部近景特写
+
+action_patterns: [撩发, 甩发, 叉腰, 伸手指镜头, 扶配饰, 扭胯, 踩步]
+expression_patterns: [挑眉, 轻笑, 眯眼, 歪头, 咬唇式轻笑, 对镜头眨眼, 坏笑]
+transition_patterns: [图形碰撞, 故障闪断, 贴纸弹出, 图层滑移, 速度线推切, 爱心扩张, 文字爆闪, 噪点抖动, UI面板插入]
+style_patterns: [modern-cel, y2k-graphic, mobile-game-premium]
+
+text_overlays: [PINK SIGNAL, PINK MODE, GIRL BOSS, LEVEL UP, WARNING, LOVE SIGNAL]
+
+key_learnings:
+  - 图片 Prompt 与视频 Prompt 分离：先用 seedream5.0lite 定角色，再用 H3 做视频
+  - 机位清单式列举比抽象描述更有效
+  - 明确写"绝不允许连续两个镜头使用相同机位、相同构图或相同动作"
+  - 安全边界必须显式声明（禁止走光/内衣外露/过度暴露/低俗）
+  - 年龄边界必须显式声明（明确为年轻成年女性）
+
+avoid: [普通淡入淡出, 空镜头, 慢节奏铺垫, 写实场景, 暖色电影光, 3D空间, 真实摄影质感, 动作重复, 角度重复]
+search_tags: [御姐, 甜妹, y2k, 朋克, 荧光粉, 白金发, 实证案例]

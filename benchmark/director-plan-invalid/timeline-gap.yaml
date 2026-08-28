@@ -1,0 +1,43 @@
+project:
+  title: 错误时间线
+  duration: 5
+  aspect_ratio: '16:9'
+  content_type: 测试
+  creative_intent: 测试时间空档
+character:
+  summary: 测试角色
+  immutable_features:
+  - 黑发
+  - 蓝瞳
+  - 黑衣
+  - 长剑
+visual:
+  environment: 山谷
+  style: 二维动画
+  lighting: 逆光
+timeline:
+- start: 0
+  end: 2
+  composition: 中景
+  primary_action: 抬剑
+  camera: 推进
+  main_effect: 无
+  sound: 风声
+- start: 3
+  end: 5
+  composition: 近景
+  primary_action: 收剑
+  camera: 固定
+  main_effect: 无
+  sound: 刀声
+text:
+  strategy: none
+  items: []
+sound:
+  soundscape: 风声
+  music: 无
+materials: []
+target:
+  platform: jimeng
+  generation_mode: T2VA
+  model_version: 测试版本

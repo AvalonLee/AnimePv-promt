@@ -1,0 +1,108 @@
+benchmark:
+  id: BM-07
+  name: Duo Rival Showcase
+  dimension: cast
+  cast_size: 2
+  status: PASS
+
+purpose: >
+  首个多角色用例。验证 Cast Schema、画面权重分配、
+  contrast 校验与同框动作等级放大规则。
+
+input:
+  request: 双人对手角色PV。银发冰系女剑士 vs 黑发炎系男剑士，宿敌关系。15秒。
+  session_spec:
+    duration: 15s
+    aspect_ratio: "16:9"
+
+expected_routing:
+  task: CREATE_PV
+  cast_mode: duo
+  genre: action
+  theme: character-release
+  variation: combat.showcase.v1
+  composer: multi-character-composer
+  style_stack:
+    base: modern-cel
+    premium: mobile-game-premium
+    special: dark-cinematic-cel
+
+cast:
+  size: 2
+  formation: duo
+  relationship:
+    type: rival
+    tension: high
+    visual_expression: 对峙 + 背对背
+  members:
+    - role: lead
+      name: Frostblade
+      screen_weight: 45
+      intro_order: 1
+      anchor_side: left
+      dna_digest: { hair: 银白长发, eyes: 冰蓝, weapon: 冰晶长剑 }
+    - role: second
+      name: Emberfang
+      screen_weight: 25
+      intro_order: 2
+      anchor_side: right
+      dna_digest: { hair: 黑色短发, eyes: 赤红, weapon: 炎纹大剑 }
+
+contrast_check:
+  dimensions_differing: [hair_color, costume_color, signature_asset, silhouette]
+  count: 4
+  required: 2
+  result: PASS
+
+weight_check:
+  member_sum: 70
+  lead_vs_second_ratio: 1.8
+  rule_lead_gte_1_5x: PASS
+  each_member_has_solo_shot: true
+
+framing_strategy:
+  solo_shots: 6
+  together_shots: 4
+  together_ratio: 40%
+
+expected_components:
+  camera: [eye-reveal, action-tracking, duo-standoff, back-to-back, final-pose]
+  action: [head-turn, weapon-reveal, signature-pose]
+  expression: [cool-gaze, battle-resolve]
+  transition: [flash-cut, split-frame-duo, title-reveal]
+
+cast_risk_assertions:
+  identity_bleed: medium
+  action_amplification:
+    together_shot_component: signature-pose
+    base_action_level: 1
+    characters_in_frame: 2
+    effective_level: 2
+    budget: 2
+    verdict: within budget
+  rejected_combination:
+    component: weapon-reveal
+    base_action_level: 2
+    characters_in_frame: 2
+    effective_level: 3
+    verdict: exceeds budget, must be used in solo shots only
+
+risk_budget:
+  max_action_level: 2
+  max_effect_level: 2
+  max_camera_transition: 9
+
+scores:
+  generation_stability: 30
+  character_consistency: 23
+  shot_feasibility: 14
+  visual_impact: 10
+  creative_intent_match: 9
+  art_direction: 4
+  final_score: 90
+  decision: PASS
+
+notes:
+  - stability 上限为 32（cast_size 2），实得 30
+  - weapon-reveal 仅用于单人 Shot，同框段落降级为 signature-pose
+  - 锚位固定 lead=left / second=right，全片不互换

@@ -1,0 +1,29 @@
+production:
+  version: 2.5.0
+  source_of_truth: skill/execution-flow.yaml
+  character_and_key_visual:
+    character_bible:
+    cast:
+    key_visual:
+    confirmed: boolean
+  direction_and_video_design:
+    creative_direction:
+    presentation_strategy:
+    style:
+    rhythm:
+    generation_clips:
+    editorial_manifest:
+    audio_beat_manifest:
+    confirmed: boolean
+  validation_and_platform_delivery:
+    director_plan:
+    structural_validation:
+    phase_risk_report:
+    quality_report:
+    revision_log: []
+    target:
+      platform: jimeng | minimax_h3_official | minimax_h3_self_hosted
+      generation_mode: T2VA | I2VA | L2VA | FL2VA | Ref2VA
+    materials: []
+    platform_prompt:
+    confirmed: boolean

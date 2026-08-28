@@ -1,0 +1,144 @@
+project:
+  title: 风雪剑士
+  duration: 5
+  aspect_ratio: '16:9'
+  content_type: action
+  creative_intent: 展示拔剑爆发
+character:
+  summary: 银发蓝瞳剑士，黑银轻甲和深蓝披风
+  immutable_features:
+  - 银发
+  - 蓝瞳
+  - 黑银轻甲
+  - 冰晶长剑
+  allowed_variations:
+  - 发丝和披风受风变形
+cast:
+  mode: single
+  members:
+  - id: lead
+    role: 主角
+  relationships: []
+direction:
+  creative_direction: kinetic_peak
+  secondary_direction: mystical_reveal
+  presentation_strategy: action_burst
+  emotional_goal: 冷静蓄力后瞬间爆发
+  visual_focus: 眼神、拔剑方向和冰晶命中
+style:
+  base_style: modern-cel
+  visual_approach: cel_animation
+  enhancements:
+  - 冰晶拖影
+  environment: 风雪山谷
+  lighting: 冷蓝逆光
+performance_direction:
+  baseline: 角色正在执行与场景相关的具体任务
+  stimulus: 环境或事件产生可感知变化
+  reaction: 视线、手部和身体重心依次产生反应
+  recovery: 角色完成反应并进入下一动作或收势
+  lifelike_moments:
+  - type: external_interruption
+    description: 环境变化触发角色即时反应
+  - type: motion_afterglow
+    description: 主要动作结束后保留发丝或衣摆余韵
+rhythm:
+  bpm: 150
+  energy_curve:
+  - start: 0
+    end: 2
+    energy: 70
+    purpose: 蓄力
+  - start: 2
+    end: 4.2
+    energy: 95
+    purpose: 拔剑高潮
+  - start: 4.2
+    end: 5
+    energy: 60
+    purpose: 收势
+  beat_events:
+  - time: 0
+    type: eye_hit
+    visual: 眼神亮起
+  - time: 2.5
+    type: action_hit
+    visual: 剑刃出鞘
+  - time: 5
+    type: final_hit
+    visual: 冰晶定格
+  micro_shots:
+  - time: 0
+    event: 手部
+  - time: 1
+    event: 眼神
+  - time: 2
+    event: 刀镡
+  - time: 3
+    event: 拔剑弧光
+  - time: 4
+    event: 低机位
+  - time: 5
+    event: 收势
+generation_clips:
+- start: 0
+  end: 2.5
+  purpose: 蓄力准备
+  composition: 手部与眼神特写
+  primary_action: 握紧剑柄并抬眼
+  camera: 急推至眼部
+  main_effect: 细小冰晶
+  sound: 风声与金属摩擦
+  editable_moments:
+  - time: 0
+    event: 握柄
+  - time: 1.2
+    event: 抬眼
+  - time: 2.5
+    event: 出鞘前停顿
+- start: 2.5
+  end: 5
+  purpose: 拔剑收势定格
+  composition: 低机位中景
+  primary_action: 向右拔剑后收势
+  camera: 跟随拔剑方向甩镜后急停
+  main_effect: 冰晶弧光
+  sound: 拔剑声与冲击音
+  editable_moments:
+  - time: 2.5
+    event: 出鞘
+  - time: 3.5
+    event: 弧光命中
+  - time: 5
+    event: 收势
+editorial_manifest:
+  strategy: none
+  items: []
+audio_beat_manifest:
+  soundscape: 风声、衣料与拔剑声
+  music: 150 BPM打击乐
+  bpm: 150
+  events:
+  - time: 0
+    sound: 风声
+  - time: 2.5
+    sound: 拔剑重击
+  - time: 5
+    sound: 冰晶余音
+materials:
+- id: character_key_visual
+  type: image
+  anchor: start_frame
+  role: 首帧角色图
+  retain:
+  - 脸部
+  - 发型
+  - 服装
+  - 武器
+  ignore:
+  - 背景
+  timing: 0秒
+target:
+  platform: jimeng
+  generation_mode: I2VA
+  model_version: 用户当前版本

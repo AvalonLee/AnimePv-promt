@@ -1,0 +1,53 @@
+case_library:
+  schema_version: 3
+  records:
+  - case_id: 二十五宫格连续分镜
+    title: 二十五宫格连续分镜
+    status: reviewed
+    evidence_level: prompt_only
+    platform: null
+    model_version: null
+    generation_mode: null
+    content_type: 分镜规划
+    path: case-library/records/二十五宫格连续分镜.yaml
+    fingerprint: 2d635f5766ed62f6
+  - case_id: 人脸类型特征锁定词库
+    title: 人脸类型特征锁定词库
+    status: reviewed
+    evidence_level: prompt_only
+    platform: null
+    model_version: null
+    generation_mode: null
+    content_type: 角色面部设定
+    path: case-library/records/人脸类型特征锁定词库.yaml
+    fingerprint: b6e738fa41d17332
+  - case_id: 白模动作迁移与真人重建
+    title: 白模动作迁移与真人重建
+    status: reviewed
+    evidence_level: prompt_only
+    platform: null
+    model_version: null
+    generation_mode: Ref2VA
+    content_type: 多参考动作迁移
+    path: case-library/records/白模动作迁移与真人重建.yaml
+    fingerprint: 01339399fe5b0684
+  - case_id: 短剧六步制作工作流
+    title: 短剧六步制作工作流
+    status: reviewed
+    evidence_level: prompt_only
+    platform: 即梦
+    model_version: null
+    generation_mode: null
+    content_type: 短剧工作流与设定资产
+    path: case-library/records/短剧六步制作工作流.yaml
+    fingerprint: 5938c442f9956755
+  - case_id: 角色图精修与一致性控制
+    title: 角色图精修与一致性控制
+    status: reviewed
+    evidence_level: prompt_only
+    platform: null
+    model_version: null
+    generation_mode: null
+    content_type: 角色图精修
+    path: case-library/records/角色图精修与一致性控制.yaml
+    fingerprint: f475fec7f2d1bf8f

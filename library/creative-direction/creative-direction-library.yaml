@@ -1,0 +1,37 @@
+creative_directions:
+  - id: kinetic_peak
+    name_zh: 动作爆发
+    emotional_goal: 紧张、兴奋、力量释放
+    visual_focus: 动作方向、命中瞬间、速度反差
+    energy_shape: high_open-rise-climax-settle
+    compatible_strategies: [action_burst, ability_showcase]
+  - id: emotional_closeup
+    name_zh: 情绪特写
+    emotional_goal: 共情、克制、情绪转折
+    visual_focus: 眼神、呼吸、微表情和距离变化
+    energy_shape: quiet-build-turn-hold
+    compatible_strategies: [emotional_showcase, story_scene]
+  - id: mystical_reveal
+    name_zh: 神秘揭示
+    emotional_goal: 好奇、敬畏、逐层发现
+    visual_focus: 剪影、符号、能力和身份揭示
+    energy_shape: conceal-reveal-rise-release
+    compatible_strategies: [ability_showcase, poster_motion, story_scene]
+  - id: relationship_tension
+    name_zh: 关系张力
+    emotional_goal: 对抗、默契、距离变化
+    visual_focus: 角色位置、视线、动作呼应和同框关系
+    energy_shape: separate-contrast-meet-resolve
+    compatible_strategies: [relationship_interaction, story_scene]
+  - id: graphic_identity
+    name_zh: 图形化角色印象
+    emotional_goal: 鲜明、时髦、强记忆点
+    visual_focus: 角色剪影、色块、符号和图形匹配
+    energy_shape: hook-pattern-escalate-freeze
+    compatible_strategies: [poster_motion, emotional_showcase]
+
+selection_rules:
+  - 必须根据角色固定特征和用户想达到的画面效果选择
+  - 只能选择一个主要创意方向，可附加一个次要方向
+  - 创意方向不能覆盖角色身份锁定和内容类型风险上限
+  - 不使用投放、转化、稀有度或活动目标进行选择

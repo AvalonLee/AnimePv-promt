@@ -1,0 +1,60 @@
+name: Validate
+
+on:
+  push:
+    branches: [main, dev, develop]
+  pull_request:
+    branches: [main, dev, develop]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Validate YAML components and schemas
+        run: python tools/validate_yaml.py
+
+      - name: Check naming migration
+        run: python tools/check_naming.py
+
+      - name: Check version and brand consistency
+        run: python tools/check_version.py
+
+      - name: Validate genre templates
+        run: python tools/validate_templates.py
+
+      - name: Validate benchmark cases
+        run: python tools/validate_benchmarks.py
+
+      - name: Validate evidence-backed case library
+        run: python tools/validate_cases.py
+
+      - name: Check effect-first migration
+        run: python tools/check_effect_first_migration.py
+
+      - name: Validate executable platform adapters
+        run: python tools/validate_platform_adapters.py
+
+      - name: Validate director plans
+        run: python tools/validate_director_plan.py examples/platform-adapters
+
+      - name: Validate execution kernel
+        run: python tools/validate_execution_kernel.py
+
+      - name: Validate quality and revision loop
+        run: python tools/validate_quality_loop.py
+
+      - name: Smoke test case ingestion
+        run: python tools/ingest_case.py benchmark/case-workflow/valid-reviewed.yaml --validate-only
+
+      - name: Check documentation links
+        run: python tools/check_links.py

@@ -1,0 +1,82 @@
+# Cast Risk Rules — 多角色特有的生成风险
+#
+# 多角色不是「单角色 x N」。它引入了单角色 PV 不存在的失败模式，
+# 必须单独建模，否则 Quality Engine 会给出虚高分数。
+
+cast_risk:
+
+  # 风险 1：身份串味（多角色最主要的失败模式）
+  identity_bleed:
+    description: >
+      同框时 AI 会把 A 的发色/服装特征混到 B 身上，
+      或生成出介于两人之间的第三张脸。
+      这是多角色 PV 最高频、也最致命的崩坏。
+    severity: critical
+    scales_with: 同框人数 与 外观相似度
+    mitigation:
+      - 阵容成员必须有强对比锚点（见 contrast_requirement）
+      - 同框 Shot 中每个成员必须绑定固定构图锚位（anchor_side）
+      - Negative prompt 必须显式写出「禁止角色特征互换」
+    risk_by_size:
+      2: medium
+      3: high
+      4: critical
+
+  # 风险 2：外观区分度不足
+  contrast_requirement:
+    description: >
+      若两个成员发色接近、服装同色系，同框必崩。
+      这是设计阶段就该拦住的问题，不是生成阶段能补救的。
+    rule: 任意两名成员必须至少在 2 个维度上强对比
+    dimensions: [hair_color, silhouette, costume_color, height_build, signature_asset]
+    validation: 不满足则拒绝进入 Composer，要求调整阵容或改用分镜
+
+  # 风险 3：动作等级放大
+  action_level_amplification:
+    description: >
+      同一动作在多角色场景下的生成难度高于单角色。
+      单人 level 2 的「拔武器」，双人同框互动时实际难度接近 level 3。
+    rule: 同框 Shot 的有效动作等级 = 组件 action_level + (同框人数 - 1)
+    example:
+      component: weapon-reveal
+      base_action_level: 2
+      characters_in_frame: 2
+      effective_level: 3
+      verdict: 超出 15s 预算(2)，须改为分镜或降级组件
+    implication: >
+      多角色同框 Shot 应优先使用 action_level 1 的组件
+      （head-turn / signature-pose / hand-gesture）。
+
+  # 风险 4：手部与肢体交叠
+  limb_overlap:
+    description: 多角色近距离同框时手部/武器交叠区域是崩坏高发区
+    severity: high
+    mitigation:
+      - 同框 Shot 禁止两人手部同时进入前景
+      - 背对背 / 并肩 构图优于面对面近距离
+      - 武器不得在同一帧内交叉
+
+  # group battle 的重新定位
+  group_battle_policy:
+    previous_classification: level_4 forbidden
+    revised: >
+      「group battle」作为无序混战仍然禁止。
+      但「结构化多角色战斗展示」（每人一个独立 Shot，同框仅用于起势/收势）
+      是可控的，不应与混战同等对待。
+    forbidden_still:
+      - 无序混战
+      - 5 人以上同框
+      - 多人同时释放技能
+      - 大规模环境破坏
+    allowed_as_structured:
+      - 各成员独占 Shot 展示各自能力（分镜）
+      - 2-3 人同框起势 / 收势定格（低动作等级）
+      - 交替快切形成「群体感」而非真正同框混战
+
+  quality_penalty:
+    description: 多角色 PV 的稳定性上限低于单角色，评分需体现
+    generation_stability_cap:
+      2: 32    # 满分 35
+      3: 28
+      4: 24
+    rationale: 不设上限会让多角色方案获得虚高分数，掩盖真实风险

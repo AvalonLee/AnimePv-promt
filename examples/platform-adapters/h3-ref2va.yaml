@@ -1,0 +1,163 @@
+project:
+  title: 风雪剑士多参考
+  duration: 8
+  aspect_ratio: '16:9'
+  content_type: action
+  creative_intent: 保持角色身份并迁移动作节奏
+character:
+  summary: silver-haired blue-eyed anime swordswoman in black-silver armor and navy
+    cape
+  immutable_features:
+  - silver hair
+  - blue eyes
+  - armor silhouette
+  - ice sword
+  allowed_variations:
+  - hair and cape deformation
+cast:
+  mode: single
+  members:
+  - id: lead
+    role: protagonist
+  relationships: []
+direction:
+  creative_direction: kinetic_peak
+  secondary_direction: ''
+  presentation_strategy: action_burst
+  emotional_goal: controlled anticipation and explosive slash
+  visual_focus: identity retention and referenced motion timing
+style:
+  base_style: modern-cel
+  visual_approach: cel_animation
+  enhancements:
+  - ice arc
+  environment: snowy mountain pass
+  lighting: cold blue rim light
+performance_direction:
+  baseline: 角色正在执行与场景相关的具体任务
+  stimulus: 环境或事件产生可感知变化
+  reaction: 视线、手部和身体重心依次产生反应
+  recovery: 角色完成反应并进入下一动作或收势
+  lifelike_moments:
+  - type: external_interruption
+    description: 环境变化触发角色即时反应
+  - type: motion_afterglow
+    description: 主要动作结束后保留发丝或衣摆余韵
+rhythm:
+  bpm: 150
+  energy_curve:
+  - start: 0
+    end: 3
+    energy: 68
+    purpose: anticipation
+  - start: 3
+    end: 6
+    energy: 97
+    purpose: burst
+  - start: 6
+    end: 8
+    energy: 62
+    purpose: settle
+  beat_events:
+  - time: 0
+    type: eye_hit
+    visual: eye focus
+  - time: 4
+    type: impact
+    visual: slash impact
+  - time: 8
+    type: final_hit
+    visual: final settle
+  micro_shots:
+  - time: 0
+    event: eye
+  - time: 1
+    event: grip
+  - time: 2
+    event: compression
+  - time: 3
+    event: launch
+  - time: 4
+    event: slash
+  - time: 5
+    event: impact
+  - time: 6
+    event: recovery
+  - time: 7
+    event: settle
+  - time: 8
+    event: final
+generation_clips:
+- start: 0
+  end: 4
+  purpose: anticipation into referenced slash
+  composition: medium close-up to low angle
+  primary_action: anticipates and launches the referenced slash
+  camera: controlled push-in then follows left to right
+  main_effect: fine snow into ice arc
+  sound: wind cloth and sword
+  editable_moments:
+  - time: 0
+    event: eye focus
+  - time: 2
+    event: compression
+  - time: 4
+    event: slash impact
+- start: 4
+  end: 8
+  purpose: recovery and final settle
+  composition: low-angle medium shot
+  primary_action: completes recovery and settles
+  camera: decelerates and stops
+  main_effect: fading ice arc
+  sound: sword resonance and cloth
+  editable_moments:
+  - time: 4
+    event: impact
+  - time: 6
+    event: recovery
+  - time: 8
+    event: final settle
+editorial_manifest:
+  strategy: none
+  items: []
+audio_beat_manifest:
+  soundscape: wind, cloth and sword effects
+  music: fast percussion at 150 BPM
+  bpm: 150
+  events:
+  - time: 0
+    sound: wind
+  - time: 4
+    sound: sword impact
+  - time: 8
+    sound: ice resonance
+materials:
+- id: character
+  type: image
+  anchor: reference
+  role: character identity
+  retain:
+  - face
+  - hair
+  - costume
+  - weapon
+  ignore:
+  - background
+  timing: throughout
+- id: motion
+  type: video
+  anchor: reference
+  role: action timing
+  retain:
+  - motion path
+  - beats
+  ignore:
+  - person identity
+  - costume
+  - environment
+  timing: 0-8s
+target:
+  platform: minimax_h3_self_hosted
+  generation_mode: Ref2VA
+  model_version: H3-Base-Ref2VA

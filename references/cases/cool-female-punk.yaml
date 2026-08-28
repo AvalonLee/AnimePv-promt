@@ -1,0 +1,19 @@
+case_id: case.cool.female.punk.v1
+character_archetype: cool_female
+creative_position: cool fashion warrior
+visual_identity:
+  hair: silver white, layered
+  palette: [black, white, neon accent]
+personality: [confident, rebellious, cool]
+selling_points:
+  primary: attitude
+  secondary: fashion design
+preferred_theme: cool-female-jrpg
+preferred_template: pv-15s-new-character-release
+camera_patterns: [eye-reveal, beauty-showcase, hero-low-angle]
+action_patterns: [hair-flip, confident-walk, weapon-reveal]
+expression_patterns: [cool-gaze, confident-smirk]
+transition_patterns: [flash-cut, glitch-data, title-reveal]
+style_patterns: [y2k-graphic, modern-cel]
+avoid: [excessive darkness, realistic punk photography]
+search_tags: [cool, punk, y2k, fashion, female]

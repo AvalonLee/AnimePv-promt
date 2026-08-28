@@ -1,0 +1,62 @@
+benchmark:
+  id: BM-12
+  name: Sweet Y2K Girl Concept Sheet
+  dimension: concept-sheet
+  status: PASS
+
+purpose: >
+  验证「角色概念分解图」资产（director/character-concept-sheet.md）与女性甜系 Y2K
+  内容方案的协同：服装分层 / 私密内着 / 表情集 / 材质特写 / 生活切片五维拆解，
+  且全程继承 Base Style 锁定与角色 DNA 一致，并落实女性向要点（羊皮纸背景 / 统一三桶命名 /
+  做旧痕迹可选）。dimension=concept-sheet 标记为与 BM-11 对称的女性回归用例。
+
+input:
+  request: 制作一个甜系Y2K少女角色的概念分解图设定稿。粉色短发，黑框眼镜，Y2K潮流穿搭，甜美但带一点自信叛逆。4:5设定图。
+  session_spec:
+    duration: 15s
+    aspect_ratio: "4:5"
+
+expected_routing:
+  task: CREATE_PV
+  character_type: sweet_female
+  persona_tag: 可爱
+  genre: daily
+  theme: sweet-y2k-girl
+  variation: release.standard.v1
+  template: genre-daily-15s
+  style_stack:
+    base: modern-cel
+    premium: mobile-game-premium
+    special: y2k-graphic
+
+# 本用例核心交付：角色概念分解图资产被触发
+output_assets:
+  - character-concept-sheet
+
+expected_components:
+  camera: [hand-to-camera, beauty-showcase, detail-macro, hero-low-angle, final-pose]
+  action: [hair-flip, hand-gesture, signature-pose]
+  expression: [playful-wink, sweet-smile]
+  transition: [graphic-panel, ui-card, title-reveal]
+
+risk_budget:
+  max_action_level: 2
+  max_effect_level: 2
+  max_camera_transition: 9
+
+scores:
+  generation_stability: 35
+  character_consistency: 25
+  shot_feasibility: 18
+  visual_impact: 10
+  creative_intent_match: 10
+  art_direction: 0
+  final_score: 98
+  decision: PASS
+
+notes:
+  - 概念分解图属 Step1 角色设定图 Prompt 的深度扩展，不替换角色圣经，仅以单图呈现六维
+  - 女性向背景使用米黄 / 羊皮纸 / 浅灰纹理背景，仅限呈现层，线稿 / 光影仍服从 modern-cel，禁止 3D / PBR
+  - 生活切片三桶统一命名为「随身包袋与内容物 / 个护与配饰 / 个性化物件」，女性向第三桶示例为手账本 / 常备药品 / 收藏品
+  - 材质特写可追加做旧痕迹（Y2K 做旧/磨痕）以增厚生活感，与「甜系潮流」人设自洽
+  - 评分结构与 BM-01（同 同内容路由）一致，新资产不改变既有稳定性上限

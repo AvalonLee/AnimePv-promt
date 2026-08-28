@@ -1,0 +1,18 @@
+shot_list:
+  duration:
+  rhythm_plan_ref:
+  unit: micro_shot | generation_clip
+  shots:
+    - id:
+      time:
+      purpose:
+      character_state:
+      camera:
+      action:
+      expression:
+      effect:
+      transition:
+      action_phase:
+      beat_event:
+      editable_moments:
+      risk_level:

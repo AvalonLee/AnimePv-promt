@@ -1,0 +1,53 @@
+benchmark:
+  id: BM-09
+  name: Male Suit Elegance
+  dimension: theme
+  status: PASS
+
+purpose: >
+  男性西装 内容类型覆盖。验证 male_mature 角色路由、
+  Genre=daily 的克制节奏与西装细节镜头组合。
+
+input:
+  request: 制作一个男性西装角色上线PV。银灰短发，琥珀瞳，黑西装深蓝领带，成熟克制，集团干部气质。15秒。
+  session_spec:
+    duration: 15s
+    aspect_ratio: "16:9"
+
+expected_routing:
+  task: CREATE_PV
+  character_type: male_mature
+  persona_tag: 冷酷
+  genre: daily
+  theme: male-suit-release
+  variation: release.standard.v1
+  template: genre-daily-15s
+  style_stack:
+    base: modern-cel
+    premium: mobile-game-premium
+    special: dark-cinematic-cel
+
+expected_components:
+  camera: [detail-macro, beauty-showcase, hero-low-angle, final-pose]
+  action: [head-turn, confident-walk, hand-gesture, signature-pose]
+  expression: [composed-gaze, detached-stare]
+  transition: [graphic-panel, ui-card, title-reveal]
+
+risk_budget:
+  max_action_level: 2
+  max_effect_level: 1
+  max_camera_transition: 9
+
+scores:
+  generation_stability: 35
+  character_consistency: 24
+  shot_feasibility: 16
+  visual_impact: 9
+  creative_intent_match: 9
+  art_direction: 4
+  final_score: 97
+  decision: PASS
+
+notes:
+  - 西装主题以克制动作为主，confident-walk 仅用于中段一次
+  - detail-macro 聚焦领带/袖扣等 DNA 配饰，与 signature-pose 分属不同 Shot

@@ -1,0 +1,13 @@
+editorial_manifest:
+  strategy: post_production | model_generated | none
+  items:
+    - content: string
+      start: number
+      end: number
+      position: string
+      appearance: string
+      effect: string
+  rules:
+    none_requires_empty_items: true
+    other_strategies_require_items: true
+    item_time_must_fit_duration: true

@@ -1,0 +1,16 @@
+character_types:
+  cool_female:
+    keywords: [cool, warrior, punk, queen, confident]
+    load_cases: [case.cool.female.punk.v1]
+  sweet_female:
+    keywords: [cute, idol, y2k, fashion]
+    load_cases: [case.sweet.y2k.girl.v1]
+  academy_female:
+    keywords: [school, academy, student, tsundere]
+    load_cases: [case.academy.tsundere.v1]
+  fantasy_female:
+    keywords: [magic, noble, elegant]
+    load_cases: [case.elegant.fantasy.v1]
+  cyber_female:
+    keywords: [cyber, neon, hacker]
+    load_cases: [case.cyberpunk.female.v1]

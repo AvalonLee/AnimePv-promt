@@ -1,0 +1,59 @@
+# 实证案例：赛璐璐三套基线参数
+# 来源：赛璐璐风格三套专属视频Prompt + 四镜连贯分镜脚本.md
+# 状态：可量化参数基线，适配 Sora / MiniMax H3 / Pika
+
+case_id: case.proven.cel.baseline.v1
+source: verified_parameter_baseline
+compatible_models: [sora, minimax-h3, pika]
+
+universal_base:
+  style: >
+    90年代日系赛璐璐动画，纯手绘黑硬轮廓线，大面积平涂上色，
+    几何块状硬边阴影，无渐变溢色、无写实PBR材质、无高斯运动模糊；
+    12fps有限动画，关键帧定格设计，轻微35mm胶片颗粒、微量手绘线条抖动，
+    复古TV动画质感
+  resolution: 16:9 / 4K 超清
+  core_rule: >
+    所有动态依靠手绘速度线、残影、形体形变表现，拒绝现代写实动态模糊；
+    镜头以2.5D平面运镜为主，无3D环绕、无大幅度空间位移
+
+genres:
+  action:
+    shot_duration: 0.5-1.5s
+    push_speed: 0.4/s
+    shake: { amplitude: 8-12px, duration: 0.2-0.5s, trigger: 命中瞬间, reset: 瞬时复位 }
+    storyboard_logic: 全景铺垫战局 → 中景肢体连招 → 特写打击瞬间 → 定格高光pose
+    principle: 动作优先、细节简化，背景虚化弱化
+    afterimage_layers: 2-3
+    transitions: [闪白硬切, 冲击模糊拉伸, 运动轨迹匹配]
+    flash_frame: 打击高光帧1帧纯白爆闪
+    reference: ["龙珠Z", "咒术回战"]
+
+  daily:
+    shot_duration: 2-4s
+    push_speed: 0.2/s
+    pan_speed: "<=0.25deg/s"
+    parallax: 多层背景视差滚动（前景慢、中景适中、背景快）
+    shake: none
+    storyboard_logic: 全景交代场景 → 中景肢体姿态 → 近景/特写微表情
+    composition: 经典双人正反打，预留视线呼吸留白，构图对称舒适
+    transitions: [淡黑柔淡出, 物体遮挡, 慢速光圈开合]
+    forbidden: [硬切闪白]
+    reference: ["魔卡少女樱 旧TV", "堀与宫村"]
+
+  magic:
+    charge_shot_duration: 2-3s
+    burst_shot_duration: 1s
+    orbit_angle: 30-45deg
+    burst_shake: { amplitude: 5-8px }
+    freeze: 高光特效帧定格处理
+    effect_style: 几何块状分层手绘光效，结界纹路清晰、粒子分层飘散、光影渐变通透
+    transitions: [光效形态匹配, 几何硬边划像, 色彩渐变溶解]
+    reference: ["美少女战士 旧版", "魔卡少女樱 魔法特效"]
+
+pitfall_summary:
+  - 全程坚守赛璐璐核心：只靠速度线、残影、色块特效做动态，绝对禁止写实运动模糊/流体特效/3D环绕运镜
+  - 节奏区分明确：打斗快切顿挫、文戏舒缓静谧、魔法快慢结合，不混用镜头节奏
+  - 所有参数可量化、可直接输入AI工具，无模糊主观描述
+
+search_tags: [赛璐璐, 基线参数, 可量化, 12fps, 2.5D运镜, 实证案例]

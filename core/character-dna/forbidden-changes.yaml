@@ -1,0 +1,54 @@
+forbidden_changes:
+  critical:
+    - face_change
+    - hair_color_change
+    - costume_change
+    - eye_color_change
+  high:
+    - weapon_change
+    - body_shape_change
+  medium:
+    - expression_shift
+    - personality_shift
+
+# transformation_exception
+# 由 BM-06 暴露的 P1 问题引入：
+# 变身动作本质是换装，与 costume_change (critical) 冲突。
+# 定义受控例外，而非放宽 DNA Lock。
+transformation_exception:
+  applies_to: action.transformation.v1
+  admission: 见 core/quality-engine/risk-budget-gate.yaml
+  must_remain_identical:
+    - face
+    - hair_color
+    - eye_color
+    - signature_asset
+  may_change:
+    - costume_form
+  constraints:
+    - 变身必须在同一 Shot 内完成，禁止跨 Shot 保持中间态
+    - 变身前后必须各有一帧完整角色形象，供一致性校验
+    - 变身过程的光效等级不得超过 effect_level 3
+  validation:
+    compare_frames: [pre_transform, post_transform]
+    required_identity_score: ">=90"
+
+# costume_variant_exception
+# 由活动 PV（季节/联动限定造型）引入。
+# 限定造型本质是换装，与 costume_change (critical) 冲突。
+# 处理方式与 transformation_exception 一致：受控例外，而非放宽 DNA Lock。
+costume_variant_exception:
+  applies_to: [theme.seasonal.event.v1, theme.collaboration.event.v1]
+  must_remain_identical:
+    - face
+    - hair_color
+    - eye_color
+    - signature_asset
+  may_change:
+    - costume_form
+    - accessory_theme
+  constraints:
+    - 造型变化须全片一致，不得在片中切换回原造型
+    - 限定造型仍须保留角色标志色，避免失去识别度
+  validation:
+    required_identity_score: ">=90"

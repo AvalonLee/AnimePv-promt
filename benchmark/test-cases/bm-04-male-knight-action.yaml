@@ -1,0 +1,79 @@
+benchmark:
+  id: BM-04
+  name: Male Knight Combat
+  dimension: genre
+  genre_under_test: action
+  status: PASS
+
+purpose: >
+  首个男性角色用例，同时验证 Genre=action 的可量化参数
+  （0.3-0.8s 快切 / 0.4/s 推镜 / 8-12px 命中震动 / 140-160 BPM）
+
+input:
+  request: 制作一个男性五星骑士角色的战斗展示PV。黑银重甲，深蓝短发，灰蓝瞳，双手大剑，气质沉稳克制。15秒。
+  session_spec:
+    duration: 15s
+    aspect_ratio: "16:9"
+
+expected_routing:
+  task: CREATE_PV
+  character_type: male_cool
+  persona_tag: 冷酷
+  genre: action
+  theme: male-knight-release
+  variation: combat.showcase.v1
+  template: genre-action-15s
+  style_stack:
+    base: modern-cel
+    premium: mobile-game-premium
+    special: dark-cinematic-cel
+
+genre_params_asserted:
+  shot_duration: 0.3-0.8s
+  push_speed: 0.4/s
+  shake: 8-12px / 0.2-0.5s on hit only
+  bpm: 140-160
+  afterimage_layers: 2-3
+
+expected_components:
+  camera: [eye-reveal, action-tracking, hero-low-angle, final-pose]
+  action: [confident-walk, weapon-reveal, ability-release, signature-pose]
+  expression: [composed-gaze, battle-resolve]
+  transition: [flash-cut, anime-impact, title-reveal]
+
+risk_budget:
+  max_action_level: 2
+  max_effect_level: 2
+  max_camera_transition: 9
+
+scores:
+  generation_stability: 32
+  character_consistency: 23
+  shot_feasibility: 14
+  visual_impact: 9
+  creative_intent_match: 9
+  art_direction: 4
+  final_score: 91
+  decision: PASS
+
+notes:
+  - 路由升级为 male-knight-release，与 v1.2 男性角色类型 对齐
+
+issues_found:
+  - id: Issue-03
+    severity: P1
+    title: Expression 库 prompt_block 硬编码女性
+    detail: >
+      cool-gaze / confident-smirk 等组件的 prompt_block 写死
+      "anime female character"，男性角色复用时会注入错误性别词。
+    evidence: library/expression/expression-library.yaml
+    resolution: 已修复 — 新增 gender_neutral_prompt_block 字段，Composer 依角色性别择一注入
+    resolved_in: library/expression/expression-library.yaml
+  - id: Issue-04
+    severity: P2
+    title: Persona 男性标签缺少对应表情组件
+    detail: >
+      persona-tags.md 定义了男性「从容/冷酷/热血」，
+      但 expression 库无对应的男性向表情组件（如沉稳凝视、战意上扬）。
+    resolution: 已修复 — 新增 composed-gaze / battle-resolve / detached-stare 三个男性向表情组件
+    resolved_in: library/expression/expression-library.yaml

@@ -1,0 +1,37 @@
+# Cast Schema — 多角色 PV 的角色阵容定义
+#
+# 单角色 PV 用 character_dna（单一 identity）。
+# 多角色 PV 必须改用 cast，因为需要额外表达「角色间关系」与「画面权重」，
+# 这两者是单角色 schema 无法承载的。
+
+cast:
+  version: 1.0
+
+  # 阵容规模。超过 4 人一律降级为剪影/背景处理，见 crowd_policy。
+  size:                  # 2 | 3 | 4
+  formation:             # duo | trio | squad
+
+  # 每个角色仍各自持有完整 DNA，DNA Lock 逐个生效
+  members:
+    - role: lead         # lead | second | support
+      character_dna:     # 引用 core/character-dna/dna-schema.yaml 结构
+      screen_weight:     # 画面权重百分比，见 weight-rules.yaml
+      intro_order:       # 出场顺序，1 起
+      anchor_side:       # left | right | center | back（构图锚位，防穿插混乱）
+
+  # 关系锚定：多角色 PV 的核心卖点，不是「多个人各自出场」
+  relationship:
+    type:                # rival | ally | mentor_student | siblings | duo_unit | opposing
+    tension:             # low | medium | high
+    visual_expression:   # 关系如何被看见（背对背 / 并肩 / 对峙 / 交叉视线）
+    forbidden:           # 关系不允许被表达为的形式
+
+  # 阵容级配色，避免多角色同框时色彩打架
+  palette_policy:
+    shared_base:         # 共享底色，建立阵容归属感
+    per_member_accent:   # 每人一个专属强调色，用于区分
+    max_total_colors: 5  # 同框总色数上限
+
+  generation_constraints:
+    must_keep:           # 每个成员的 DNA must_keep 并集
+    avoid_change:

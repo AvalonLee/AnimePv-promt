@@ -1,0 +1,71 @@
+benchmark:
+  id: BM-05
+  name: Academy Tsundere Daily
+  dimension: genre
+  genre_under_test: daily
+  status: PASS
+
+purpose: >
+  验证 Genre=daily 的可量化参数（1-2.5s 单镜头 / 0.2/s 推镜 /
+  <=0.25deg/s 横移 / 无震动 / 100-120 BPM），
+  并对齐实证案例 proven-academy-file
+
+input:
+  request: 学院系新角色档案式介绍PV。黑色长发，学院衬衫配领带与徽章，格纹裙，小熊挂件，冷淡傲娇。15秒。
+  session_spec:
+    duration: 15s
+    aspect_ratio: "16:9"
+
+expected_routing:
+  task: CREATE_PV
+  character_type: academy_female
+  persona_tag: 冷酷
+  genre: daily
+  theme: academy-character
+  variation: release.standard.v1
+  template: genre-daily-15s
+  reference_case: case.proven.academy.file.v1
+  style_stack:
+    base: modern-cel
+    premium: mobile-game-premium
+    special: y2k-graphic
+
+genre_params_asserted:
+  shot_duration: 1-2.5s
+  push_speed: 0.2/s
+  pan_speed: "<=0.25deg/s"
+  shake: none
+  bpm: 100-120
+
+expected_components:
+  camera: [beauty-showcase, detail-macro, final-pose]
+  action: [head-turn, hand-gesture]
+  expression: [shy-expression, sweet-smile, cool-gaze]
+  transition: [graphic-panel, ui-card, title-reveal]
+
+technique_asserted:
+  name: 角色稳定 + 背景 Graphic 高速运动
+  source: case.proven.academy.file.v1
+  detail: 角色居中偏右保持稳定，背景分镜框与色块高速重组
+  breathing_beat:
+    at: 12.5s
+    detail: 元素散开留一瞬呼吸感后重组为最终海报定格
+
+risk_budget:
+  max_action_level: 1
+  max_effect_level: 1
+  max_camera_transition: 9
+
+scores:
+  generation_stability: 35
+  character_consistency: 25
+  shot_feasibility: 15
+  visual_impact: 9
+  creative_intent_match: 10
+  art_direction: 4
+  final_score: 98
+  decision: PASS
+
+notes:
+  - daily genre 因动作等级低、无震动、无爆发特效，稳定性得分最高
+  - 档案卡概念为文字元素提供合理载体，避免文字遮挡角色

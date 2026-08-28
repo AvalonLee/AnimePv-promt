@@ -1,0 +1,420 @@
+# AstraForge Visual Component Library — Camera
+# Camera 决定「像不像手游角色 PV」
+
+components:
+  - id: camera.reveal.closeup.v1
+    slug: reveal-closeup
+    name: Character Reveal Close-up
+    category: camera
+    purpose: opening hook
+    creative_intent_match: high
+    best_for: [new character reveal, ability_showcase opening, female hero introduction]
+    shot: extreme close-up
+    focus: [face, eyes, signature feature]
+    camera_motion: slow push-in
+    composition: face dominates frame
+    emotion: [mysterious, memorable]
+    prompt_block: >
+      extreme close-up anime female character reveal,
+      focus on eyes and facial expression,
+      slow camera push-in,
+      high quality mobile game character trailer
+    compatible_action: [eye_reveal, head_turn]
+    risk: low
+    stability_score: 9
+    impact_score: 8
+
+  - id: camera.eye.reveal.v1
+
+    slug: eye-reveal
+    name: Eye Reveal Shot
+    category: camera
+    purpose: instant character recognition
+    focus: [eye design, emotion]
+    shot: macro close-up
+    movement: slow reveal from shadow
+    prompt_block: >
+      anime female character eye reveal,
+      sharp detailed eyes,
+      dramatic lighting,
+      slow cinematic reveal
+    best_for: [cool female, mysterious female, boss]
+    risk: low
+    stability_score: 9
+    impact_score: 9
+
+  - id: camera.beauty.showcase.v1
+
+    slug: beauty-showcase
+    name: Character Beauty Showcase
+    category: camera
+    purpose: show character design
+    shot: medium close-up
+    focus: [hairstyle, outfit, accessory, face]
+    movement: slow horizontal pan
+    creative_intent: increase character appeal
+    prompt_block: >
+      anime game character beauty showcase,
+      slow camera pan,
+      showing hairstyle costume and accessories,
+      premium character trailer style
+    best_for: [ability_showcase character, skin showcase]
+    risk: low
+    stability_score: 9
+    impact_score: 9
+
+  - id: camera.detail.macro.v1
+
+    slug: detail-macro
+    name: Signature Detail Macro
+    category: camera
+    purpose: highlight character asset
+    focus: [jewelry, weapon, emblem, accessory]
+    shot: macro close-up
+    duration: 0.5-1.5s
+    prompt_block: >
+      macro anime detail shot,
+      focus on character accessory, weapon, symbolic item,
+      stylized game trailer
+    best_for: [premium character, limited skin]
+    risk: low
+    stability_score: 9
+    impact_score: 7
+
+  - id: camera.hand.camera.v1
+
+    slug: hand-to-camera
+    name: Hand To Camera Perspective
+    category: camera
+    purpose: create viewer interaction
+    shot: dynamic close perspective
+    movement: character reaches toward lens
+    focus: [foreground hand, face behind]
+    prompt_block: >
+      anime girl reaching hand toward camera,
+      strong perspective,
+      dynamic interaction,
+      stylized 2D game PV
+    best_for: [cute girl, idol, punk girl]
+    risk: medium
+    stability_score: 6
+    impact_score: 9
+    note: 同一 Shot 不可与 hair-flip 叠加，易出现手部异常
+
+  - id: camera.hero.low_angle.v1
+
+    slug: hero-low-angle
+    name: Hero Low Angle
+    category: camera
+    purpose: final power shot
+    shot: full body
+    angle: low angle
+    composition: strong silhouette
+    movement: slow push forward
+    prompt_block: >
+      low angle anime hero shot,
+      female character standing confidently,
+      strong silhouette,
+      dramatic game trailer ending
+    best_for: [warrior, boss, legendary character]
+    risk: low
+    stability_score: 9
+    impact_score: 9
+
+  - id: camera.action.tracking.v1
+
+    slug: action-tracking
+    name: Action Tracking Shot
+    category: camera
+    purpose: ability showcase
+    shot: medium full shot
+    movement: tracking camera
+    focus: character motion
+    prompt_block: >
+      anime character action tracking shot,
+      dynamic movement,
+      clean 2D animation,
+      game skill showcase
+    best_for: [combat, ability]
+    risk: medium
+    stability_score: 6
+    impact_score: 9
+
+  - id: camera.final.pose.v1
+
+    slug: final-pose
+    name: Final Character Card Shot
+    category: camera
+    purpose: memorable ending
+    shot: hero portrait
+    composition: character centered
+    space: title area reserved
+    prompt_block: >
+      anime character final pose,
+      hero portrait,
+      title reveal space,
+      mobile game trailer ending
+    best_for: [all character PV]
+    risk: low
+    stability_score: 10
+    impact_score: 8
+
+  # 由 benchmark 校验暴露的库缺口：
+  # story-director.md / variation-library.yaml / examples 均引用此组件，此前未定义。
+  - id: camera.environment.reveal.v1
+    slug: environment-reveal
+    name: Environment Reveal
+    category: camera
+    purpose: world and mood establishment
+    creative_intent_match: medium
+    best_for: [story PV, 30s narrative, legendary character, mystery opening]
+    shot: wide establishing
+    focus: [environment, character silhouette]
+    camera_motion: slow pull-back or slow lateral parallax
+    composition: character small in frame, environment dominant
+    emotion: [mysterious, atmospheric]
+    prompt_block: >
+      anime wide establishing shot,
+      character silhouette within stylized environment,
+      slow camera pull-back,
+      atmospheric mood, flat cel background
+    compatible_action: [head_turn]
+    risk: low
+    stability_score: 10
+    impact_score: 7
+    note: >
+      30s 剧情 PV 的 Act 1 常用开场。角色占比低，
+      因此不适用于 15s 角色上线 PV（违反角色优先原则）。
+
+  # ---- 多角色同框镜头 ----
+  # 由 core/multi-character/ 引入。所有同框镜头的有效动作等级
+  # = 组件 action_level + (同框人数 - 1)，见 cast-risk-rules.yaml。
+  # 因此这些组件本身刻意保持低动作等级。
+
+  - id: camera.duo.standoff.v1
+    slug: duo-standoff
+    name: Duo Standoff
+    category: camera
+    purpose: rival tension between two characters
+    creative_intent_match: high
+    best_for: [rival, opposing, boss confrontation, 30s story]
+    shot: medium two-shot
+    focus: [both faces in profile, gaze line between them]
+    camera_motion: slow lateral dolly along the gaze axis
+    composition: 两人分居画面左右，中央留出张力空白
+    emotion: [tension, confrontation]
+    cast_size: 2
+    prompt_block: >
+      anime two-shot standoff,
+      two characters facing each other in profile,
+      strong gaze line, tension gap in center,
+      slow lateral camera, flat cel shading
+    negative_addon: >
+      no character feature swapping, no merged faces,
+      keep each character design distinct and separate
+    risk: medium
+    stability_score: 7
+    impact_score: 9
+
+  - id: camera.back.to.back.v1
+    slug: back-to-back
+    name: Back To Back
+    category: camera
+    purpose: allied or rival duo silhouette
+    creative_intent_match: high
+    best_for: [ally, rival, duo_unit, poster frame]
+    shot: medium full two-shot
+    focus: [dual silhouette, opposing gaze directions]
+    camera_motion: slow push-in or static
+    composition: 背对背，两人视线朝相反方向
+    emotion: [trust, mutual resolve]
+    cast_size: 2
+    prompt_block: >
+      anime duo standing back to back,
+      looking in opposite directions,
+      strong combined silhouette,
+      slow push-in, flat cel shading
+    negative_addon: >
+      no character feature swapping, no overlapping limbs,
+      keep both character designs distinct
+    risk: low
+    stability_score: 8
+    impact_score: 9
+    note: 背对背构图无手部交叠，是同框中最稳定的选择
+
+  - id: camera.shoulder.to.shoulder.v1
+    slug: shoulder-to-shoulder
+    name: Shoulder To Shoulder
+    category: camera
+    purpose: allied duo advancing together
+    best_for: [ally, duo_unit, team formation]
+    shot: medium two-shot
+    focus: [both faces, aligned forward motion]
+    camera_motion: slow forward tracking
+    composition: 并肩前行，两人同向
+    emotion: [solidarity, momentum]
+    cast_size: 2
+    prompt_block: >
+      anime duo walking shoulder to shoulder toward camera,
+      aligned forward motion, confident posture,
+      slow tracking shot, flat cel shading
+    negative_addon: >
+      no character feature swapping, no hand overlap in foreground,
+      keep both character designs distinct
+    risk: medium
+    stability_score: 7
+    impact_score: 8
+
+  - id: camera.split.frame.duo.v1
+    slug: split-frame-duo
+    name: Split Frame Duo
+    category: camera
+    purpose: show two characters without true co-framing
+    best_for: [opposing, rival, low-risk duo presentation]
+    shot: graphic split composition
+    focus: [each character isolated in own panel]
+    camera_motion: static with graphic panel slide
+    composition: 画面被图形分割，每人独占一格
+    emotion: [contrast, opposition]
+    cast_size: 2
+    prompt_block: >
+      anime split screen composition,
+      two characters each isolated in separate graphic panel,
+      hard dividing line, flat cel shading, poster layout
+    negative_addon: >
+      characters must not cross the dividing line,
+      no feature blending between panels
+    risk: low
+    stability_score: 10
+    impact_score: 8
+    note: >
+      技术上是两个单人镜头拼合，因此不受同框动作等级放大影响。
+      多角色 PV 降低风险的首选手段。
+
+  - id: camera.duo.formation.v1
+    slug: duo-formation
+    name: Group Formation
+    category: camera
+    purpose: cast lineup for team or event PV
+    best_for: [trio, squad, anniversary, collaboration event]
+    shot: wide group shot
+    focus: [full cast silhouette, depth staggering]
+    camera_motion: slow pull-back revealing full cast
+    composition: 前后错位列队，避免并排站桩；高低差建立层次
+    emotion: [scale, celebration]
+    cast_size: 3
+    prompt_block: >
+      anime group formation wide shot,
+      characters staggered in depth with height variation,
+      slow pull-back reveal,
+      flat cel shading, premium game key visual
+    negative_addon: >
+      no character feature swapping between members,
+      keep each character design distinct,
+      no crowd, no duplicated faces
+    risk: high
+    stability_score: 6
+    impact_score: 10
+    note: 必须搭配 action_level 1 组件使用
+
+  - id: camera.mirrored.pose.v1
+    slug: mirrored-pose
+    name: Mirrored Pose
+    category: camera
+    purpose: express paired identity through symmetry
+    best_for: [siblings, duo_unit, twin characters]
+    shot: symmetric two-shot
+    focus: [mirrored body lines]
+    camera_motion: static or slow symmetric push
+    composition: 左右镜像对称姿态
+    emotion: [paired identity, harmony]
+    cast_size: 2
+    prompt_block: >
+      anime symmetric mirrored duo pose,
+      left-right mirrored body lines,
+      static symmetric composition,
+      flat cel shading
+    negative_addon: >
+      mirrored pose must not mean identical faces,
+      keep each character design distinct
+    risk: medium
+    stability_score: 7
+    impact_score: 8
+
+  # ---- 快切 / 快速转动 / 英雄镜头组件 ----
+  # 由 shot-planner 快切优先规则引入：单镜 1-2s、多角度、快速甩镜/环绕、英雄镜头配额。
+
+  - id: camera.quick.whip.pan.v1
+    slug: quick-whip-pan
+    name: Quick Whip Pan
+    category: camera
+    purpose: fast camera rotation between cuts
+    shot: any (cut-on-motion)
+    camera_motion: whip pan 90-180deg within 0.3-0.5s
+    focus: [motion streak, subject re-entry]
+    prompt_block: >
+      anime quick whip pan,
+      fast camera swipe between angles,
+      motion streak, dynamic fast-cut editing,
+      clean 2D cel animation
+    best_for: [fast-cut PV, multi-angle montage, action transitions]
+    risk: low
+    stability_score: 9
+    impact_score: 9
+    note: 快切节奏默认首选，代替慢速摇镜
+
+  - id: camera.fast.orbit.v1
+    slug: fast-orbit
+    name: Fast Partial Orbit
+    category: camera
+    purpose: efficient fast rotation around subject
+    shot: medium to full
+    camera_motion: fast partial orbit 90-180deg within 0.5-1s
+    focus: [character silhouette, ability effect]
+    prompt_block: >
+      anime fast partial orbit around character,
+      120 degree rotation in under a second,
+      dynamic energy showcase,
+      stylized 2D game PV
+    best_for: [ability release, hero moment, action showcase]
+    risk: medium
+    stability_score: 7
+    impact_score: 10
+    note: 禁止完整 360 环绕；90-180° 部分环绕为稳定区间
+
+  - id: camera.snap.zoom.v1
+    slug: snap-zoom
+    name: Snap Zoom
+    category: camera
+    purpose: instant impact push / pull
+    shot: close to medium
+    camera_motion: snap zoom in 0.2-0.4s
+    focus: [face, weapon, hit impact]
+    prompt_block: >
+      anime snap zoom,
+      instant quick push toward character,
+      impact frame, punchy fast-cut rhythm,
+      flat cel shading
+    best_for: [hit impact, ability burst, hook opener]
+    risk: low
+    stability_score: 9
+    impact_score: 9
+
+  - id: camera.hero.orbit.v1
+    slug: hero-orbit
+    name: Hero Orbit
+    category: camera
+    purpose: hero moment with fast rotation
+    shot: full body low angle
+    camera_motion: low angle fast partial orbit 90-180deg then freeze
+    focus: [hero silhouette, power pose]
+    prompt_block: >
+      anime hero shot,
+      low angle fast partial orbit around character,
+      power pose, freeze frame ending,
+      premium game trailer hero moment
+    best_for: [climax hero shot, final power pose, legendary character]
+    risk: medium
+    stability_score: 7
+    impact_score: 10
+    note: 与 hero-low-angle 互补；高频场景用 hero-orbit，结尾定格用 hero-low-angle

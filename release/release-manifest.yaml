@@ -1,0 +1,40 @@
+release:
+  project:
+    name: AstraForge Studio
+    name_zh: 星铸工坊
+    version: 2.5.0
+    codename: 角色表演与生命感镜头
+    release_type: Hybrid
+    target:
+    - GitHub Repository
+    - AI Skill Deployment
+    status: Release Candidate
+  included_modules:
+    cast_engine: enabled
+    event_engine: removed
+    documentation: enabled
+    skill_layer: enabled
+    character_dna: enabled
+    style_engine: enabled
+    quality_engine: enabled
+    benchmark_suite: enabled
+    visual_library: enabled
+    multi_style_2d: enabled
+    rhythm_engine: enabled
+    case_ingestion_pipeline: prompt_first
+    director_plan_validator: strict
+    generation_mode_compiler: five_strategies
+    execution_kernel: unified
+    creative_direction_layer: effect_first
+    quality_revision_loop: executable
+    performance_direction: enabled
+    lifelike_shot_cards: enabled
+    camera_motivation: enabled
+    environment_interaction: enabled
+    shot_difference_matrix: enabled
+    default_anime_aesthetic: japanese_anime_for_chinese_users
+  quality_audit:
+    score: 95
+    decision: APPROVED
+    recommendation: READY_FOR_GITHUB_RELEASE
+  git_tag: v2.5.0

@@ -1,0 +1,132 @@
+project:
+  title: 雷光登场
+  duration: 5
+  aspect_ratio: '16:9'
+  content_type: action
+  creative_intent: 用高速登场建立角色气势
+character:
+  summary: 黑发金瞳的年轻女武者，红黑短甲，手持窄刃长刀
+  immutable_features:
+  - 黑色高马尾
+  - 金色瞳孔
+  - 红黑短甲轮廓
+  - 窄刃长刀
+  allowed_variations:
+  - 发丝和衣摆受风变形
+cast:
+  mode: single
+  members:
+  - id: lead
+    role: 主角
+  relationships: []
+direction:
+  creative_direction: kinetic_peak
+  secondary_direction: ''
+  presentation_strategy: action_burst
+  emotional_goal: 紧张和力量释放
+  visual_focus: 落点冲击与抬刀姿态
+style:
+  base_style: modern-cel
+  visual_approach: cel_animation
+  enhancements:
+  - 战斗漫画线
+  environment: 雨夜屋顶
+  lighting: 紫蓝雷光逆光
+performance_direction:
+  baseline: 角色正在执行与场景相关的具体任务
+  stimulus: 环境或事件产生可感知变化
+  reaction: 视线、手部和身体重心依次产生反应
+  recovery: 角色完成反应并进入下一动作或收势
+  lifelike_moments:
+  - type: external_interruption
+    description: 环境变化触发角色即时反应
+  - type: motion_afterglow
+    description: 主要动作结束后保留发丝或衣摆余韵
+rhythm:
+  bpm: 150
+  energy_curve:
+  - start: 0
+    end: 1.5
+    energy: 75
+    purpose: 快速钩子
+  - start: 1.5
+    end: 4
+    energy: 95
+    purpose: 动作高潮
+  - start: 4
+    end: 5
+    energy: 65
+    purpose: 收势记忆
+  beat_events:
+  - time: 0
+    type: impact
+    visual: 雷光亮相
+  - time: 2.5
+    type: action_hit
+    visual: 落地电弧
+  - time: 5
+    type: final_hit
+    visual: 抬刀定格
+  micro_shots:
+  - time: 0
+    event: 雷光剪影
+  - time: 1
+    event: 下落姿态
+  - time: 2
+    event: 落点
+  - time: 3
+    event: 眼神
+  - time: 4
+    event: 抬刀
+  - time: 5
+    event: 定格
+generation_clips:
+- start: 0
+  end: 2.5
+  purpose: 落地爆发
+  composition: 屋顶远景转中景
+  primary_action: 从画外落到屋脊并稳住
+  camera: 快速下摇后急停
+  main_effect: 落点电弧
+  sound: 雨声与落地冲击
+  editable_moments:
+  - time: 0
+    event: 雷光剪影
+  - time: 1.2
+    event: 下落
+  - time: 2.5
+    event: 落点
+- start: 2.5
+  end: 5
+  purpose: 抬刀收势定格
+  composition: 低机位半身
+  primary_action: 抬刀指向镜头
+  camera: 短促推进后锁定
+  main_effect: 刀锋雷光
+  sound: 刀鸣与雷声
+  editable_moments:
+  - time: 2.5
+    event: 抬眼
+  - time: 3.8
+    event: 抬刀
+  - time: 5
+    event: 定格
+editorial_manifest:
+  strategy: none
+  items: []
+audio_beat_manifest:
+  soundscape: 雨声、落地声和刀鸣
+  music: 150 BPM紧张打击乐
+  bpm: 150
+  events:
+  - time: 0
+    sound: 雷声
+  - time: 2.5
+    sound: 落地重击
+  - time: 5
+    sound: 金属余音
+materials: []
+target:
+  platform: jimeng
+  generation_mode: T2VA
+  model_version: 用户当前版本

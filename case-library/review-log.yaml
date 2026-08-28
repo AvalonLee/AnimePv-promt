@@ -1,0 +1,20 @@
+review_log:
+  reviewed_at: '2026-08-27'
+  accepted:
+    - source: 8.txt
+      case_id: 短剧六步制作工作流
+    - source: 15.txt
+      case_id: 角色图精修与一致性控制
+    - source: 16.txt
+      case_id: 白模动作迁移与真人重建
+    - source: 17.txt
+      case_id: 人脸类型特征锁定词库
+    - source: 25.txt
+      case_id: 二十五宫格连续分镜
+  isolated:
+    - source: 5.txt
+      reason: 包含密集枪击、爆炸、击打、伤害动物桥段，并混用多个现成角色指向，不作为正向规律。
+    - source: 7.txt
+      reason: 将网格遮挡作为规避人脸审核技巧，不进入正例库。
+    - source: 14.txt
+      reason: 明确以几何遮挡规避人脸审核，不进入正例库；其中普通一镜到底运镜可另行人工摘取，但不能继承规避审核语境。

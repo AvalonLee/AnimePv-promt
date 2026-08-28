@@ -1,0 +1,21 @@
+adapter:
+  id: jimeng
+  output_language: zh
+  modes: [T2VA, I2VA, L2VA, FL2VA, Ref2VA]
+  section_order: [主体与环境, 时间线动作, 镜头与节奏, 光影与风格, 声音, 文字, 一致性要求]
+  material_reference:
+    policy: ui_dependent
+    display: 图片1
+    reminder: 通过当前界面的素材选择器插入；仅当界面实际显示时使用 @图片1。
+  mode_focus:
+    T2VA: 完整描述静态外观、环境、动作和镜头
+    I2VA: 减少首帧已有的静态描述，重点描述向后发展的运动
+    L2VA: 说明合理开场和逐步收束至尾帧的路径
+    FL2VA: 说明首尾帧之间连续且方向一致的变化路径
+    Ref2VA: 逐项说明每份素材参考和排除的内容及出现时间
+  material_contract:
+    T2VA: {count: 0}
+    I2VA: {start_frame: 1, total: 1}
+    L2VA: {end_frame: 1, total: 1}
+    FL2VA: {start_frame: 1, end_frame: 1, total: 2}
+    Ref2VA: {reference_min: 2}

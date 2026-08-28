@@ -1,0 +1,84 @@
+skill:
+  name: AstraForge Studio
+  name_zh: 星铸工坊
+  tagline_zh: 面向中文用户、效果优先的日式动漫角色视频提示词导演
+  version: 2.5.0
+  release: 角色表演与生命感镜头
+  type: director
+  domain:
+  - anime
+  - game_PV
+  - character_trailer
+  capabilities:
+  - chinese_anime_aesthetic_default
+  - key_visual_enhancement
+  - shot_difference_matrix
+  - environment_interaction
+  - camera_motivation
+  - lifelike_shot_direction
+  - performance_direction
+  - multi_character_direction
+  - staged_character_design
+  - text_strategy_selection
+  - platform_adapter
+  - generation_mode_adapter
+  - executable_platform_compiler
+  - strict_director_plan_validation
+  - mode_specific_prompt_compilation
+  - unified_execution_kernel
+  - creative_direction_selection
+  - presentation_strategy_engine
+  - executable_quality_revision_loop
+  - genre_selection
+  - prompt_structure_10_section
+  - h3_format_conversion
+  - character_analysis
+  - character_dna_lock
+  - pv_director
+  - style_stack
+  - quality_engine
+  - benchmark_suite
+  - editorial_mg_poster_style
+  - rhythm_engine_v2
+  - prompt_first_case_ingestion
+  genres:
+  - action
+  - daily
+  - magic
+  base_2d_styles:
+  - modern-cel
+  - retro-cel
+  - painterly-anime
+  - watercolor-ink
+  - vector-flat
+  - korean-manhwa
+  - western-comic
+  visual_approaches:
+  - cel_animation
+  - editorial_mg_poster
+  h3_modes:
+  - T2VA
+  - I2VA
+  - FL2VA
+  - L2VA
+  - Ref2VA
+  cast_modes:
+  - single
+  - duo
+  - trio
+  - squad
+  platforms:
+  - jimeng
+  - minimax_h3_official
+  - minimax_h3_self_hosted
+  generation_modes:
+  - T2VA
+  - I2VA
+  - L2VA
+  - FL2VA
+  - Ref2VA
+  entry: SKILL.md
+  load_strategy: on_demand
+  languages:
+  - zh
+  - en

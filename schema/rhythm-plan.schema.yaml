@@ -1,0 +1,41 @@
+rhythm_plan:
+  session_duration:
+  bpm:
+  beat_duration:
+  energy_curve:
+    - time:
+      energy:
+      purpose:
+  beat_grid:
+    - time:
+      strength:
+      type:
+      content:
+  micro_shots:
+    - id:
+      time:
+      purpose:
+      event:
+      phase:
+      transition:
+  generation_clips:
+    - id:
+      time:
+      primary_action:
+      camera_motion:
+      primary_effect:
+      start_pose:
+      end_pose:
+      editable_moments:
+        - time:
+          frame:
+  rhythm_score:
+    hook_strength:
+    event_density:
+    beat_alignment:
+    energy_contrast:
+    shot_variety:
+    character_sell:
+    climax_strength:
+    total:
+    decision:

@@ -1,0 +1,31 @@
+presentation_strategies:
+  action_burst:
+    name_zh: 动作爆发
+    required: [anticipation, impact, recovery, directional_motion, climax]
+    preferred_content_types: [action]
+  emotional_showcase:
+    name_zh: 情绪展示
+    required: [expression_progression, camera_distance_change, emotional_turn]
+    preferred_content_types: [daily, story]
+  ability_showcase:
+    name_zh: 能力展示
+    required: [ability_setup, activation, visual_release, settle]
+    preferred_content_types: [action, magic]
+  relationship_interaction:
+    name_zh: 关系互动
+    required: [individual_identity, spatial_anchor, relationship_event, shared_or_contrasting_end]
+    preferred_content_types: [multi_character, story]
+  story_scene:
+    name_zh: 剧情片段
+    required: [setup, change, consequence]
+    preferred_content_types: [story, daily]
+  poster_motion:
+    name_zh: 海报动态图形
+    required: [graphic_system, silhouette_or_pose, match_transition, final_freeze]
+    preferred_content_types: [poster_motion, action, magic]
+
+selection_rules:
+  - 一个方案只能有一个主要表现策略
+  - 多角色方案优先关系互动，除非用户明确要求分别展示
+  - 表现策略必须兼容创意方向和内容类型
+  - 表现策略只决定效果组织，不决定平台提示词语法

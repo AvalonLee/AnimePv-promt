@@ -1,0 +1,26 @@
+performance_quality:
+  version: 2.5.0
+  required_fields:
+    - current_activity
+    - attention_target_or_stimulus
+    - hand_task
+    - body_balance_or_motion_tendency
+    - expression_transition
+    - environment_response
+    - camera_motivation
+  lifelike_targets:
+    fifteen_second_video:
+      unfinished_or_transition_moment_min: 1
+      external_reaction_min: 1
+      afterglow_min: 1
+  shot_difference_matrix:
+    dimensions: [activity, shot_distance, camera_angle, foreground, lighting, color_relationship, primary_effect, emotional_state]
+    adjacent_minimum_differences: 3
+    minimum_shot_distances_per_15s: 3
+    repeat_primary_effect_consecutively: false
+  camera_rejections:
+    - 无目的推近
+    - 为动感而无目的环绕
+    - 连续镜头重复贴脸
+    - 无原因低机位或倾斜
+    - 镜头方向与人物注意力冲突

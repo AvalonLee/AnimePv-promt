@@ -1,0 +1,76 @@
+conflict_rules:
+  - id: conflict.001
+    styles:
+      - y2k-graphic
+      - dark-cinematic-cel
+    level: C
+    reason: >
+      visual_language_conflict: bright playful graphic vs dark dramatic cinematic
+    resolution:
+      keep: character_identity
+      remove: y2k-graphic
+      add: fantasy-anime
+
+  - id: conflict.002
+    styles:
+      - retro-cel
+      - mobile-game-premium
+    level: B
+    reason: different rendering philosophy
+    resolution:
+      choose_based_on: goal (nostalgia vs visual polish)
+
+  - id: conflict.003
+    styles:
+      - sweet-y2k-release
+      - heavy-battle-style
+    level: B
+    resolution:
+      reduce: combat intensity
+      keep: character charm
+
+  - id: conflict.004
+    styles:
+      - western-comic
+      - modern-cel
+      - retro-cel
+      - korean-manhwa
+      - watercolor-ink
+    level: C
+    reason: >
+      facial_proportion_and_rendering_conflict:
+      western exaggerated anatomy vs Japanese/Korean anime anatomy
+    resolution:
+      keep: character_identity
+      choose_base_by: character art language (western vs Japanese vs Korean)
+
+  - id: conflict.005
+    styles:
+      - painterly-anime
+      - modern-cel
+      - retro-cel
+    level: C
+    reason: >
+      rendering_philosophy_conflict:
+      painterly gradient rendering vs flat cel rendering
+    resolution:
+      keep: character_identity
+      choose_base_by: target rendering language (film grade vs TV anime)
+
+  - id: conflict.006
+    styles:
+      - vector-flat
+      - korean-manhwa
+    level: B
+    reason: flat graphic color fields vs airbrush gradient shading
+    resolution:
+      choose_based_on: goal (trendy poster vs soft manhwa romance)
+
+  - id: conflict.007
+    styles:
+      - western-comic
+      - mobile-game-premium
+    level: B
+    reason: comic book ink/halftone vs premium polished game render
+    resolution:
+      choose_based_on: goal (stylized comic PV vs premium game trailer)

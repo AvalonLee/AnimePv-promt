@@ -1,0 +1,42 @@
+project:
+  title: 错误文字
+  duration: 5
+  aspect_ratio: '16:9'
+  content_type: 测试
+  creative_intent: 测试文字互斥
+character:
+  summary: 测试角色
+  immutable_features:
+  - 黑发
+  - 蓝瞳
+  - 黑衣
+  - 长剑
+visual:
+  environment: 山谷
+  style: 二维动画
+  lighting: 逆光
+timeline:
+- start: 0
+  end: 5
+  composition: 中景
+  primary_action: 拔剑
+  camera: 推进
+  main_effect: 剑光
+  sound: 刀声
+text:
+  strategy: none
+  items:
+  - content: 测试
+    start: 1
+    end: 2
+    position: 中央
+    appearance: 闪现
+    effect: 强调节拍
+sound:
+  soundscape: 风声
+  music: 无
+materials: []
+target:
+  platform: jimeng
+  generation_mode: T2VA
+  model_version: 测试版本

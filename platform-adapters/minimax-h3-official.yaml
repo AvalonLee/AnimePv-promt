@@ -1,0 +1,22 @@
+adapter:
+  id: minimax_h3_official
+  output_language: en
+  modes: [T2VA, I2VA, L2VA, FL2VA, Ref2VA]
+  base_fields: [integrated_multimodal_description, overall_soundscape, non_diegetic_music]
+  reference_fields: [subject_definitions, summary, retention_analysis, detailed_description, overall_soundscape, non_diegetic_music]
+  preserve_original_language: [dialogue, lyrics, visible_text]
+  material_reference:
+    policy: official_h3_labels
+    reminder: 使用官方 H3 素材标签，所有章节保持一致并声明出现时间。
+  mode_strategy:
+    T2VA: 完整建立角色、环境与开场构图
+    I2VA: 0秒对齐首帧，只描述向后发展的运动
+    L2VA: 逐步收束至指定尾帧，禁止突然跳入
+    FL2VA: 首尾严格对齐，以连续动作路径连接
+    Ref2VA: 逐项声明保留、排除和使用时间
+  material_contract:
+    T2VA: {count: 0}
+    I2VA: {start_frame: 1, total: 1}
+    L2VA: {end_frame: 1, total: 1}
+    FL2VA: {start_frame: 1, end_frame: 1, total: 2}
+    Ref2VA: {reference_min: 2, total_max: 12, image_max: 9, video_max: 3, audio_max: 3}

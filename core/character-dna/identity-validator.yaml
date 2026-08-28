@@ -1,0 +1,16 @@
+identity_score:
+  face: 25
+  hair: 20
+  costume: 20
+  color: 15
+  signature_item: 10
+  personality: 10
+  total: 100
+
+result:
+  pass:
+    threshold: ">=90"
+  revision:
+    threshold: "70-90"
+  fail:
+    threshold: "<70"

@@ -1,0 +1,19 @@
+case_id: case.cyberpunk.female.v1
+character_archetype: cyber_female
+creative_position: future technology heroine
+visual_identity:
+  keywords: [neon, digital, hacker]
+  palette: [black, neon, electric blue]
+personality: [cool, intelligent, mysterious]
+selling_points:
+  primary: visual style
+  secondary: technology ability
+preferred_theme: cyberpunk-girl
+preferred_template: pv-15s-new-character-release
+camera_patterns: [detail-macro, hand-to-camera, hero-low-angle]
+action_patterns: [hand-gesture, ability-release]
+expression_patterns: [confident-smirk]
+transition_patterns: [glitch-data, ui-card]
+style_patterns: [y2k-graphic, modern-cel]
+avoid: [fantasy magic effects]
+search_tags: [cyberpunk, hacker, neon, future]

@@ -1,0 +1,18 @@
+character_bible:
+  identity:
+    name:
+    age_impression:
+    role:
+    personality:
+  appearance:
+    face:
+    hair:
+    body:
+    costume:
+    accessories:
+    weapon:
+    palette:
+  memory_hook:
+  immutable_features: []
+  allowed_variations: []
+  forbidden_changes: []

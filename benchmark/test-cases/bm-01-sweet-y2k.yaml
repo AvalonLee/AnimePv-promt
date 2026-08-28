@@ -1,0 +1,53 @@
+benchmark:
+  id: BM-01
+  name: Sweet Y2K Girl
+  dimension: theme
+  status: PASS
+
+input:
+  request: 制作一个手游新角色上线PV。角色：粉色短发少女，黑框眼镜，Y2K潮流服装，甜美但有一点自信和叛逆感。希望突出：可爱、时尚、角色魅力。15秒。
+  session_spec:
+    duration: 15s
+    aspect_ratio: "16:9"
+
+expected_routing:
+  task: CREATE_PV
+  character_type: sweet_female
+  genre: daily
+  theme: sweet-y2k-girl
+  variation: release.standard.v1
+  template: genre-daily-15s
+  style_stack:
+    base: modern-cel
+    premium: mobile-game-premium
+    special: y2k-graphic
+
+expected_components:
+  camera: [hand-to-camera, beauty-showcase, detail-macro, hero-low-angle, final-pose]
+  action: [hair-flip, hand-gesture, signature-pose]
+  expression: [playful-wink, sweet-smile]
+  transition: [graphic-panel, ui-card, title-reveal]
+
+risk_budget:
+  max_action_level: 2
+  max_effect_level: 2
+  max_camera_transition: 9
+
+scores:
+  generation_stability: 35
+  character_consistency: 25
+  shot_feasibility: 18
+  visual_impact: 10
+  creative_intent_match: 10
+  final_score: 98
+  decision: PASS
+
+issues_found:
+  - id: Issue-01
+    title: 甜系角色动作冲突
+    detail: hand-to-camera 与 hair-flip 同 Shot 叠加导致手部异常
+    rule_added: sweet_character_motion_limit
+  - id: Issue-02
+    title: Y2K 视觉过载
+    detail: UI/贴纸/背景过多导致角色不突出
+    rule_added: y2k_balance_rule

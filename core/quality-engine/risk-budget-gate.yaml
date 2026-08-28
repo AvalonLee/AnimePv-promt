@@ -1,0 +1,94 @@
+# Risk Budget Gate
+# 由 BM-06 暴露的 P0 问题引入：
+# 内容方案的 recommended_action 可能超出 Genre / 时长的动作等级上限。
+#
+# 原则：内容方案推荐仅为「候选」，不是「决定」。
+# 必须经 Risk Budget Gate 过滤后才可进入 Shot Plan。
+
+risk_budget_gate:
+  position: after_theme_and_genre_selection, before_composer
+  principle: >
+    内容类型 recommendations are candidates, not decisions.
+    The effective budget is the minimum of genre limit and duration limit.
+
+  budget_resolution:
+    formula: min(genre_limit, duration_limit)
+    example:
+      theme: magic-girl
+      theme_recommends: [transformation, ability_release, signature_pose]
+      genre: magic
+      genre_max_action_level: 2
+      duration: 15s
+      duration_max_action_level: 2
+      effective_budget: 2
+      filtered_out: [transformation]
+      reason: transformation is action_level 3, exceeds effective budget 2
+      substitution: ability-release
+
+  action_level_limits:
+    by_duration:
+      5s: 1
+      10s: 2
+      15s: 2
+      30s: 3
+    by_genre:
+      action: 2
+      daily: 2
+      magic: 2
+    # genre 上限为「基线」，可被时长 + 稀有度联合提升。
+    # 由 benchmark 校验暴露：此前 daily=1 与其自身模板矛盾
+    # （genre-daily-15s.md 含漫步/转身，即 confident-walk action_level 2），
+    # 且 magic=2 使 transformation(level 3) 的准入条件永远无法满足。
+    genre_ceiling_uplift:
+      - genre: magic
+        when: { duration: 30s, rarity: SSR }
+        raises_action_limit_to: 3
+        rationale: 30s 剧情 PV 有足够时间铺陈变身，且 SSR 值得仪式感演出
+      - genre: action
+        when: { duration: 30s }
+        raises_action_limit_to: 3
+        rationale: 30s 允许完整连招段落
+
+  effect_level_limits:
+    by_duration:
+      5s: 1
+      15s: 2
+      30s: 3
+    by_genre:
+      action: 2
+      daily: 1
+      magic: 2
+    rarity_bonus:
+      SSR: +1
+      note: rarity bonus may raise effect level only, never action level
+
+  # transformation 是唯一需要特殊准入的组件
+  restricted_components:
+    - id: action.transformation.v1
+      action_level: 3
+      admission_requires:
+        duration: 30s
+        rarity: SSR
+        genre: magic
+      on_reject:
+        substitute: action.ability.release.v1
+        log: >
+          transformation rejected by risk budget gate;
+          substituted with ability-release to stay within action_level 2
+
+  substitution_table:
+    action_level_3_to_2:
+      action.transformation.v1: action.ability.release.v1
+    action_level_2_to_1:
+      action.weapon.reveal.v1: action.signature.pose.v1
+      action.ability.release.v1: action.hand.gesture.v1
+      action.confident.walk.v1: action.head.turn.v1
+
+  output:
+    risk_budget_report:
+      effective_action_budget:
+      effective_effect_budget:
+      candidates_from_theme: []
+      admitted: []
+      filtered: []
+      substituted: []

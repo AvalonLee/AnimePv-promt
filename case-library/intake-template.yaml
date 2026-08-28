@@ -1,0 +1,16 @@
+input:
+  original_prompt: |
+    在这里粘贴完整的原始提示词。
+
+# 以下内容全部可选；不知道时可删除。
+# user_claimed_success: true
+# applicability:
+#   platform: 即梦 | MiniMax H3 官方 | MiniMax H3 自行部署
+#   model_version:
+#   generation_mode: T2VA | I2VA | L2VA | FL2VA | Ref2VA
+#   content_type:
+# user_report:
+#   result_summary:
+# observed_output:
+#   video_ref:
+#   analysis:

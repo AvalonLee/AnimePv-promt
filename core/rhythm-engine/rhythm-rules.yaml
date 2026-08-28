@@ -1,0 +1,74 @@
+rhythm_engine:
+  version: 2
+  principle: separate_edit_rhythm_from_generation_continuity
+
+  units:
+    beat_event:
+      description: 可感知的节奏事件，不必切换场景
+      types: [hard_cut, pose_change, camera_snap, graphic_hit, expression_hit, typography_hit, flash_frame, freeze]
+    micro_shot:
+      description: 成片中的剪辑单位
+      duration_by_genre:
+        action: 0.25-0.80s
+        daily: 0.80-1.50s
+        magic_burst: 0.30-0.80s
+        magic_charge: 1.50-2.50s
+        poster_mg: 0.30-0.80s
+    generation_clip:
+      description: 单次交给视频模型的连续生成单位
+      recommended_duration: 2-4s
+      hard_limits:
+        primary_action: 1
+        camera_motion: 1
+        primary_effect: 1
+      editable_moments: 3-6
+
+  bpm_profiles:
+    action: { min: 140, max: 160, subdivision: quarter }
+    daily: { min: 100, max: 120, subdivision: half }
+    magic: { min: 120, max: 140, subdivision: quarter }
+    poster_mg: { min: 120, max: 140, subdivision: quarter }
+
+  action_15s:
+    energy_curve:
+      - { time: 0.0-0.8s, energy: 85, purpose: hook }
+      - { time: 0.8-3.0s, energy: 55-70, purpose: identity }
+      - { time: 3.0-6.0s, energy: 75, purpose: first_impact }
+      - { time: 6.0-8.0s, energy: 45, purpose: contrast_breath }
+      - { time: 8.0-12.5s, energy: 80-100, purpose: escalation_and_climax }
+      - { time: 12.5-13.2s, energy: 30, purpose: pre_final_vacuum }
+      - { time: 13.2-15.0s, energy: 100-70, purpose: hero_title }
+    gates:
+      hook_window: 0.8s
+      min_hook_events: 2
+      max_no_new_event: 1.2s
+      min_energy_changes: 3
+      min_climax_energy: 90
+      climax_must_exceed_opening: true
+      identity_required_in_final_window: 2.0s
+      min_micro_shots: 16
+      max_micro_shots: 28
+      recommended_generation_clips: 4-6
+      full_speed_continuous_action: forbidden
+
+  action_phase_grammar:
+    required: [anticipation, impact, recovery]
+    rule: 将连续动作拆成可独立剪辑的准备、命中、收势三个节点
+
+  rhythm_score:
+    total: 100
+    dimensions:
+      hook_strength: 20
+      event_density: 15
+      beat_alignment: 15
+      energy_contrast: 15
+      shot_variety: 10
+      character_sell: 15
+      climax_strength: 10
+    pass: 80
+    hard_fail:
+      - missing_beat_grid
+      - missing_energy_curve
+      - action_without_phase_grammar
+      - climax_not_above_opening
+      - generation_clip_overloaded

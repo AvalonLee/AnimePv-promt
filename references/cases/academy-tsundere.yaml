@@ -1,0 +1,19 @@
+case_id: case.academy.tsundere.v1
+character_archetype: academy_female
+creative_position: personality-driven heroine
+visual_identity:
+  uniform: school style
+  palette: [pink, white, black]
+personality: [tsundere, intelligent, emotional]
+selling_points:
+  primary: personality
+  secondary: facial expression
+preferred_theme: academy-character
+preferred_template: pv-15s-new-character-release
+camera_patterns: [beauty-showcase, detail-macro]
+action_patterns: [head-turn, hand-gesture]
+expression_patterns: [shy-expression, sweet-smile]
+transition_patterns: [graphic-panel, ui-card]
+style_patterns: [modern-cel]
+avoid: [excessive battle focus]
+search_tags: [academy, school, tsundere, cute]

@@ -1,0 +1,130 @@
+# AstraForge Visual Component Library — Transition
+
+components:
+  - id: transition.flash.cut.v1
+    slug: flash-cut
+    name: Anime Flash Cut
+    category: transition
+    purpose: fast scene change
+    visual: [white flash, light burst]
+    speed: fast
+    best_for: [action PV, character reveal]
+    prompt_block: >
+      anime flash transition,
+      bright impact frame,
+      dynamic effect-first editing
+    risk: low
+    stability_score: 10
+    impact_score: 7
+
+  - id: transition.anime.impact.v1
+
+    slug: anime-impact
+    name: Graphic Impact Transition
+    category: transition
+    purpose: increase energy
+    visual: [speed lines, shape burst, impact frame]
+    best_for: [battle, skill reveal]
+    prompt_block: >
+      anime impact transition,
+      graphic burst,
+      dynamic 2D motion design
+    risk: low
+    stability_score: 9
+    impact_score: 8
+
+  - id: transition.graphic.panel.v1
+
+    slug: graphic-panel
+    name: Comic Panel Transition
+    category: transition
+    purpose: stylized anime editing
+    visual: [manga panels, split screen, graphic shapes]
+    best_for: [y2k, fashion, academy]
+    prompt_block: >
+      anime manga panel transition,
+      graphic split frames,
+      stylized comic editing
+    risk: low
+    stability_score: 9
+    impact_score: 8
+
+  - id: transition.ui.card.v1
+
+    slug: ui-card
+    name: Character UI Card Reveal
+    category: transition
+    purpose: game identity reveal
+    visual: [character frame, data panel, rarity card]
+    best_for: [ability_showcase, character trailer]
+    prompt_block: >
+      anime game UI character card reveal,
+      holographic interface,
+      premium mobile game trailer
+    risk: medium
+    stability_score: 7
+    impact_score: 9
+
+  - id: transition.glitch.data.v1
+
+    slug: glitch-data
+    name: Digital Glitch Transition
+    category: transition
+    purpose: cyber / future style
+    visual: [scan line, digital distortion, UI overlay]
+    best_for: [cyberpunk, hacker, sci-fi]
+    prompt_block: >
+      anime cyber glitch transition,
+      digital UI overlay,
+      futuristic game trailer style
+    risk: medium
+    stability_score: 7
+    impact_score: 8
+
+  - id: transition.particle.reveal.v1
+
+    slug: particle-reveal
+    name: Particle Character Reveal
+    category: transition
+    purpose: premium fantasy entrance
+    visual: [particles, light, energy]
+    best_for: [magic girl, legendary character]
+    prompt_block: >
+      anime character reveal with glowing particles,
+      fantasy game trailer effect
+    effect_level: 2
+    risk: medium
+    stability_score: 7
+    impact_score: 9
+
+  - id: transition.title.reveal.v1
+
+    slug: title-reveal
+    name: Character Title Reveal
+    category: transition
+    purpose: final memorable ending
+    sequence: character freeze -> title appears -> final frame
+    best_for: [all PV types]
+    prompt_block: >
+      anime character final title reveal,
+      hero freeze frame,
+      mobile game trailer ending
+    risk: low
+    stability_score: 10
+    impact_score: 9
+
+  - id: transition.character.freeze.v1
+
+    slug: character-freeze
+    name: Character Freeze Frame
+    category: transition
+    purpose: create memorable ending image
+    visual: [freeze pose, clean background, title space]
+    best_for: [ability_showcase, trailer ending]
+    prompt_block: >
+      anime character freeze frame,
+      premium illustration feeling,
+      clean memorable ending
+    risk: low
+    stability_score: 10
+    impact_score: 8

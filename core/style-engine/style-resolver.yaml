@@ -1,0 +1,29 @@
+style_resolver:
+  input_example:
+    style_stack:
+      base: modern-cel
+      premium: mobile-game-premium
+      special:
+        - dark-cinematic-cel
+        - y2k-graphic
+  detected_conflict: dark-cinematic-cel x y2k-graphic
+  output_example:
+    resolved_style:
+      base: modern-cel
+      premium: mobile-game-premium
+      special: dark-cinematic-cel
+    removed: y2k-graphic
+    reason: maintain premium dark fantasy identity
+
+  validated_cases:
+    - input: dark witch SSR
+      stack: modern-cel + mobile-game-premium + dark-cinematic-cel
+      result: PASS
+    - input: sweet y2k girl
+      stack: y2k-graphic + dark-cinematic-cel
+      auto_corrected: modern-cel + mobile-game-premium + y2k-graphic
+      result: PASS
+    - input: retro magic girl
+      stack: retro-cel + fantasy-anime
+      result: PASS
+      note: both directions aligned

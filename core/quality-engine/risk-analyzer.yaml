@@ -1,0 +1,68 @@
+risk_analyzer:
+  character_drift:
+    low: single character fixed shot
+    medium: character in motion
+    high: transformation / costume change
+
+  action_complexity:
+    level_1:
+      label: stable
+      examples: [standing, head turn, smile, wave]
+    level_2:
+      label: acceptable
+      examples: [weapon draw, ability release, walk toward camera]
+    level_3:
+      label: high risk
+      examples: [continuous combat, high speed movement, flips, flying]
+    level_4:
+      label: forbidden
+      examples: [unstructured group melee, complex transformation, large scale destruction]
+      note: >
+        "group battle" 原先笼统列为禁止。现区分：
+        无序混战仍禁止；结构化多角色展示（各成员独占 Shot +
+        低动作等级同框）由 core/multi-character/ 单独建模。
+    max_action_level:
+      5s: 1
+      15s: 2
+      30s: 3
+
+  camera_stability:
+    stable: [slow push, pan, closeup, hero shot, 2.5D parallax, fast partial orbit, quick whip pan, snap zoom]
+    risky: [full 360 orbit, high speed tracking, complex movement]
+    note: >
+      快速部分环绕（90-180°）与快速甩镜、急推急拉属于稳定项，
+      是快切节奏的首选运镜；完整 360° 环绕与长时间高速追踪仍为高风险。
+    max_camera_transition:
+      5s: 4
+      10s: 6
+      15s: 9
+      30s: 15
+
+  effect_level:
+    0: none
+    1: light effect
+    2: particles
+    3: ability burst
+    4: environmental destruction
+    limits:
+      15s_character_pv: 2
+      legendary: 3
+
+  # 多角色专属风险，详见 core/multi-character/cast-risk-rules.yaml
+  cast_risk:
+    identity_bleed:
+      2: medium
+      3: high
+      4: critical
+    action_level_amplification: base_level + (characters_in_frame - 1)
+    stability_cap_by_cast_size:
+      1: 35
+      2: 32
+      3: 28
+      4: 24
+
+  output_format:
+    risk_report:
+      overall_risk:
+      failure_probability:
+      problem:

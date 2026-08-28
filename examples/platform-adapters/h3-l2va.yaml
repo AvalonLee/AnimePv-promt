@@ -1,0 +1,144 @@
+project:
+  title: 冰剑收束
+  duration: 5
+  aspect_ratio: '16:9'
+  content_type: action
+  creative_intent: 从攻击自然收束至指定姿态
+character:
+  summary: silver-haired blue-eyed anime swordswoman in black-silver armor
+  immutable_features:
+  - silver hair
+  - blue eyes
+  - black-silver armor silhouette
+  - ice sword
+  allowed_variations:
+  - hair and cape deformation
+cast:
+  mode: single
+  members:
+  - id: lead
+    role: protagonist
+  relationships: []
+direction:
+  creative_direction: kinetic_peak
+  secondary_direction: ''
+  presentation_strategy: action_burst
+  emotional_goal: controlled strike and confident settle
+  visual_focus: slash direction and anchored final pose
+style:
+  base_style: modern-cel
+  visual_approach: cel_animation
+  enhancements:
+  - ice arc
+  environment: snowy mountain pass
+  lighting: cold blue rim light
+performance_direction:
+  baseline: 角色正在执行与场景相关的具体任务
+  stimulus: 环境或事件产生可感知变化
+  reaction: 视线、手部和身体重心依次产生反应
+  recovery: 角色完成反应并进入下一动作或收势
+  lifelike_moments:
+  - type: external_interruption
+    description: 环境变化触发角色即时反应
+  - type: motion_afterglow
+    description: 主要动作结束后保留发丝或衣摆余韵
+rhythm:
+  bpm: 150
+  energy_curve:
+  - start: 0
+    end: 2.5
+    energy: 78
+    purpose: attack
+  - start: 2.5
+    end: 4
+    energy: 96
+    purpose: impact
+  - start: 4
+    end: 5
+    energy: 60
+    purpose: settle
+  beat_events:
+  - time: 0
+    type: motion
+    visual: sword enters
+  - time: 2.5
+    type: impact
+    visual: ice arc
+  - time: 5
+    type: final_hit
+    visual: final pose
+  micro_shots:
+  - time: 0
+    event: blade entry
+  - time: 1
+    event: eye focus
+  - time: 2
+    event: slash
+  - time: 3
+    event: impact
+  - time: 4
+    event: deceleration
+  - time: 5
+    event: final pose
+generation_clips:
+- start: 0
+  end: 2.5
+  purpose: strike impact
+  composition: low-angle medium shot
+  primary_action: completes a horizontal slash
+  camera: follows left to right
+  main_effect: ice arc
+  sound: sword slash
+  editable_moments:
+  - time: 0
+    event: blade entry
+  - time: 1.2
+    event: acceleration
+  - time: 2.5
+    event: impact
+- start: 2.5
+  end: 5
+  purpose: final settle
+  composition: frontal hero medium shot
+  primary_action: settles into the anchored final pose
+  camera: decelerates into a locked frame
+  main_effect: fading ice particles
+  sound: cloth and fading chime
+  editable_moments:
+  - time: 2.5
+    event: recovery starts
+  - time: 3.8
+    event: camera locks
+  - time: 5
+    event: final pose
+editorial_manifest:
+  strategy: none
+  items: []
+audio_beat_manifest:
+  soundscape: wind, sword and cloth
+  music: percussion resolves at final frame
+  bpm: 150
+  events:
+  - time: 0
+    sound: wind
+  - time: 2.5
+    sound: sword impact
+  - time: 5
+    sound: fading chime
+materials:
+- id: final_pose
+  type: image
+  anchor: end_frame
+  role: final hero frame
+  retain:
+  - face
+  - costume
+  - weapon
+  - framing
+  ignore:
+  - temporary particles
+  timing: 5s
+target:
+  platform: minimax_h3_official
+  generation_mode: L2VA
+  model_version: H3

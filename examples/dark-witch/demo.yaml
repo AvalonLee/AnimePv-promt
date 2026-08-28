@@ -1,0 +1,79 @@
+example: Dark Witch
+character_type: fantasy_female
+mode: 30s_story
+variation: story.emotional.v1
+theme: dark-witch-release
+rarity: SSR
+style_stack:
+  base: modern-cel
+  premium: mobile-game-premium
+  special: dark-cinematic-cel
+character_dna:
+  hair: long black hair
+  eyes: crimson purple
+  outfit: black elegant dress
+  signature_asset: ancient magic book
+  ability_visual: dark purple magic
+  palette: [black, purple, crimson]
+  personality: [intelligent, mysterious, elegant]
+structure:
+  - act: mystery
+    time: 0-5s
+  - act: reveal
+    time: 5-10s
+  - act: conflict
+    time: 10-18s
+  - act: power
+    time: 18-25s
+  - act: emotion
+    time: 25-30s
+shots:
+  - id: shot_01
+    time: 0-5s
+    purpose: mystery
+    camera: environment-reveal
+    effect: level 1
+    risk: low
+  - id: shot_02
+    time: 5-10s
+    purpose: reveal
+    camera: eye-reveal
+    expression: villain-pressure
+    risk: low
+  - id: shot_03
+    time: 10-18s
+    purpose: conflict
+    camera: beauty-showcase
+    action: ability-preparation
+    risk: medium
+  - id: shot_04
+    time: 18-25s
+    purpose: power
+    camera: hero-low-angle
+    action: ability-release
+    effect: controlled purple energy (level 3)
+    risk: medium
+  - id: shot_05
+    time: 25-30s
+    purpose: emotion
+    camera: closeup
+    expression: reflective-look
+    transition: title-reveal
+    risk: low
+revision_log:
+  revision_count: 1
+  changes:
+    - problem: effect overload
+      original: large magic explosion, 360 camera rotation
+      modified: controlled purple energy, hero low angle
+      reason: reduce generation risk
+      impact: stability +18%
+quality_report:
+  generation_stability: 31
+  character_consistency: 25
+  shot_feasibility: 14
+  visual_impact: 10
+  creative_intent_match: 10
+  art_direction: 4
+  final_score: 94
+  decision: PASS

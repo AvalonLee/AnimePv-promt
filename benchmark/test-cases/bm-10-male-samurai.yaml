@@ -1,0 +1,60 @@
+benchmark:
+  id: BM-10
+  name: Male Samurai Combat
+  dimension: theme
+  status: PASS
+
+purpose: >
+  男性武士 内容类型覆盖。验证 male_hotblooded 路由、
+  Genre=action 的居合节奏与 weapon-reveal 的 DNA 约束。
+
+input:
+  request: 制作一个男性武士角色上线PV。黑发束发，赤红眼，藏青羽织白上衣，佩太刀，气质热血克制。15秒。
+  session_spec:
+    duration: 15s
+    aspect_ratio: "16:9"
+
+expected_routing:
+  task: CREATE_PV
+  character_type: male_hotblooded
+  persona_tag: 热血
+  genre: action
+  theme: male-samurai-release
+  variation: combat.showcase.v1
+  template: genre-action-15s
+  style_stack:
+    base: modern-cel
+    premium: mobile-game-premium
+    special: dark-cinematic-cel
+
+genre_params_asserted:
+  shot_duration: 0.3-0.8s
+  push_speed: 0.4/s
+  shake: 8-12px / 0.2-0.5s on hit only
+  bpm: 140-160
+  afterimage_layers: 2-3
+
+expected_components:
+  camera: [eye-reveal, detail-macro, action-tracking, hero-low-angle, final-pose]
+  action: [weapon-reveal, ability-release, signature-pose]
+  expression: [composed-gaze, battle-resolve]
+  transition: [flash-cut, anime-impact, title-reveal]
+
+risk_budget:
+  max_action_level: 2
+  max_effect_level: 2
+  max_camera_transition: 9
+
+scores:
+  generation_stability: 31
+  character_consistency: 24
+  shot_feasibility: 15
+  visual_impact: 10
+  creative_intent_match: 9
+  art_direction: 4
+  final_score: 93
+  decision: PASS
+
+notes:
+  - weapon-reveal 必须复用 character_dna.signature_assets.weapon，禁止换刀
+  - 居合斩使用 flash-cut + anime-impact，收刀定格交给 final-pose

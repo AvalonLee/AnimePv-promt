@@ -1,0 +1,21 @@
+quality_engine:
+  version: 2.5.0
+  priority:
+  - character_consistency
+  - core_visual_effect
+  - motion_camera_rhythm
+  - effect_complexity
+  scoring:
+    character_consistency: 30
+    core_visual_effect: 20
+    motion_camera_rhythm: 20
+    creative_intent_match: 15
+    ending_memory_point: 10
+    performance_lifelike: 5
+  pass_conditions:
+    generation_stability: 75
+    rhythm_effect_score: 80
+  forbidden_metrics:
+  - marketing_conversion
+  - rarity_sales_value
+  - forced_call_to_action

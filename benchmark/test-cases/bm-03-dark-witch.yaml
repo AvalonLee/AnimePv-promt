@@ -1,0 +1,54 @@
+benchmark:
+  id: BM-03
+  name: Dark Witch
+  dimension: theme
+  status: PASS
+
+input:
+  request: 幻想五星角色，黑暗魔女系剧情PV。黑紫长发，赤紫瞳，黑色优雅长裙，古魔法书。30秒。
+  session_spec:
+    duration: 30s
+    aspect_ratio: "16:9"
+
+expected_routing:
+  task: CREATE_PV
+  character_type: fantasy_female
+  genre: magic
+  theme: dark-witch-release
+  variation: story.emotional.v1
+  template: 30s-story-pv
+  rarity: SSR
+  style_stack:
+    base: modern-cel
+    premium: mobile-game-premium
+    special: dark-cinematic-cel
+
+expected_components:
+  camera: [environment-reveal, eye-reveal, beauty-showcase, hero-low-angle]
+  action: [ability-preparation, ability-release]
+  expression: [villain-pressure, reflective-look]
+  transition: [particle-reveal, title-reveal]
+
+risk_budget:
+  max_action_level: 3
+  max_effect_level: 3
+  max_camera_transition: 15
+
+scores:
+  generation_stability: 31
+  character_consistency: 25
+  shot_feasibility: 14
+  visual_impact: 10
+  creative_intent_match: 10
+  art_direction: 4
+  final_score: 94
+  decision: PASS
+
+revision_log:
+  revision_count: 1
+  changes:
+    - problem: effect overload
+      original: large magic explosion + 360 camera rotation
+      modified: controlled purple energy + hero low angle
+      reason: reduce generation risk
+      impact: stability +18%

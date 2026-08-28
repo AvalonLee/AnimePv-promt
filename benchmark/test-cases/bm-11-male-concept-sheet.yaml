@@ -1,0 +1,61 @@
+benchmark:
+  id: BM-11
+  name: Male Suit Concept Sheet
+  dimension: concept-sheet
+  status: PASS
+
+purpose: >
+  验证「角色概念分解图」资产（director/character-concept-sheet.md）与男性西装
+  内容方案的协同：服装分层 / 私密内着 / 表情集 / 材质特写 / 生活切片五维拆解，
+  且全程继承 Base Style 锁定与角色 DNA 一致。dimension=concept-sheet 标记为
+  新资产回归用例。
+
+input:
+  request: 制作一个男性西装角色的概念分解图设定稿。银灰短发，琥珀瞳，黑西装深蓝领带，成熟克制，集团干部气质。4:5设定图。
+  session_spec:
+    duration: 15s
+    aspect_ratio: "4:5"
+
+expected_routing:
+  task: CREATE_PV
+  character_type: male_mature
+  persona_tag: 冷酷
+  genre: daily
+  theme: male-suit-release
+  variation: release.standard.v1
+  template: genre-daily-15s
+  style_stack:
+    base: modern-cel
+    premium: mobile-game-premium
+    special: dark-cinematic-cel
+
+# 本用例核心交付：角色概念分解图资产被触发
+output_assets:
+  - character-concept-sheet
+
+expected_components:
+  camera: [detail-macro, beauty-showcase, hero-low-angle, final-pose]
+  action: [head-turn, confident-walk, hand-gesture, signature-pose]
+  expression: [composed-gaze, detached-stare]
+  transition: [graphic-panel, ui-card, title-reveal]
+
+risk_budget:
+  max_action_level: 2
+  max_effect_level: 1
+  max_camera_transition: 9
+
+scores:
+  generation_stability: 35
+  character_consistency: 24
+  shot_feasibility: 16
+  visual_impact: 9
+  creative_intent_match: 9
+  art_direction: 4
+  final_score: 97
+  decision: PASS
+
+notes:
+  - 概念分解图属 Step1 角色设定图 Prompt 的深度扩展，不替换角色圣经，仅以单图呈现六维
+  - 白底为设计稿呈现变体，线稿 / 光影仍服从 modern-cel，禁止 3D / PBR
+  - 生活切片第三桶（私密收藏：复古机械表 / 限量打火机 / 雪茄剪）须与「成熟克制」人设自洽
+  - 评分结构与 BM-09 一致（同 同内容路由），新资产不改变既有稳定性上限

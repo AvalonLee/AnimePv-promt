@@ -1,0 +1,48 @@
+benchmark:
+  id: BM-02
+  name: Cool Warrior
+  dimension: theme
+  status: PASS
+
+input:
+  request: 冷艳战斗女角色上线PV。银发紫瞳女剑士，冷静高贵，冰元素剑技。15秒。
+  session_spec:
+    duration: 15s
+    aspect_ratio: "16:9"
+
+expected_routing:
+  task: CREATE_PV
+  character_type: cool_female
+  genre: action
+  theme: cool-female-jrpg
+  variation: combat.showcase.v1
+  template: genre-action-15s
+  style_stack:
+    base: modern-cel
+    premium: mobile-game-premium
+    special: dark-cinematic-cel
+
+expected_components:
+  camera: [eye-reveal, beauty-showcase, action-tracking, hero-low-angle]
+  action: [confident-walk, weapon-reveal, ability-release, signature-pose]
+  expression: [cool-gaze, confident-smirk]
+  transition: [flash-cut, anime-impact, title-reveal]
+
+risk_budget:
+  max_action_level: 2
+  max_effect_level: 2
+  max_camera_transition: 9
+
+scores:
+  generation_stability: 32
+  character_consistency: 25
+  shot_feasibility: 15
+  visual_impact: 10
+  creative_intent_match: 10
+  art_direction: 4
+  final_score: 96
+  decision: PASS
+
+notes:
+  - 加入生成稳定性权重后由 99 下调至 96：视觉强但战斗动作生成风险更高
+  - weapon-reveal 必须复用 character_dna.signature_assets.weapon，禁止换武器

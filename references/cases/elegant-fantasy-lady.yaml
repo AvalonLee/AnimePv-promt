@@ -1,0 +1,19 @@
+case_id: case.elegant.fantasy.v1
+character_archetype: elegant_female
+creative_position: premium fantasy heroine
+visual_identity:
+  keywords: [noble, magic, elegant]
+  palette: [white, gold, blue]
+personality: [calm, graceful, mysterious]
+selling_points:
+  primary: beauty
+  secondary: magic identity
+preferred_theme: magic-girl
+preferred_template: ability_showcase-legendary-showcase
+camera_patterns: [eye-reveal, beauty-showcase, hero-low-angle]
+action_patterns: [ability-release, signature-pose]
+expression_patterns: [elegant-smile]
+transition_patterns: [particle-reveal, title-reveal]
+style_patterns: [fantasy-anime, mobile-game-premium]
+avoid: [casual modern styling]
+search_tags: [elegant, fantasy, magic, noble]

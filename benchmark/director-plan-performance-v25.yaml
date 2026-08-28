@@ -1,0 +1,45 @@
+project: {title: 生命感镜头验证, duration: 5, aspect_ratio: '16:9', content_type: daily, creative_intent: 验证角色从日常状态到警觉反应的生命感}
+character:
+  summary: 黑发金瞳的日式动漫女武者，红黑短甲，持窄刃长刀
+  immutable_features: [黑色高马尾, 金色瞳孔, 红黑短甲轮廓, 窄刃长刀]
+  allowed_variations: [发丝和衣摆受风变形]
+cast: {mode: single, members: [{id: lead, role: 主角}], relationships: []}
+direction: {creative_direction: emotional_closeup, secondary_direction: '', presentation_strategy: emotional_showcase, emotional_goal: 从放松到警觉, visual_focus: 刀面反光进入瞳孔的瞬间}
+style: {base_style: modern-cel, visual_approach: cel_animation, enhancements: [清晰精致日式动漫五官], environment: 夜间和室, lighting: 窗外冷月光与室内暖光}
+performance_direction:
+  baseline: 角色坐着低头擦拭刀刃
+  stimulus: 刀面映出身后掠过的人影并传来轻微金属声
+  reaction: 眼睛先抬起，左手停住，身体重心前移
+  recovery: 角色缓慢扣紧刀鞘，准备起身但尚未拔刀
+  lifelike_moments:
+    - {type: attention_shift, description: 眼睛先向刀面反光移动，头部稍后跟随}
+    - {type: external_interruption, description: 窗帘受风扫过前景并触发角色眯眼}
+    - {type: motion_afterglow, description: 角色停手后发丝与窗帘仍继续摆动}
+rhythm:
+  bpm: 120
+  energy_curve: [{start: 0, end: 2, energy: 35, purpose: 日常状态}, {start: 2, end: 4, energy: 65, purpose: 察觉异常}, {start: 4, end: 5, energy: 50, purpose: 克制收束}]
+  beat_events: [{time: 0, type: start, visual: 刀面暖光}, {time: 2, type: stimulus, visual: 冷光人影掠过}, {time: 5, type: settle, visual: 握刀准备起身}]
+  micro_shots: [{time: 0, event: 擦刀}, {time: 1, event: 刀面反光}, {time: 2, event: 眼神先动}, {time: 3, event: 窗帘遮挡}, {time: 4, event: 重心前移}, {time: 5, event: 收束}]
+generation_clips:
+  - start: 0
+    end: 2.5
+    purpose: 建立日常行为并触发注意力变化
+    composition: 刀刃前景到角色半身
+    primary_action: 擦拭刀刃后突然停手
+    camera: 沿刀面轻推到眼睛，原因是捕捉反光进入瞳孔
+    main_effect: 刀面二维硬边反光
+    sound: 布擦金属声与远处轻响
+    editable_moments: [{time: 0, event: 擦刀}, {time: 1.2, event: 反光出现}, {time: 2.5, event: 停手抬眼}]
+  - start: 2.5
+    end: 5
+    purpose: 角色确认异常并收势定格
+    composition: 前景窗帘遮挡后的侧面中近景
+    primary_action: 扣紧刀鞘并前移重心后收势
+    camera: 窗帘遮挡后切侧面固定机位，等待角色动作完成
+    main_effect: 月光硬边投影
+    sound: 风声、衣料声与刀鞘轻响
+    editable_moments: [{time: 2.5, event: 窗帘扫过}, {time: 3.6, event: 扣刀鞘}, {time: 5, event: 前倾收束}]
+editorial_manifest: {strategy: none, items: []}
+audio_beat_manifest: {soundscape: 风声、衣料声、金属细响, music: 克制低频氛围音乐, bpm: 120, events: [{time: 0, sound: 擦刀声}, {time: 2, sound: 轻微金属声}, {time: 5, sound: 刀鞘轻响}]}
+materials: []
+target: {platform: jimeng, generation_mode: T2VA, model_version: 用户当前版本}

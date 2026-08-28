@@ -1,0 +1,54 @@
+project:
+  title: 错误素材
+  duration: 5
+  aspect_ratio: '16:9'
+  content_type: 测试
+  creative_intent: 测试素材冲突
+character:
+  summary: 测试角色
+  immutable_features:
+  - 黑发
+  - 蓝瞳
+  - 黑衣
+  - 长剑
+visual:
+  environment: 山谷
+  style: 二维动画
+  lighting: 逆光
+timeline:
+- start: 0
+  end: 5
+  composition: 中景
+  primary_action: 拔剑
+  camera: 推进
+  main_effect: 剑光
+  sound: 刀声
+text:
+  strategy: none
+  items: []
+sound:
+  soundscape: 风声
+  music: 无
+materials:
+- id: same
+  type: image
+  anchor: reference
+  role: 角色
+  retain:
+  - 脸
+  ignore:
+  - 背景
+  timing: 全片
+- id: same
+  type: video
+  anchor: reference
+  role: 动作
+  retain:
+  - 节奏
+  ignore:
+  - 人物
+  timing: 全片
+target:
+  platform: minimax_h3_self_hosted
+  generation_mode: Ref2VA
+  model_version: H3-Base-Ref2VA

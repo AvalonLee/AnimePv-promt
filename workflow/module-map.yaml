@@ -1,0 +1,143 @@
+modules:
+  task_classification:
+    path: workflow/task-orchestrator.md
+  character_input_selection:
+    path: SKILL.md
+  character_analysis:
+    path: director/character-concept-sheet.md
+  character_identity_lock:
+    path: core/character-dna/dna-lock-rules.md
+  cast_resolution:
+    path: core/multi-character/cast-schema.yaml
+  key_visual_design:
+    path: director/character-card-template.md
+  content_type_selection:
+    path: library/genre/genre-library.md
+  creative_direction_selection:
+    path: library/creative-direction/creative-direction-library.yaml
+  presentation_strategy_selection:
+    path: core/presentation-strategy/strategy-rules.yaml
+  style_resolution:
+    path: core/style-engine/style-resolver.yaml
+  director_composition:
+    path: director/pv-composer.md
+  rhythm_planning:
+    path: core/rhythm-engine/rhythm-planner.md
+  component_matching:
+    path: library/action/action-library.yaml
+  shot_planning:
+    path: director/shot-planner.md
+  text_strategy_selection:
+    path: workflow/output-package.md
+  editorial_planning:
+    path: schema/editorial-manifest.schema.yaml
+  audio_beat_planning:
+    path: schema/audio-beat-manifest.schema.yaml
+  build_director_plan:
+    path: schema/director-plan.schema.yaml
+  director_plan_validation:
+    path: tools/validate_director_plan.py
+  phase_risk_evaluation:
+    path: core/quality-engine/phase-risk-budgets.yaml
+  quality_scoring:
+    path: tools/evaluate_director_plan.py
+  automatic_revision:
+    path: core/quality-engine/revision-rules.yaml
+  revised_plan_validation:
+    path: tools/validate_director_plan.py
+  platform_selection:
+    path: references/平台与生成方式.md
+  generation_mode_selection:
+    path: references/平台与生成方式.md
+  material_registration:
+    path: schema/director-plan.schema.yaml
+  platform_prompt_compilation:
+    path: tools/compile_platform_prompt.py
+  final_quality_check:
+    path: schema/quality-report.schema.yaml
+  reference_analysis:
+    path: references/extracted-rules.md
+  case_ingestion:
+    path: workflow/case-ingestion.md
+  case_validation:
+    path: tools/validate_cases.py
+  index_update:
+    path: tools/ingest_case.py
+  performance_direction:
+    path: director/performance-direction.md
+  camera_motivation:
+    path: director/performance-direction.md
+  environment_interaction:
+    path: library/performance/lifelike-shot-library.yaml
+  shot_difference_check:
+    path: core/quality-engine/performance-rules.yaml
+  key_visual_enhancement:
+    path: director/key-visual-enhancement.md
+tasks:
+  create_video:
+    required:
+    - task_classification
+    - character_input_selection
+    - character_analysis
+    - character_identity_lock
+    - cast_resolution
+    - key_visual_design
+    - content_type_selection
+    - creative_direction_selection
+    - presentation_strategy_selection
+    - style_resolution
+    - performance_direction
+    - camera_motivation
+    - environment_interaction
+    - director_composition
+    - rhythm_planning
+    - component_matching
+    - shot_planning
+    - shot_difference_check
+    - text_strategy_selection
+    - editorial_planning
+    - audio_beat_planning
+    - build_director_plan
+    - director_plan_validation
+    - phase_risk_evaluation
+    - quality_scoring
+    - automatic_revision
+    - revised_plan_validation
+    - platform_selection
+    - generation_mode_selection
+    - material_registration
+    - platform_prompt_compilation
+    - final_quality_check
+  optimize_prompt:
+    required:
+    - task_classification
+    - director_plan_validation
+    - quality_scoring
+    - automatic_revision
+    - platform_prompt_compilation
+  compile_platform_prompt:
+    required:
+    - director_plan_validation
+    - platform_prompt_compilation
+    - final_quality_check
+  analyze_reference:
+    required:
+    - reference_analysis
+    - case_ingestion
+  ingest_case:
+    required:
+    - case_ingestion
+    - case_validation
+    - index_update
+  character_profile:
+    required:
+    - character_input_selection
+    - character_analysis
+    - character_identity_lock
+    - key_visual_design
+load_strategy:
+  entry: SKILL.md
+  on_demand: true
+  forbidden:
+  - load_entire_library_at_once
+  - load_entire_references_at_once

@@ -1,0 +1,25 @@
+quality_report:
+  scores:
+    character_consistency:
+    core_visual_effect:
+    motion_camera_rhythm:
+    creative_intent_match:
+    ending_memory_point:
+  risk_analysis:
+    character_drift:
+    action_complexity:
+    camera_risk:
+    effect_risk:
+    material_reference_risk:
+  rhythm_effect_score:
+    hook_strength:
+    event_density:
+    beat_alignment:
+    energy_contrast:
+    shot_variety:
+    climax_strength:
+    total:
+  hard_gates:
+    generation_stability_pass:
+    rhythm_effect_pass:
+  decision:

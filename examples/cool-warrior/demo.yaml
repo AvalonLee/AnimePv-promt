@@ -1,0 +1,60 @@
+example: Cool Warrior
+character_type: cool_female
+mode: 15s_release
+variation: combat.showcase.v1
+theme: cool-female-jrpg
+style_stack:
+  base: modern-cel
+  premium: mobile-game-premium
+  special: dark-cinematic-cel
+character_dna:
+  hair: silver white long hair
+  eyes: sharp purple eyes
+  outfit: elegant dark battle attire
+  signature_asset: ice longsword
+  palette: [silver, black, ice blue]
+  personality: [calm, noble, cold]
+shots:
+  - id: shot_01
+    time: 0-3s
+    purpose: hook
+    camera: eye-reveal
+    action: head-turn
+    expression: cool-gaze
+    risk: low
+  - id: shot_02
+    time: 3-6s
+    purpose: identity
+    camera: beauty-showcase
+    action: confident-walk
+    expression: cool-gaze
+    risk: low
+  - id: shot_03
+    time: 6-10s
+    purpose: personality
+    camera: medium-close
+    action: weapon-reveal
+    expression: confident-smirk
+    risk: medium
+  - id: shot_04
+    time: 10-13s
+    purpose: signature
+    camera: action-tracking
+    action: ability-release
+    effect: ice particles (level 2)
+    risk: medium
+  - id: shot_05
+    time: 13-15s
+    purpose: title
+    camera: hero-low-angle
+    action: signature-pose
+    transition: title-reveal
+    risk: low
+quality_report:
+  generation_stability: 32
+  character_consistency: 25
+  shot_feasibility: 15
+  visual_impact: 10
+  creative_intent_match: 10
+  final_score: 96
+  decision: PASS

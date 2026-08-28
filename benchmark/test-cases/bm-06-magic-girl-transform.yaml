@@ -1,0 +1,99 @@
+benchmark:
+  id: BM-06
+  name: Magic Girl Transformation
+  dimension: genre
+  genre_under_test: magic
+  status: PASS
+
+purpose: >
+  验证 Genre=magic 的快慢结合节奏（蓄力 1.5-2.5s / 爆发 0.3-0.8s /
+  环绕 30-45° / 爆发微震 5-8px / 120-140 BPM），
+  并压测 transformation 这一 action_level 3 组件的准入边界
+
+input:
+  request: 魔法少女变身PV，五星限定。金发碧瞳，白金圣光系法袍，法杖，气质神圣优雅。15秒。
+  session_spec:
+    duration: 15s
+    aspect_ratio: "16:9"
+
+expected_routing:
+  task: CREATE_PV
+  character_type: fantasy_female
+  persona_tag: 可爱
+  genre: magic
+  theme: magic-girl
+  variation: ability_showcase.legendary.v1
+  template: genre-magic-15s
+  rarity: SSR
+  style_stack:
+    base: modern-cel
+    premium: mobile-game-premium
+    special: fantasy-anime
+
+genre_params_asserted:
+  charge_duration: 1.5-2.5s
+  burst_duration: 0.3-0.8s
+  orbit_angle: 30-45deg
+  burst_shake: 5-8px
+  bpm: 120-140
+  effect_style: 块状分层手绘光效，禁止写实流体
+
+risk_budget_gate_result:
+  effective_action_budget: 2
+  candidates_from_theme: [transformation, ability_release, signature_pose]
+  admitted: [ability_release, signature_pose]
+  filtered: [transformation]
+  filter_reason: action_level 3 exceeds effective budget 2 (genre=magic, duration=15s)
+  substituted: { transformation: ability-release }
+
+expected_components:
+  camera: [eye-reveal, hero-low-angle, detail-macro, final-pose]
+  action: [ability-release, signature-pose]
+  expression: [elegant-smile]
+  transition: [particle-reveal, title-reveal]
+
+risk_budget:
+  max_action_level: 2
+  max_effect_level: 3
+  max_camera_transition: 9
+
+scores:
+  generation_stability: 30
+  character_consistency: 24
+  shot_feasibility: 14
+  visual_impact: 10
+  creative_intent_match: 10
+  art_direction: 4
+  final_score: 92
+  decision: PASS
+
+issues_found:
+  - id: Issue-05
+    severity: P0
+    title: 内容方案推荐动作超出 Genre 动作等级上限
+    detail: >
+      theme.magic.girl.v1 与 theme.ability_showcase.legendary.v1 的
+      recommended_action 均含 transformation（action_level 3，risk high），
+      但 genre=magic 的 max_action_level 为 2，15s 模式亦为 2。
+      Composer 若直接采纳 内容方案推荐会突破风险预算。
+    evidence:
+      - library/action/action-library.yaml
+      - library/genre/genre-library.md (最大动作等级)
+      - skill/execution-flow.yaml (max_action_level_15s)
+    resolution: >
+      已修复 — 新增 Risk Budget Gate：内容方案推荐仅为候选，
+      必须经 Genre/时长上限过滤后才可进入 Shot Plan。
+      transformation 仅在 30s 剧情模式且 rarity>=SSR 时准入，
+      否则自动替换为 ability-release。
+    resolved_in: core/quality-engine/risk-budget-gate.yaml
+  - id: Issue-06
+    severity: P1
+    title: transformation 与 Character DNA Lock 存在语义冲突
+    detail: >
+      DNA Lock 将 costume_change 列为 critical 禁止项，
+      但变身动作本质就是换装，二者未定义例外关系。
+    resolution: >
+      已修复 — DNA Lock 增加 transformation_exception：
+      变身前后核心 DNA（脸/发色/眼色/标志物）必须一致，
+      仅允许服装形态变化，且必须在同一 Shot 内完成。
+    resolved_in: core/character-dna/forbidden-changes.yaml

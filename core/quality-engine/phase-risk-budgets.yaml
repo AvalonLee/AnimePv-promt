@@ -1,0 +1,19 @@
+phase_risk_budgets:
+  anticipation:
+    stability: 40
+    identity: 35
+    kinetic: 10
+    impact: 15
+  burst:
+    stability: 15
+    identity: 20
+    kinetic: 40
+    impact: 25
+  settle:
+    stability: 35
+    identity: 35
+    kinetic: 10
+    impact: 20
+identity_lock:
+  immutable: [hair_color, costume_silhouette, weapon_identity, primary_palette]
+  deformable_during_burst: [limb_proportion, perspective_scale, facial_visibility, hair_shape, cloth_shape]

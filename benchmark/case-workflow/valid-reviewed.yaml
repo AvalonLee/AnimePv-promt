@@ -1,0 +1,50 @@
+schema_version: 2
+case_id: workflow-smoke-test
+title: 案例工作流烟雾测试
+status: reviewed
+provenance:
+  source_type: internal_test
+  source_ref: benchmark-fixture
+  rights_note: synthetic fixture
+  analyzed_at: "2026-08-27"
+  reviewer: test-suite
+applicability:
+  models: [synthetic]
+  generation_mode: T2VA
+  genre: action
+  duration: 5s
+  aspect_ratio: "16:9"
+  tags: [workflow]
+input:
+  character_summary: synthetic character
+  pv_goal: test ingestion
+  original_prompt: synthetic prompt
+observed_output:
+  video_ref: synthetic-video
+  actual_duration: 5
+  notes: not a proven creative case
+temporal_analysis:
+  bpm: 150
+  cuts: [0.4, 0.8, 1.6, 2.4]
+  accent_timestamps: [0.4, 0.8]
+  energy_curve: [80, 60, 95]
+  silence_windows: []
+instruction_compliance:
+  obeyed: [eye flash]
+  ignored: [camera shake]
+  distorted: []
+evaluation:
+  hook_strength: 80
+  rhythm_score: 82
+  character_consistency: 80
+  model_controllability: 75
+  character_pv_fit: 81
+  evidence_notes: synthetic validator fixture
+reusable_patterns:
+  keep: []
+  avoid: []
+  model_specific: []
+derived_rules: []
+dedupe:
+  fingerprint: ""
+  related_cases: []

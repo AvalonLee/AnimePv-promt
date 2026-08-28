@@ -1,0 +1,24 @@
+case_record:
+  required:
+    input:
+      original_prompt: string
+  optional:
+    case_id: string
+    title: string
+    status: draft | reviewed | proven | rejected
+    user_claimed_success: boolean
+    evidence_level: prompt_only | user_reported | output_observed
+    applicability:
+      platform: string
+      model_version: string
+      generation_mode: T2VA | I2VA | L2VA | FL2VA | Ref2VA
+      content_type: string
+      duration: number
+      aspect_ratio: string
+      tags: []
+    user_report: {}
+    observed_output: {}
+    reusable_patterns: {}
+    derived_rules: []
+    review: {}
+    dedupe: {}

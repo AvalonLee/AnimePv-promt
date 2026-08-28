@@ -1,0 +1,51 @@
+# Screen Weight Rules — 画面权重分配
+#
+# 由现有效果规则 Rule 01 推导而来：
+#   单角色 PV = character 70% / effect 20% / environment 10%
+# 多角色 PV 中 character 的 70% 需要在成员间再分配，
+# 而不是每人都拿 70%（那会导致没有主角、观众记不住任何人）。
+
+weight_rules:
+  principle: >
+    多角色 PV 依然必须有唯一视觉主体。
+    平均分配是最常见的失败模式：谁都想突出，结果谁都不突出。
+
+  # character 总预算 70%，在成员间切分
+  character_budget: 70
+
+  distribution:
+    duo:
+      lead: 45
+      second: 25
+      note: 主次分明，2:1 左右
+    trio:
+      lead: 35
+      second: 20
+      support: 15
+      note: 主角仍需明显领先
+    squad:              # 4 人
+      lead: 30
+      second: 18
+      support: 11       # x2
+      note: 4 人已接近上限，需靠出场顺序而非同框区分
+
+  # 关系与世界观占用剩余预算
+  remaining_budget:
+    relationship: 20    # 关系表达（对视/并肩/对峙）本身占画面
+    world: 10
+
+  validation:
+    rule_01: sum(member screen_weight) == 70
+    rule_02: lead screen_weight >= second * 1.5
+    rule_03: lead 必须在首个 Shot 出现
+    rule_04: 每个成员至少有 1 个独占 Shot（避免沦为背景）
+
+  # 同框 vs 分镜的取舍
+  framing_strategy:
+    principle: >
+      同框镜头风险高于分镜。优先用「分镜建立个体 + 少量同框建立关系」，
+      而非全程同框。
+    recommended_ratio:
+      solo_shots: 60%      # 各自独占，建立识别
+      together_shots: 40%  # 同框，建立关系
+    max_characters_in_frame: 4

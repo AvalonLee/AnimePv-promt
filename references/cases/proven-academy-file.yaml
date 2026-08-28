@@ -1,0 +1,72 @@
+# 实证案例：学院傲娇 · ACADEMY STUDENT FILE
+# 来源：动漫角色pv教程和提示词.md（MiniMax H3 实测直出效果）
+# 状态：已验证产出成片
+
+case_id: case.proven.academy.file.v1
+source: verified_production
+model: minimax-h3
+duration: 15s
+aspect_ratio: "16:9"
+
+character_archetype: academy_female
+persona_tag: 冷酷
+genre: daily
+theme: academy-character
+
+creative_position: 学院系角色档案式展示
+pv_title: "MIRA / ACADEMY SERIES"
+
+character_dna:
+  hair: 黑色长发，流畅大块发丝线条
+  outfit: 白色短袖学院衬衫、黑蓝斜纹领带、胸前学院徽章、黑色腰带、灰黑格纹百褶裙
+  accessory: 棕色串珠手链、小熊挂件
+  expression_style: [冷淡, 傲娇, 审视般的压迫感]
+  palette: [粉色, 白色, 黑色, 少量蓝色]
+  personality: [傲娇, 聪慧, 高标准]
+
+concept: 动态角色档案海报被迅速组装
+world_elements:
+  - 白色档案纸片
+  - 粉色矩形色块
+  - 黑色条形码
+  - 星星图标
+  - 漫画分镜边框
+  - 半调网点
+
+structure:
+  - time: 0-2s
+    beat: 档案组装
+    detail: 黑色斜切裂痕劈开画面，纸张翻动/印章/扫描声，标题高速撞入
+  - time: 2-4s
+    beat: 眼神建立
+    detail: 眼睛与半张脸超近景，眼神低垂后侧移看镜头，冷淡傲娇压迫感
+  - time: 4-7s
+    beat: 细节快切蒙太奇
+    detail: 领带徽章 → 手腕串珠小熊 → 格纹裙摆，卖点逐项解锁
+  - time: 7-10s
+    beat: 档案拼贴
+    detail: 角色稳定居中偏右，背景多个分镜框拼贴 + Graphic 高速运动
+  - time: 10-12.5s
+    beat: 高能展示
+    detail: 鼓点爆发，大字标签撞入，黑粉反相/闪白/爆炸线/撕裂
+  - time: 12.5-15s
+    beat: 海报定格
+    detail: 元素散开留呼吸感，再重组为最终角色海报定格
+
+text_overlays: [MIRA, ACADEMY SERIES, NEW CHARACTER, STUDENT FILE, "HMPH.", "NOT INTERESTED.", TOP STUDENT, TSUNDERE]
+
+camera_patterns: [超近景眼部, 细节特写快切, 半身档案构图, 分镜框拼贴]
+action_patterns: [眼神侧移, 叉腰, 轻碰领带, 抬下巴, 马尾轻摆]
+expression_patterns: [冷淡侧视, 傲娇, 审视]
+transition_patterns: [二维滑入, 遮罩切割, 缩放冲屏, 平面弹出, 纸片翻页, 条形码扫描, 单帧闪白, 平面Glitch, 粉黑反相, 贴纸拍入]
+style_patterns: [modern-cel, y2k-graphic]
+
+key_learnings:
+  - '"角色相对稳定 + 背景 Graphic 高速运动"是控制生成风险同时保持视觉冲击的关键手法'
+  - 档案/档案卡概念天然适配角色介绍型 PV，为文字元素提供合理载体
+  - 12.5s 处安排"元素散开留一瞬呼吸感"再重组，避免全程高压导致观感疲劳
+  - 细节快切蒙太奇（4-7s）把角色卖点逐项解锁，比一次性全展示更有记忆点
+  - 拟声式短标签（HMPH. / NOT INTERESTED.）强化性格，成本低效果好
+
+avoid: [3D, 立体, 真实空间, CG渲染, 三维建模, 真实校园, 电影级光影, 景深, 真实材质, 写实特效]
+search_tags: [学院, 傲娇, 档案, 制服, 小熊, 实证案例]

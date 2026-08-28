@@ -1,0 +1,31 @@
+kinetic_components:
+  - id: crash-zoom-eye
+    phase: anticipation
+    cn: 眼神急推
+  - id: whip-pan-slash
+    phase: burst
+    cn: 甩镜斩击
+  - id: impact-frame
+    phase: burst
+    cn: 冲击画格
+  - id: smear-frame
+    phase: burst
+    cn: 手绘拖影画格
+  - id: instantaneous-displacement
+    phase: burst
+    cn: 瞬间位移
+  - id: perspective-foreshortening
+    phase: burst
+    cn: 强透视缩短
+  - id: anticipation-compression
+    phase: anticipation
+    cn: 蓄力压缩
+  - id: recovery-settle
+    phase: settle
+    cn: 收势稳定
+  - id: contact-freeze
+    phase: burst
+    cn: 接触定格
+rules:
+  allowed: [hand_drawn_smear, discrete_afterimage, speed_lines, shape_stretch]
+  forbidden: [gaussian_motion_blur, full_frame_blur]

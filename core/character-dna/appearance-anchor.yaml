@@ -1,0 +1,15 @@
+appearance_anchor:
+  positive_anchor:
+    always_include:
+      - character face identity
+      - exact hair color
+      - signature costume
+      - iconic accessory
+  negative_anchor:
+    avoid:
+      - different hairstyle
+      - different outfit
+      - different character design
+      - character drift
+      - realistic
+      - 3D CGI

@@ -1,0 +1,226 @@
+# AstraForge Visual Component Library — Expression
+# 两种风格覆盖：冷系（cool / elegant / villain）与甜系（sweet / idol / shy）
+#
+# prompt_block 默认为女性向（沿用实证案例用词）。
+# 男性/中性角色请使用 gender_neutral_prompt_block。
+# 由 BM-04 暴露的 Issue-03 引入：Composer 须依 character_dna 性别择一注入。
+
+components:
+  - id: expression.cool.gaze.v1
+    slug: cool-gaze
+    name: Cool Gaze
+    purpose: establish character attitude
+    emotion: [cold, confident]
+    face: [sharp eyes, neutral mouth]
+    best_for: [cool female, warrior, queen]
+    prompt_block: >
+      anime female character cool sharp gaze,
+      confident cold expression,
+      direct eye contact
+    gender_neutral_prompt_block: >
+      anime character cool sharp gaze, confident cold expression, direct eye contact
+    risk: low
+    stability_score: 10
+    impact_score: 9
+
+  - id: expression.confident.smirk.v1
+
+    slug: confident-smirk
+    name: Confident Smirk
+    purpose: personality moment
+    emotion: [confident, teasing]
+    face: [slight smirk, narrowed eyes]
+    best_for: [cool female, cyber female, punk girl]
+    prompt_block: >
+      anime female character confident smirk,
+      subtle teasing expression
+    gender_neutral_prompt_block: >
+      anime character confident smirk, subtle teasing expression
+    risk: low
+    stability_score: 9
+    impact_score: 9
+
+  - id: expression.elegant.smile.v1
+
+    slug: elegant-smile
+    name: Elegant Smile
+    purpose: premium fantasy charm
+    emotion: [graceful, calm]
+    face: [soft eyes, gentle smile]
+    best_for: [fantasy female, noble, magic girl]
+    prompt_block: >
+      anime noble female elegant smile,
+      graceful calm expression,
+      premium fantasy character
+    gender_neutral_prompt_block: >
+      anime noble character elegant smile, graceful calm expression, premium fantasy character
+    risk: low
+    stability_score: 10
+    impact_score: 8
+
+  - id: expression.villain.pressure.v1
+
+    slug: villain-pressure
+    name: Villain Pressure
+    purpose: create intimidation
+    emotion: [dominant, mysterious]
+    face: [intense eyes, faint smile]
+    best_for: [boss, dark witch, antagonist]
+    prompt_block: >
+      anime villain female intense gaze,
+      dominant mysterious aura,
+      dramatic shadow lighting
+    gender_neutral_prompt_block: >
+      anime antagonist character intense gaze, dominant mysterious aura, dramatic shadow lighting
+    risk: low
+    stability_score: 9
+    impact_score: 10
+
+  - id: expression.sweet.smile.v1
+
+    slug: sweet-smile
+    name: Sweet Character Smile
+    purpose: increase emotional appeal
+    emotion: [warm, friendly]
+    face: [bright eyes, soft smile]
+    best_for: [cute girl, idol, academy]
+    prompt_block: >
+      cute anime girl smiling,
+      bright expressive eyes,
+      warm character charm
+    gender_neutral_prompt_block: >
+      cute anime character smiling, bright expressive eyes, warm character charm
+    risk: low
+    stability_score: 10
+    impact_score: 8
+
+  - id: expression.playful.wink.v1
+
+    slug: playful-wink
+    name: Playful Wink
+    purpose: create viewer interaction
+    emotion: [cute, confident, teasing]
+    face: [one eye closed, small smile]
+    best_for: [y2k, idol, fashion girl]
+    prompt_block: >
+      anime girl wink,
+      playful confident smile,
+      direct camera interaction
+    gender_neutral_prompt_block: >
+      anime character wink, playful confident smile, direct camera interaction
+    risk: low
+    stability_score: 9
+    impact_score: 9
+
+  - id: expression.shy.v1
+
+    slug: shy-expression
+    name: Shy Expression
+    purpose: emotional contrast
+    emotion: [soft, gentle]
+    face: [slightly lowered eyes, small smile]
+    best_for: [romance, academy, daily life]
+    prompt_block: >
+      anime girl shy expression,
+      soft eyes,
+      gentle emotional moment
+    gender_neutral_prompt_block: >
+      anime character shy expression, soft eyes, gentle emotional moment
+    risk: low
+    stability_score: 10
+    impact_score: 7
+
+  - id: expression.idol.bright.v1
+
+    slug: idol-bright
+    name: Idol Bright Expression
+    purpose: high energy charm
+    emotion: [happy, radiant]
+    face: [sparkling eyes, bright smile]
+    best_for: [idol, ability_showcase, promotional PV]
+    prompt_block: >
+      anime idol girl bright smile,
+      sparkling eyes,
+      energetic character charm
+    gender_neutral_prompt_block: >
+      anime idol character bright smile, sparkling eyes, energetic character charm
+    risk: low
+    stability_score: 9
+    impact_score: 9
+
+  - id: expression.reflective.look.v1
+
+    slug: reflective-look
+    name: Reflective Look
+    purpose: story emotional beat
+    emotion: [melancholy, memory]
+    face: [distant eyes, subtle expression]
+    best_for: [story PV, 30s emotional]
+    prompt_block: >
+      anime character reflective distant gaze,
+      subtle melancholy emotion,
+      cinematic soft lighting
+    risk: low
+    stability_score: 10
+    impact_score: 8
+
+  # 男性向表情组件
+  # 由 BM-04 暴露的 Issue-04 引入：
+  # persona-tags.md 定义了男性「从容/冷酷/热血」，但此前无对应表情组件。
+  - id: expression.composed.gaze.v1
+    slug: composed-gaze
+    name: Composed Gaze
+    purpose: establish mature composure
+    emotion: [calm, self-assured]
+    face: [steady eyes, relaxed jaw, faint brow lift]
+    best_for: [male cool, knight, mature male, mentor]
+    prompt_block: >
+      anime male character composed steady gaze,
+      mature self-assured expression,
+      relaxed confidence
+    gender_neutral_prompt_block: >
+      anime character composed steady gaze,
+      mature self-assured expression
+    risk: low
+    stability_score: 10
+    impact_score: 8
+
+  - id: expression.battle.resolve.v1
+
+    slug: battle-resolve
+    name: Battle Resolve
+    purpose: fighting spirit without shouting
+    emotion: [determined, burning]
+    face: [narrowed eyes, clenched jaw, slight forward lean]
+    best_for: [male hot-blooded, warrior, shonen protagonist]
+    prompt_block: >
+      anime male character battle resolve,
+      narrowed determined eyes,
+      clenched jaw, burning fighting spirit
+    gender_neutral_prompt_block: >
+      anime character battle resolve,
+      narrowed determined eyes,
+      burning fighting spirit
+    risk: low
+    stability_score: 9
+    impact_score: 9
+
+  - id: expression.detached.stare.v1
+
+    slug: detached-stare
+    name: Detached Stare
+    purpose: cold distance and pressure
+    emotion: [aloof, unreadable]
+    face: [flat expression, half-lidded eyes, no smile]
+    best_for: [male cold, antagonist, assassin, lone swordsman]
+    prompt_block: >
+      anime male character detached cold stare,
+      unreadable flat expression,
+      aloof distance
+    gender_neutral_prompt_block: >
+      anime character detached cold stare,
+      unreadable flat expression,
+      aloof distance
+    risk: low
+    stability_score: 10
+    impact_score: 8

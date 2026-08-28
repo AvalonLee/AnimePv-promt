@@ -1,0 +1,183 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: 星铸工坊v2.5统一导演方案
+type: object
+additionalProperties: false
+required: [project, character, cast, direction, style, performance_direction, rhythm, generation_clips, editorial_manifest, audio_beat_manifest, materials, target]
+properties:
+  project:
+    type: object
+    additionalProperties: false
+    required: [title, duration, aspect_ratio, content_type, creative_intent]
+    properties:
+      title: {$ref: '#/$defs/text'}
+      duration: {type: number, exclusiveMinimum: 0}
+      aspect_ratio: {$ref: '#/$defs/text'}
+      content_type: {enum: [action, daily, magic, story, poster_motion, multi_character]}
+      creative_intent: {$ref: '#/$defs/text'}
+  character:
+    type: object
+    additionalProperties: false
+    required: [summary, immutable_features, allowed_variations]
+    properties:
+      summary: {$ref: '#/$defs/text'}
+      immutable_features: {type: array, minItems: 4, uniqueItems: true, items: {$ref: '#/$defs/text'}}
+      allowed_variations: {type: array, items: {$ref: '#/$defs/text'}}
+  cast:
+    type: object
+    additionalProperties: false
+    required: [mode, members, relationships]
+    properties:
+      mode: {enum: [single, duo, trio, squad]}
+      members:
+        type: array
+        minItems: 1
+        maxItems: 4
+        items:
+          type: object
+          required: [id, role]
+          properties: {id: {$ref: '#/$defs/text'}, role: {$ref: '#/$defs/text'}}
+      relationships: {type: array, items: {$ref: '#/$defs/text'}}
+  direction:
+    type: object
+    additionalProperties: false
+    required: [creative_direction, secondary_direction, presentation_strategy, emotional_goal, visual_focus]
+    properties:
+      creative_direction: {enum: [kinetic_peak, emotional_closeup, mystical_reveal, relationship_tension, graphic_identity]}
+      secondary_direction: {type: [string, 'null']}
+      presentation_strategy: {enum: [action_burst, emotional_showcase, ability_showcase, relationship_interaction, story_scene, poster_motion]}
+      emotional_goal: {$ref: '#/$defs/text'}
+      visual_focus: {$ref: '#/$defs/text'}
+  style:
+    type: object
+    additionalProperties: false
+    required: [base_style, visual_approach, enhancements, environment, lighting]
+    properties:
+      base_style: {$ref: '#/$defs/text'}
+      visual_approach: {$ref: '#/$defs/text'}
+      enhancements: {type: array, items: {$ref: '#/$defs/text'}}
+      environment: {$ref: '#/$defs/text'}
+      lighting: {$ref: '#/$defs/text'}
+  performance_direction:
+    type: object
+    additionalProperties: false
+    required: [baseline, stimulus, reaction, recovery, lifelike_moments]
+    properties:
+      baseline: {$ref: '#/$defs/text'}
+      stimulus: {$ref: '#/$defs/text'}
+      reaction: {$ref: '#/$defs/text'}
+      recovery: {$ref: '#/$defs/text'}
+      lifelike_moments:
+        type: array
+        minItems: 1
+        items: {$ref: '#/$defs/performance_moment'}
+  rhythm:
+    type: object
+    additionalProperties: false
+    required: [bpm, energy_curve, beat_events, micro_shots]
+    properties:
+      bpm: {type: number, exclusiveMinimum: 0}
+      energy_curve:
+        type: array
+        minItems: 1
+        items: {$ref: '#/$defs/energy'}
+      beat_events:
+        type: array
+        minItems: 2
+        items: {$ref: '#/$defs/beat'}
+      micro_shots:
+        type: array
+        minItems: 2
+        items: {$ref: '#/$defs/micro'}
+  generation_clips:
+    type: array
+    minItems: 1
+    items: {$ref: '#/$defs/clip'}
+  editorial_manifest:
+    type: object
+    additionalProperties: false
+    required: [strategy, items]
+    properties:
+      strategy: {enum: [post_production, model_generated, none]}
+      items: {type: array, items: {$ref: '#/$defs/editorial_item'}}
+  audio_beat_manifest:
+    type: object
+    additionalProperties: false
+    required: [soundscape, music, bpm, events]
+    properties:
+      soundscape: {type: string}
+      music: {type: string}
+      bpm: {type: number, exclusiveMinimum: 0}
+      events: {type: array, items: {$ref: '#/$defs/audio_event'}}
+  materials:
+    type: array
+    items: {$ref: '#/$defs/material'}
+  target:
+    type: object
+    additionalProperties: false
+    required: [platform, generation_mode, model_version]
+    properties:
+      platform: {enum: [jimeng, minimax_h3_official, minimax_h3_self_hosted]}
+      generation_mode: {enum: [T2VA, I2VA, L2VA, FL2VA, Ref2VA]}
+      model_version: {$ref: '#/$defs/text'}
+  revision_log: {type: array, items: {$ref: '#/$defs/text'}}
+$defs:
+  text: {type: string, minLength: 1}
+  energy:
+    type: object
+    required: [start, end, energy, purpose]
+    properties: {start: {type: number}, end: {type: number}, energy: {type: number, minimum: 0, maximum: 100}, purpose: {$ref: '#/$defs/text'}}
+  beat:
+    type: object
+    required: [time, type, visual]
+    properties: {time: {type: number, minimum: 0}, type: {$ref: '#/$defs/text'}, visual: {$ref: '#/$defs/text'}}
+  micro:
+    type: object
+    required: [time, event]
+    properties: {time: {type: number, minimum: 0}, event: {$ref: '#/$defs/text'}}
+  moment:
+    type: object
+    required: [time, event]
+    properties: {time: {type: number, minimum: 0}, event: {$ref: '#/$defs/text'}}
+  clip:
+    type: object
+    additionalProperties: false
+    required: [start, end, purpose, composition, primary_action, camera, main_effect, sound, editable_moments]
+    properties:
+      start: {type: number, minimum: 0}
+      end: {type: number, exclusiveMinimum: 0}
+      purpose: {$ref: '#/$defs/text'}
+      composition: {$ref: '#/$defs/text'}
+      primary_action: {$ref: '#/$defs/text'}
+      camera: {$ref: '#/$defs/text'}
+      main_effect: {type: string}
+      sound: {$ref: '#/$defs/text'}
+      editable_moments: {type: array, minItems: 3, maxItems: 6, items: {$ref: '#/$defs/moment'}}
+  editorial_item:
+    type: object
+    required: [content, start, end, position, appearance, effect]
+    properties: {content: {$ref: '#/$defs/text'}, start: {type: number}, end: {type: number}, position: {$ref: '#/$defs/text'}, appearance: {$ref: '#/$defs/text'}, effect: {$ref: '#/$defs/text'}}
+  audio_event:
+    type: object
+    required: [time, sound]
+    properties: {time: {type: number, minimum: 0}, sound: {$ref: '#/$defs/text'}}
+  performance_moment:
+    type: object
+    additionalProperties: false
+    required: [type, description]
+    properties:
+      type: {enum: [unfinished_action, expression_transition, external_interruption, attention_shift, motion_afterglow, relationship_reaction]}
+      description: {$ref: '#/$defs/text'}
+  material:
+    type: object
+    additionalProperties: false
+    required: [id, type, anchor, role, retain, ignore, timing]
+    properties:
+      id: {$ref: '#/$defs/text'}
+      type: {enum: [image, video, audio]}
+      anchor: {enum: [start_frame, end_frame, reference]}
+      role: {$ref: '#/$defs/text'}
+      retain: {type: array, minItems: 1, items: {$ref: '#/$defs/text'}}
+      ignore: {type: array, items: {$ref: '#/$defs/text'}}
+      timing: {$ref: '#/$defs/text'}
+
+# 跨字段规则由 tools/validate_director_plan.py 执行。

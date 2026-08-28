@@ -1,0 +1,42 @@
+version: 2.5.0
+name_zh: 生命感镜头库
+principles:
+  - 人物先有行为，镜头再寻找瞬间
+  - 表情来自事件，不单独贴情绪标签
+  - 环境参与人物表演
+  - 捕捉动作未完成、注意力偏移和动作余韵
+moment_types:
+  unfinished_action:
+    name_zh: 动作未完成
+    examples: [刚开始回头但尚未正对镜头, 手已经抬起但尚未碰到武器]
+  expression_transition:
+    name_zh: 表情转换
+    examples: [笑意刚消失警觉刚出现, 惊讶尚未完全显露]
+  external_interruption:
+    name_zh: 外界打断
+    examples: [侧风突然增强, 门外传来声响, 光线扫过眼睛]
+  attention_shift:
+    name_zh: 注意力偏移
+    examples: [眼睛先移动头部稍后跟随, 视线越过镜头看向画外]
+  motion_afterglow:
+    name_zh: 动作余韵
+    examples: [挥击结束衣摆仍在运动, 停步后发丝继续摆动]
+  relationship_reaction:
+    name_zh: 关系反应
+    examples: [一人先看向另一人对方延迟回应, 对方动作触发主角细微表情变化]
+environment_triggers:
+  - wind_and_cloth
+  - moving_light
+  - foreground_object
+  - water_or_dust
+  - door_window_prop
+  - reflected_image
+camera_motivation_required: true
+effect_budget:
+  primary_max: 1
+  auxiliary_max: 1
+  auxiliary_strength: subtle
+  protected_areas: [核心五官, 发型身份轮廓, 标志配饰, 武器识别结构]
+  anime_translation:
+    use: [手绘光斑, 硬边投影, 二维高光闪线, 速度线, 离散残影, 形体拉伸, 前后景图层虚化]
+    avoid: [全画面高斯运动模糊, 写实镜头脏污堆叠, PBR光学材质]

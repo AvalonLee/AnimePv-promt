@@ -1,0 +1,58 @@
+example: Sweet Y2K Character
+character_type: sweet_female
+mode: 15s_release
+variation: release.standard.v1
+theme: sweet-y2k-girl
+style_stack:
+  base: modern-cel
+  premium: mobile-game-premium
+  special: y2k-graphic
+character_dna:
+  hair: pink short hair, soft volume
+  accessory: black framed glasses
+  outfit: Y2K street fashion
+  palette: [pink, white, milk blue]
+  personality: [playful, energetic, friendly]
+shots:
+  - id: shot_01
+    time: 0-3s
+    purpose: hook
+    camera: hand-to-camera
+    action: hand-gesture
+    expression: playful-wink
+    risk: low
+  - id: shot_02
+    time: 3-6s
+    purpose: identity
+    camera: beauty-showcase
+    action: hair-flip
+    expression: sweet-smile
+    risk: low
+  - id: shot_03
+    time: 6-10s
+    purpose: personality
+    camera: medium-close
+    action: hand-gesture
+    expression: confident-smile
+    risk: low
+  - id: shot_04
+    time: 10-13s
+    purpose: signature
+    camera: hero-low-angle
+    action: signature-pose
+    effect: y2k graphic UI
+    risk: low
+  - id: shot_05
+    time: 13-15s
+    purpose: title
+    camera: final-pose
+    transition: title-reveal
+    risk: low
+quality_report:
+  generation_stability: 35
+  character_consistency: 25
+  shot_feasibility: 18
+  visual_impact: 10
+  creative_intent_match: 10
+  final_score: 98
+  decision: PASS

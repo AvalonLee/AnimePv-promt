@@ -1,0 +1,20 @@
+case_id: case.sweet.y2k.girl.v1
+character_archetype: sweet_female
+creative_position: cute fashion character
+visual_identity:
+  hair: pink, soft volume
+  outfit: street fashion with colorful accessories
+  palette: [pink, white, milk blue]
+personality: [playful, energetic, friendly]
+selling_points:
+  primary: expression
+  secondary: fashion design
+preferred_theme: sweet-y2k-girl
+preferred_template: ability_showcase-character-banner
+camera_patterns: [hand-to-camera, beauty-showcase, detail-macro]
+action_patterns: [hair-flip, hand-gesture]
+expression_patterns: [playful-wink, sweet-smile, idol-bright]
+transition_patterns: [graphic-panel, ui-card]
+style_patterns: [y2k-graphic, mobile-game-premium]
+avoid: [aggressive combat, dark boss atmosphere]
+search_tags: [cute, sweet, idol, y2k, fashion]

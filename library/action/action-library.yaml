@@ -1,0 +1,180 @@
+# AstraForge Visual Component Library — Action
+# Action 决定「角色有没有商品价值」
+
+components:
+  - id: action.hair.flip.v1
+    slug: hair-flip
+    name: Hair Flip
+    category: character_action
+    purpose: increase charm
+    motion: character turns head, hair moves naturally
+    emotion: confident
+    best_for: [cool female, fashion girl, idol]
+    prompt_block: >
+      anime female character flips hair,
+      stylized 2D animation,
+      confident expression,
+      dynamic hair movement
+    action_level: 1
+    risk: low
+    stability_score: 9
+    impact_score: 8
+
+  - id: action.head.turn.v1
+
+    slug: head-turn
+    name: Slow Head Turn
+    category: character_action
+    purpose: character reveal
+    motion: slow head turn toward camera
+    emotion: [calm, confident]
+    best_for: [all archetypes]
+    prompt_block: >
+      anime character slowly turns head toward camera,
+      subtle hair movement,
+      clean 2D cel animation
+    action_level: 1
+    risk: low
+    stability_score: 10
+    impact_score: 7
+
+  - id: action.confident.walk.v1
+
+    slug: confident-walk
+    name: Confident Walk
+    category: character_action
+    purpose: attitude display
+    motion: character walks toward camera
+    emotion: [confident, elegant]
+    best_for: [cool female, skin showcase]
+    prompt_block: >
+      anime female character walking toward camera,
+      confident posture,
+      flowing costume,
+      premium game trailer
+    action_level: 2
+    risk: low
+    stability_score: 8
+    impact_score: 8
+
+  - id: action.hand.gesture.v1
+
+    slug: hand-gesture
+    name: Signature Hand Gesture
+    category: character_action
+    purpose: personality expression
+    motion: stylized hand gesture
+    best_for: [sweet female, idol, cyber female]
+    prompt_block: >
+      anime girl signature hand gesture,
+      playful stylized motion,
+      character personality moment
+    action_level: 1
+    risk: low
+    stability_score: 8
+    impact_score: 8
+
+  - id: action.weapon.reveal.v1
+
+    slug: weapon-reveal
+    name: Weapon Reveal
+    category: character_action
+    purpose: show signature asset
+    motion: character draws or presents weapon
+    best_for: [warrior, swordsman, boss]
+    prompt_block: >
+      anime character draws signature weapon,
+      clean 2D animation,
+      dramatic reveal,
+      game trailer style
+    action_level: 2
+    risk: medium
+    stability_score: 7
+    impact_score: 10
+    dna_rule: 武器必须与 character_dna.signature_assets.weapon 一致，禁止自动替换
+
+  - id: action.ability.release.v1
+
+    slug: ability-release
+    name: Ability Release
+    category: character_action
+    purpose: power demonstration
+    motion: character releases signature ability
+    best_for: [magic girl, warrior, legendary character]
+    prompt_block: >
+      anime character releases signature ability,
+      controlled energy effect,
+      stylized 2D animation,
+      premium mobile game trailer
+    action_level: 2
+    effect_level: 2
+    risk: medium
+    stability_score: 6
+    impact_score: 10
+    note: 禁止升级为 level 4 环境毁灭
+
+  - id: action.transformation.v1
+
+    slug: transformation
+    name: Transformation
+    category: character_action
+    purpose: magical reveal
+    motion: light burst then new form
+    best_for: [magic girl, legendary character]
+    prompt_block: >
+      anime magical girl transformation,
+      glowing light burst,
+      stylized 2D animation
+    action_level: 3
+    effect_level: 3
+    risk: high
+    stability_score: 4
+    impact_score: 10
+    dna_rule: 变身前后核心 DNA（脸/发色/眼色）必须一致
+
+  - id: action.signature.pose.v1
+
+    slug: signature-pose
+    name: Signature Pose
+    category: character_action
+    purpose: memory frame
+    motion: character holds iconic pose
+    best_for: [all character PV endings]
+    prompt_block: >
+      anime character iconic signature pose,
+      hero framing,
+      clean memorable ending
+    action_level: 1
+    risk: low
+    stability_score: 10
+    impact_score: 9
+
+  # 由 benchmark 校验暴露的库缺口：
+  # theme.dark-witch-release 与 examples/dark-witch 均引用此组件，此前未定义。
+  # 它是 ability-release 的低风险前置动作，用于蓄力段。
+  - id: action.ability.preparation.v1
+    slug: ability-preparation
+    name: Ability Preparation
+    category: character_action
+    purpose: charge-up before the burst
+    motion: character gathers energy, stance settles, effect builds
+    emotion: [solemn, focused]
+    best_for: [magic girl, dark witch, legendary character, 30s story]
+    prompt_block: >
+      anime character gathering energy before casting,
+      solemn focused expression,
+      layered flat light effect building around hands,
+      stylized 2D animation
+    gender_neutral_prompt_block: >
+      anime character gathering energy before casting,
+      solemn focused expression,
+      layered flat light effect building
+    action_level: 1
+    effect_level: 1
+    risk: low
+    stability_score: 9
+    impact_score: 8
+    pairs_with: action.ability.release.v1
+    note: >
+      蓄力段使用本组件而非直接 ability-release，
+      可在不提高动作等级的前提下建立节奏对比（见 Genre=magic 快慢结合）。

@@ -1,0 +1,158 @@
+project:
+  title: 拔剑首尾控制
+  duration: 6
+  aspect_ratio: '16:9'
+  content_type: action
+  creative_intent: 连续完成从蓄力到拔剑收势
+character:
+  summary: silver-haired blue-eyed anime swordswoman in black-silver armor
+  immutable_features:
+  - silver hair
+  - blue eyes
+  - black-silver armor silhouette
+  - ice sword
+  allowed_variations:
+  - hair and cape deformation
+cast:
+  mode: single
+  members:
+  - id: lead
+    role: protagonist
+  relationships: []
+direction:
+  creative_direction: kinetic_peak
+  secondary_direction: mystical_reveal
+  presentation_strategy: action_burst
+  emotional_goal: compressed anticipation and sharp release
+  visual_focus: continuous sword path between anchors
+style:
+  base_style: modern-cel
+  visual_approach: cel_animation
+  enhancements:
+  - ice particles
+  environment: snowy mountain pass
+  lighting: cold blue rim light
+performance_direction:
+  baseline: 角色正在执行与场景相关的具体任务
+  stimulus: 环境或事件产生可感知变化
+  reaction: 视线、手部和身体重心依次产生反应
+  recovery: 角色完成反应并进入下一动作或收势
+  lifelike_moments:
+  - type: external_interruption
+    description: 环境变化触发角色即时反应
+  - type: motion_afterglow
+    description: 主要动作结束后保留发丝或衣摆余韵
+rhythm:
+  bpm: 150
+  energy_curve:
+  - start: 0
+    end: 2
+    energy: 70
+    purpose: anticipation
+  - start: 2
+    end: 4.5
+    energy: 98
+    purpose: burst
+  - start: 4.5
+    end: 6
+    energy: 58
+    purpose: settle
+  beat_events:
+  - time: 0
+    type: anchor
+    visual: opening pose
+  - time: 3
+    type: impact
+    visual: blade arc
+  - time: 6
+    type: final_hit
+    visual: final pose
+  micro_shots:
+  - time: 0
+    event: opening
+  - time: 1
+    event: grip
+  - time: 2
+    event: draw starts
+  - time: 3
+    event: arc
+  - time: 4
+    event: impact
+  - time: 5
+    event: settle
+  - time: 6
+    event: final
+generation_clips:
+- start: 0
+  end: 3
+  purpose: anticipation into draw
+  composition: anchored medium close-up
+  primary_action: compresses and begins the sword draw
+  camera: subtle push-in
+  main_effect: gathering ice dust
+  sound: wind and grip
+  editable_moments:
+  - time: 0
+    event: opening anchor
+  - time: 1.5
+    event: compression
+  - time: 3
+    event: blade release
+- start: 3
+  end: 6
+  purpose: impact and final settle
+  composition: low-angle to anchored final shot
+  primary_action: completes the draw and settles
+  camera: follows then decelerates and locks
+  main_effect: sharp ice arc fading to particles
+  sound: sword impact and cloth
+  editable_moments:
+  - time: 3
+    event: arc
+  - time: 4.5
+    event: recovery
+  - time: 6
+    event: final anchor
+editorial_manifest:
+  strategy: none
+  items: []
+audio_beat_manifest:
+  soundscape: wind, sword, cloth and ice
+  music: 150 BPM burst ending on held note
+  bpm: 150
+  events:
+  - time: 0
+    sound: wind
+  - time: 3
+    sound: sword impact
+  - time: 6
+    sound: ice chime
+materials:
+- id: last_pose
+  type: image
+  anchor: end_frame
+  role: final pose
+  retain:
+  - face
+  - costume
+  - weapon
+  - framing
+  ignore:
+  - background particles
+  timing: 6s
+- id: first_pose
+  type: image
+  anchor: start_frame
+  role: opening pose
+  retain:
+  - face
+  - costume
+  - weapon
+  - framing
+  ignore:
+  - background particles
+  timing: 0s
+target:
+  platform: minimax_h3_self_hosted
+  generation_mode: FL2VA
+  model_version: H3-Base-FL2VA
