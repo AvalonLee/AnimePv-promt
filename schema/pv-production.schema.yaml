@@ -1,5 +1,5 @@
 production:
-  version: 2.5.0
+  version: 1.0.0
   source_of_truth: skill/execution-flow.yaml
   character_and_key_visual:
     character_bible:

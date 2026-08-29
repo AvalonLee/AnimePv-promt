@@ -1,5 +1,5 @@
 execution:
-  version: 2.5.0
+  version: 1.0.0
   source_of_truth: skill/execution-flow.yaml
   principle: character_consistency > core_visual_effect > motion_camera_rhythm > effect_complexity
   stages:

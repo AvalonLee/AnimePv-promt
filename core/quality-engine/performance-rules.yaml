@@ -1,5 +1,5 @@
 performance_quality:
-  version: 2.5.0
+  version: 1.0.0
   required_fields:
     - current_activity
     - attention_target_or_stimulus
