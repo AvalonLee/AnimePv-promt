@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
-"""Guard against the legacy `AnimePV-H3` project name leaking back in.
+"""Guard against legacy project names leaking back in.
 
-A few files intentionally document the rename (changelog, developer guide) or
-implement the check itself, so they are allowlisted.
+Legacy names: `AnimePV-H3` (pre-rename), `AstraForge Studio` / `星铸工坊`
+(the intermediate mainline project). The current project name is
+`AnimePv-promt`.
+
+A few files intentionally document the renames (changelog, developer guide)
+or implement the check itself, so they are allowlisted.
 """
 from __future__ import annotations
 
@@ -11,12 +15,17 @@ import re
 import sys
 
 REPO = pathlib.Path(__file__).resolve().parent.parent
-PATTERN = re.compile(r"animepv", re.IGNORECASE)
+LEGACY_PATTERNS = [
+    re.compile(r"animepv-h3", re.IGNORECASE),
+    re.compile(r"astraforge", re.IGNORECASE),
+    re.compile(r"星铸工坊"),
+]
 SKIP_DIRS = {".git", "node_modules"}
 SUFFIXES = {".md", ".yaml", ".yml", ".py"}
 ALLOWLIST = {
     "CHANGELOG.md",
     "docs/DEVELOPER_GUIDE.md",
+    "docs/KINETIC-ENGINE-UPGRADE-PLAN.md",
     "tools/README.md",
     "tools/check_naming.py",
 }
@@ -38,14 +47,14 @@ def main() -> int:
         scanned += 1
         text = path.read_text(encoding="utf-8", errors="replace")
         for lineno, line in enumerate(text.splitlines(), 1):
-            if PATTERN.search(line):
+            if any(p.search(line) for p in LEGACY_PATTERNS):
                 hits.append(f"{rel}:{lineno}: {line.strip()}")
 
     for hit in hits:
         print(f"LEGACY NAME {hit}")
 
     if hits:
-        print("\nLegacy name found. Migrate to 'AstraForge Studio'.")
+        print("\nLegacy name found. Migrate to 'AnimePv-promt'.")
         return 1
 
     print(f"scanned {scanned} file(s); naming migration clean")

@@ -1,8 +1,8 @@
 # Configuration Guide
 
-**AstraForge Studio · 星铸工坊 v1.2.0**
+**AnimePv-promt v1.2.0**
 
-AstraForge 使用基于 YAML 的配置。
+AnimePv-promt 使用基于 YAML 的配置。
 
 ---
 
@@ -22,8 +22,8 @@ config/
 
 ```yaml
 project:
-  name: AstraForge Studio
-  name_zh: 星铸工坊
+  name: AnimePv-promt
+  name_zh: AnimePv-promt
   version: 1.2.0
 ```
 

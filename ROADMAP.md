@@ -4,7 +4,7 @@
 
 ## v1.1 — Character Universe Expansion ✅ 已发布
 
-多角色 PV（duo / trio）、活动 PV（周年 / 联动 / 季节）、中文品牌名星铸工坊、五校验器体系。
+多角色 PV（duo / trio）、活动 PV（周年 / 联动 / 季节）、中文品牌名AnimePv-promt、五校验器体系。
 
 ---
 

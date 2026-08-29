@@ -1,6 +1,6 @@
 # Installation Guide
 
-**AstraForge Studio · 星铸工坊 v1.2.0**
+**AnimePv-promt v1.2.0**
 
 ---
 
@@ -18,19 +18,19 @@
 ## Clone Repository
 
 ```bash
-git clone https://github.com/AvalonLee/AstraForge-Studio.git
-cd AstraForge-Studio
+git clone https://github.com/AvalonLee/AnimePv-promt.git
+cd AnimePv-promt
 ```
 
 ---
 
 ## 作为 AI Skill 使用
 
-AstraForge Studio 的核心是文档与 YAML 规则集，不依赖运行时。
+AnimePv-promt 的核心是文档与 YAML 规则集，不依赖运行时。
 将仓库放入 AI Agent 的 skills 目录即可加载：
 
 ```
-<agent-skills-dir>/astraforge-studio/
+<agent-skills-dir>/animepv-promt/
 ├── SKILL.md
 └── skill/
     ├── manifest.yaml

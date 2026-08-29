@@ -76,7 +76,7 @@ Branch name pattern: main
 或使用 gh CLI：
 
 ```bash
-gh api -X PUT repos/AvalonLee/AstraForge-Studio/branches/main/protection \
+gh api -X PUT repos/AvalonLee/AnimePv-promt/branches/main/protection \
   -F required_pull_request_reviews.required_approving_review_count=0 \
   -F enforce_admins=true \
   -F required_status_checks.strict=true \

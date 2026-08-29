@@ -1,4 +1,4 @@
-# AstraForge Genre Library
+# AnimePv-promt Genre Library
 
 Genre 决定内容类型和基础镜头节奏；角色设定、创作意图与视觉风格在其上叠加。
 

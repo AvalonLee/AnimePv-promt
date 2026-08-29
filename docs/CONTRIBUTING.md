@@ -1,6 +1,6 @@
 # Contributing Guide
 
-欢迎参与 AstraForge Studio 开发。
+欢迎参与 AnimePv-promt 开发。
 
 ---
 

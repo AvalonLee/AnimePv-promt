@@ -1,5 +1,5 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-title: 星铸工坊v2.5统一导演方案
+title: AnimePv-promtv2.5统一导演方案
 type: object
 additionalProperties: false
 required: [project, character, cast, direction, style, performance_direction, rhythm, generation_clips, editorial_manifest, audio_beat_manifest, materials, target]

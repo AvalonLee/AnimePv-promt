@@ -1,4 +1,4 @@
-# AstraForge Composer
+# AnimePv-promt Composer
 
 核心导演模块，负责生成 Shot / Camera / Action / Expression / Transition。
 

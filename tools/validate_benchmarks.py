@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate AstraForge benchmark cases against the component libraries.
+"""Validate AnimePv-promt benchmark cases against the component libraries.
 
 This catches drift between benchmark expectations and the actual libraries:
   1. Every benchmark declares the required fields.

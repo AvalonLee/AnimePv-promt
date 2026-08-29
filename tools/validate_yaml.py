@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate all YAML component/schema files in AstraForge Studio.
+"""Validate all YAML component/schema files in AnimePv-promt.
 
 Checks:
   1. Every *.yaml / *.yml file parses.

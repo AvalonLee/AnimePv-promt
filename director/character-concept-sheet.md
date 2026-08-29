@@ -130,7 +130,7 @@ Style anchor (apply to all panels):
 
 ## 6. 执行逻辑（Execution Logic）
 
-对接 AstraForge 的 Step0 → Step1 流程：
+对接 AnimePv-promt 的 Step0 → Step1 流程：
 
 1. **分析核心特征**：年龄、风格定位（工装 / 商务 / 街头 / 户外等）、穿着细节、潜在性格（沉稳 / 随性 / 热血 / 内敛）。
 2. **提取一级元素**：外套、裤子、鞋子、核心配饰、大表情（直接可见项）。

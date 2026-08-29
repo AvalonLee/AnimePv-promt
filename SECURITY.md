@@ -5,7 +5,7 @@
 请不要为安全问题创建公开 Issue。
 
 如发现安全问题，请通过 GitHub Security Advisory 私下报告：
-https://github.com/AvalonLee/AstraForge-Studio/security/advisories/new
+https://github.com/AvalonLee/AnimePv-promt/security/advisories/new
 
 ## Supported Versions
 

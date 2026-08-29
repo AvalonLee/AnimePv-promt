@@ -15,7 +15,7 @@ import yaml
 
 REPO = pathlib.Path(__file__).resolve().parent.parent
 
-EXPECTED_NAME_ZH = "星铸工坊"
+EXPECTED_NAME_ZH = "AnimePv-promt"
 
 
 def read_yaml(rel: str):

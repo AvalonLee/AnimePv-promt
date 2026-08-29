@@ -1,8 +1,16 @@
 # Changelog
 
-All notable changes to AstraForge Studio（星铸工坊）are documented in this file.
+All notable changes to AnimePv-promt are documented in this file.
 
 ---
+
+## 项目更名 — AnimePv-promt
+
+- 项目由原「AstraForge Studio」正式更名为 **AnimePv-promt**，作为独立新项目发布。
+- 同步更新 skill manifest、release manifest、SKILL.md、README、License 及全部文档中的项目名。
+- README 重写：突出 AI Agent Skill 安装方式与「角色设定 / 资产设定 / PV 分镜产出」三大核心能力。
+- 新增 director/occasion-director.md（纪念 / 节令 / 跨风格群像导演器，去商业化移植）。
+- 归档 v1.3.0 动能引擎升级蓝图至 docs/（历史参考）。
 
 ## v2.5.0 — 角色表演与生命感镜头
 
@@ -179,7 +187,7 @@ All notable changes to AstraForge Studio（星铸工坊）are documented in this
 
 ### Added
 
-- **中文品牌名**：星铸工坊。定位语「AI 二次元游戏角色 PV 智能导演系统」
+- **中文品牌名**：AnimePv-promt。定位语「AI 二次元游戏角色 PV 智能导演系统」
 - **Cast Engine（多角色 PV）** — `core/multi-character/`
   - duo / trio / squad 阵容，画面权重 `sum==70` 且 `lead >= second × 1.5`
   - identity_bleed 风险建模、contrast 准入闸门、同框动作等级放大
@@ -221,7 +229,7 @@ All notable changes to AstraForge Studio（星铸工坊）are documented in this
 **Initial Production Release**
 
 首个正式公开版本。项目前身为内部迭代的 `AnimePV-H3`（迭代至 v2.6），
-v1.0.0 起以 AstraForge Studio 名义重新起版，定位为 Production Foundation Release。
+v1.0.0 起以 AnimePv-promt 名义重新起版，定位为 Production Foundation Release。
 
 ### Added
 
@@ -238,7 +246,7 @@ v1.0.0 起以 AstraForge Studio 名义重新起版，定位为 Production Founda
 
 ### Changed
 
-- 项目全面从 `AnimePV-H3` 更名迁移为 `AstraForge Studio`
+- 项目全面从 `AnimePV-H3` 更名迁移为 `AnimePv-promt`
 - `composer/` → `director/`，`output-schema/` → `schema/`
 - 质量评分权重由「视觉冲击优先」调整为「生成稳定性优先」
 

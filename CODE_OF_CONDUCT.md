@@ -1,6 +1,6 @@
 # Code of Conduct
 
-AstraForge Studio 欢迎所有贡献者。
+AnimePv-promt 欢迎所有贡献者。
 
 ## 我们的准则
 
