@@ -31,7 +31,7 @@ SESSION_SPEC:
 | Character Type | `cool_female` | workflow/production-flow.md 关键词表（剑士/冷静/高贵） |
 | Persona Tag | 冷酷 | library/style/persona-tags.md |
 | Genre | `action` | 战斗展示 → library/genre/genre-library.md |
-| 内容类型 | `cool-female-jrpg` | library/theme/theme-library.yaml |
+| 内容类型 | `cool-female-jrpg` | library/creative-direction/concept-sheet-matrix.yaml |
 | 表现重点 | `combat.showcase.v1` | 统一导演方案中的创作意图字段 |
 | Template | `genre-action-15s` | Genre=action + 15s |
 

@@ -94,8 +94,9 @@
 
 > 桶 ③ 是记忆点来源：男性向偏「工具 / 硬核收藏」，女性向偏「记录 / 治愈 / 软收藏」，中性向偏「通用收藏 / 跨性别物件（徽章 / 盲盒 / 手账 / 明信片）」，均须与角色人设自洽。
 > 角色种子矩阵由当前角色设定卡与风格锚点共同生成；
-> 女性种子矩阵见 `sweet-y2k-girl` / `cool-female-jrpg` / `academy-character` / `magic-girl` / `cyberpunk-girl` / `dark-witch-release` 主题的 `concept_sheet` 字段；
-> 中性 / 非二元种子矩阵见 `character-release` / `ability_showcase-legendary` 主题的 `concept_sheet` 字段（生活切片采用跨性别通用示例）。
+> 男性种子矩阵见 [concept-sheet-matrix.yaml](../library/creative-direction/concept-sheet-matrix.yaml) 的 `male-*` 条目；
+> 女性种子矩阵见同一文件的 `female` 条目（sweet-y2k-girl / cool-female-jrpg / academy-character / magic-girl / cyberpunk-girl / dark-witch-release）；
+> 中性 / 非二元种子矩阵见同一文件的 `neutral` 条目（character-release / ability-showcase-legendary，生活切片采用跨性别通用示例）。
 
 ---
 
@@ -186,6 +187,6 @@ character concept breakdown sheet,
 - **Base Style 锁定铁律**第 1、3 条同样适用于概念分解图：选定后全图不可切换，且禁止 3D 形态。
 - **角色 DNA 一致**：生活切片中的私藏物属于 `signature_item` / `memory_points` 的延伸，不得与角色设定矛盾（如禁欲系角色不应出现电子烟，除非刻意制造反差并在设定中注明）。
 - **效果优先**：生活切片第三桶（私密收藏）是记忆点来源，但需服务于「让玩家记住角色」，而非堆砌无关杂物。
-- **风格统一**：三套男性 + 六套女性 + 两套中性（非二元）主题的规范分解内容已固化于 `library/theme/theme-library.yaml` 的 `concept_sheet` 字段，生成时须优先采用主题既定矩阵，再做个性化微调。
+- **风格统一**：三套男性 + 六套女性 + 两套中性（非二元）角色类型的规范分解内容已固化于 [concept-sheet-matrix.yaml](../library/creative-direction/concept-sheet-matrix.yaml)，生成时须优先采用类型既定矩阵，再做个性化微调。
 - **性别化背景仅限呈现层**：女性向使用羊皮纸纹理背景、男性向使用纯白稿纸，均为呈现层差异，不改变 Base Style；中性 / 非二元角色可在「纯白稿纸」与「羊皮纸纹理」间按角色气质二选一。若所选 base 为水彩国风 / 韩漫等，羊皮纸可自然融合，但禁止引入写实照片底或 3D 材质底。
 - **做旧痕迹慎用**：女性向材质特写可追加做旧痕迹以增厚生活感，但磨损 / 起球须服务于人设（如冒险系、复古系），禁欲 / 高奢系角色应克制或省略，避免与「精致」定位矛盾。

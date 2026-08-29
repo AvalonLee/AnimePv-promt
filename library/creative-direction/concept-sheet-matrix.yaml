@@ -1,0 +1,175 @@
+# 概念分解图种子矩阵（Concept Sheet Matrix）
+# 来源：主线 v1.2.2 `library/theme/theme-library.yaml` 的 concept_sheet 字段吸收而来。
+# 吸收方式：去商业化重构——仅保留 concept_sheet 的六维拆解内容
+#   （clothing_layers / inner_layer_state / intimate_innerwear /
+#    expression_set / material_closeups / life_slice），
+#   移除原目标导向 / 定位 / 推荐位等商业字段；
+#   原稀有度展示主题转义为 `ability-showcase-legendary`（与 benchmark 迁移路径一致，
+#   见 bm-06 同名转换）；
+#   活动主题（anniversary / collaboration / seasonal）属于事件营销概念，不吸收。
+# 用途：director/character-concept-sheet.md 生成概念分解图时的种子矩阵，
+#   覆盖三套男性 + 六套女性 + 两套中性（非二元）角色类型。
+
+concept_sheet_matrix:
+  by_type:
+    # ---- 中性 / 非二元 ----
+    - id: character-release
+      name_zh: 角色发布（性别中立基础）
+      gender: neutral
+      background_hint: 白底与羊皮纸间按气质二选一（清冷感白底，温润/复古感羊皮纸）
+      clothing_layers: [主外套, 内搭上衣, 下装（长裤/半身裙二选一）, 鞋履, 颈/腰饰, 随身包]
+      inner_layer_state: 脱去主外套展示内搭与下装层次
+      intimate_innerwear: [打底衫, 打底裤/打底裙, 袜类]
+      expression_set: [composed-gaze, elegant-smile, confident-smirk, sweet-smile]
+      material_closeups: [主面料肌理, 金属/皮质配饰反光, 标志纹样]
+      life_slice:
+        bags: 随身包袋：笔记本、充电宝、钢笔/口红二选一、钥匙、便签
+        care: [护手霜, 香水/发蜡, 首饰/发饰盒]
+        private: [手账本, 收藏徽章/盲盒, 常备药品, 明信片]
+
+    - id: ability-showcase-legendary
+      name_zh: 能力爆发展示（性别中立传奇强度）
+      gender: neutral
+      background_hint: 白底与羊皮纸间按气质二选一
+      clothing_layers: [华丽主衣, 披风/外罩, 战靴/礼靴, 贵金属配饰, 头冠/额饰, 武器挂链]
+      inner_layer_state: 解外罩展示主衣与内衬
+      intimate_innerwear: [打底衫, 打底裤/打底裙, 长袜]
+      expression_set: [confident-smirk, cool-gaze, elegant-smile, detached-stare]
+      material_closeups: [缎面/绒面流光, 宝石镶嵌, 金属法器反光]
+      life_slice:
+        bags: 宝匣/腰囊：符文卷、信物、星砂瓶
+        care: [香水, 护手霜, 银饰盒]
+        private: [收藏宝石, 手账本, 常备药品, 明信片]
+
+    # ---- 女性 ----
+    - id: cool-female-jrpg
+      name_zh: 冷峻 JRPG 女主角
+      gender: female
+      background_hint: 米黄 / 羊皮纸 / 浅灰纹理背景
+      clothing_layers: [修身战甲上衣, 长靴, 披风/短斗, 战裙/长裤, 护臂, 颈饰]
+      inner_layer_state: 解披风展示战甲上衣与内衬软甲
+      intimate_innerwear: [打底背心, 打底衫, 长袜]
+      expression_set: [cool-gaze, confident-smirk, elegant-smile, detached-stare]
+      material_closeups: [银甲冷光, 武器刃纹, 披风丝绸]
+      life_slice:
+        bags: 战术腰包 / 武器匣：地图卷、护手油、信物
+        care: [护甲布, 发油, 香水]
+        private: [家族徽章, 旧照片, 收藏刃饰]
+
+    - id: sweet-y2k-girl
+      name_zh: 甜系 Y2K 角色
+      gender: female
+      background_hint: 米黄 / 羊皮纸 / 浅灰纹理背景
+      clothing_layers: [粉系短上衣, 低腰裤/迷你裙, 厚底鞋, 荧光配饰, 渔网袜/腿环, 斜挎小包]
+      inner_layer_state: 解外套展示内搭吊带与叠穿
+      intimate_innerwear: [打底吊带, 打底衫, 堆堆袜]
+      expression_set: [playful-wink, sweet-smile, confident-smirk, shy-expression]
+      material_closeups: [亮面PU反光, Y2K镭射布, 金属戒链]
+      life_slice:
+        bags: 迷你斜挎 / 透明果冻包：口红、粉饼、贴纸、挂件、便签
+        care: [化妆镜, 香水, 发饰]
+        private: [手账本, 收藏盲盒, 常备药品, 明信片]
+
+    - id: academy-character
+      name_zh: 学院角色
+      gender: female
+      background_hint: 米黄 / 羊皮纸 / 浅灰纹理背景
+      clothing_layers: [校服外套, 衬衫, 百褶裙/长裤, 领结, 书包, 短袜/制服鞋]
+      inner_layer_state: 解校服外套展示衬衫与针织背心
+      intimate_innerwear: [打底衫, 袜类]
+      expression_set: [shy-expression, sweet-smile, playful-wink, confident-smirk]
+      material_closeups: [校服呢料, 领结绸面, 书包帆布]
+      life_slice:
+        bags: 双肩书包：笔记本、笔袋、便当盒、充电宝
+        care: [护手霜, 发饰, 小镜子]
+        private: [手账本, 社团徽章, 收藏橡皮, 常备药品]
+
+    - id: magic-girl
+      name_zh: 魔法少女
+      gender: female
+      background_hint: 米黄 / 羊皮纸 / 浅灰纹理背景
+      clothing_layers: [魔法裙装, 长靴, 星纹披肩, 魔杖挂饰, 过膝袜, 头饰]
+      inner_layer_state: 解披肩展示裙装与内搭
+      intimate_innerwear: [打底吊带, 打底衫, 过膝袜]
+      expression_set: [elegant-smile, confident-smirk, sweet-smile, shy-expression]
+      material_closeups: [魔法缎面流光, 宝石镶嵌, 星纹刺绣]
+      life_slice:
+        bags: 魔法小包 / 道具袋：符文书、星砂瓶、发饰
+        care: [香水, 护手霜, 首饰盒]
+        private: [手账本, 收藏宝石, 常备药品, 明信片]
+
+    - id: cyberpunk-girl
+      name_zh: 赛博朋克女性角色
+      gender: female
+      background_hint: 米黄 / 羊皮纸 / 浅灰纹理背景
+      clothing_layers: [机能外套, 战术背心, 工装裤, 作战靴, 全息护目镜, 数据手套]
+      inner_layer_state: 解机能外套展示战术背心与内搭
+      intimate_innerwear: [打底衫, 运动内衣, 袜类]
+      expression_set: [confident-smirk, cool-gaze, detached-stare, playful-wink]
+      material_closeups: [反光防水布, 霓虹导光条, 金属接口]
+      life_slice:
+        bags: 机能腰包 / 解码箱：U盘、数据线、工具钳、能量棒
+        care: [便携消毒, 发蜡, 墨镜]
+        private: [收藏芯片, 手写便签, 旧照片, 挂件]
+
+    - id: dark-witch-release
+      name_zh: 暗黑魔女
+      gender: female
+      background_hint: 米黄 / 羊皮纸 / 浅灰纹理背景
+      clothing_layers: [暗纹长袍, 尖头靴, 兜帽披风, 皮质束腰, 长手套, 魔导书挂链]
+      inner_layer_state: 解兜帽披风展示长袍与内衬
+      intimate_innerwear: [打底裙/打底衫, 长袜]
+      expression_set: [villain-pressure, elegant-smile, confident-smirk, detached-stare]
+      material_closeups: [暗纹绒面, 金属法器, 皮革束腰]
+      life_slice:
+        bags: 魔导书囊：符文卷、药瓶、骨雕
+        care: [香水, 护手霜, 银饰盒]
+        private: [收藏宝石, 手账本, 常备药品, 明信片]
+
+    # ---- 男性 ----
+    - id: male-suit-release
+      name_zh: 西装男性角色
+      gender: male
+      background_hint: 纯白 / 浅灰稿纸
+      clothing_layers: [西装外套, 马甲, 衬衫, 平角内搭, 西裤, 牛津皮鞋]
+      inner_layer_state: 脱去西装外套后展示马甲 + 衬衫（解领口、松领带）
+      intimate_innerwear: [平角内裤, 袜子, 背心]
+      expression_set: [composed-gaze, detached-stare, confident-smirk, impatient]
+      material_closeups: [羊毛西装纹理, 袖扣金属反光, 皮鞋皮质]
+      life_slice:
+        bags: 公文包 / 邮差包打开：钢笔、名片夹、钱包、交通卡、充电宝
+        care: [电动剃须刀, 发蜡, 古龙水]
+        private: [复古机械表, 限量打火机, 雪茄剪]
+
+    - id: male-samurai-release
+      name_zh: 武士男性角色
+      gender: male
+      background_hint: 纯白 / 浅灰稿纸
+      clothing_layers: [羽织, 白上衣, 袴, 足袋, 草履, 腰带]
+      inner_layer_state: 解羽织展示白上衣与袴的层叠
+      intimate_innerwear: [兜裆布, 足袋, 肌襦袢]
+      expression_set: [composed-gaze, battle-resolve, focused]
+      material_closeups: [刀镡金属, 羽织织物肌理, 皮革刀鞘]
+      life_slice:
+        bags: 包袱 / 卷物：卷轴、干粮、钱袋
+        care: [发油, 刀油, 手巾]
+        private: [木梳, 护身符, 茶具]
+
+    - id: male-knight-release
+      name_zh: 骑士男性角色
+      gender: male
+      background_hint: 纯白 / 浅灰稿纸
+      clothing_layers: [全身板甲, 内衬链甲, 披风, 战靴, 护手]
+      inner_layer_state: 解披风与胸甲展示内衬链甲与底衣
+      intimate_innerwear: [锁子甲内衬衣, 战靴长袜]
+      expression_set: [composed-gaze, battle-resolve]
+      material_closeups: [钢板锤纹, 披风织物, 大剑刃纹]
+      life_slice:
+        bags: 行囊：地图、水囊、口粮、火石
+        care: [盔甲油, 磨刀石, 软布]
+        private: [家徽旗, 祈祷书, 旧战友信物]
+
+usage:
+  selection: 按角色类型匹配 id；中性/非二元用 character-release 或 ability-showcase-legendary
+  reference: director/character-concept-sheet.md
+  customization: 矩阵为种子基线，允许按当前角色设定卡与风格锚点做个性化微调

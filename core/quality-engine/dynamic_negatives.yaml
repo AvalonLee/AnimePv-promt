@@ -1,0 +1,41 @@
+# 动能负向抑制词表（Kinetic Negative Presets）
+# 来源：KINETIC-ENGINE-UPGRADE-PLAN（v1.3.0 动能引擎方案）中规划的 dynamic_negatives.yaml
+# 目的：抑制"摆拍感 / 缓动 / 静态凝视"等破坏生命感的描述。
+#       与 library/action/kinetic-library.yaml（正向动能组件）配套：
+#       正向组件负责"写什么"，本表负责"禁止写什么"。
+#
+# 使用时机（接入点见 core/quality-engine/revision-rules.yaml）：
+#   - motion_camera_rhythm 评分偏低时，对 burst 片段注入 action_burst 预设；
+#   - generation_risk_high 时，先应用本表再降复杂度，避免"降稳"变成"变慢"。
+
+kinetic_negative_presets:
+  action_burst:
+    mandatory_negatives:
+      - "slow motion"
+      - "lazy drifting"
+      - "floating pose"
+      - "static gaze"
+      - "mannequin freeze"
+      - "smooth pan without motion blur"
+      - "gentle idle movement"
+    threshold_penalty: 0.25
+    note: >
+      burst 片段命中任一负向词（或未含 kinetic-library 的动能关键词）时，
+      动能密度按 threshold_penalty 扣减权重。
+
+  idle_sequence:
+    mandatory_negatives:
+      - "static standing"
+      - "expressionless stare"
+      - "no motion"
+    threshold_penalty: 0.15
+    note: >
+      文戏 / 日常片段同样禁止完全静止，至少保留呼吸、视线偏移与重心微动，
+      与 director/performance-direction.md 的"原本状态"要求一致。
+
+  application:
+    phases: [burst, anticipation, settle]
+    direction: >
+      仅 burst 阶段注入完整 action_burst 预设；
+      anticipation 与 settle 阶段仅应用 idle_sequence 的部分词，
+      避免过度负向约束导致动作僵硬。

@@ -1,0 +1,107 @@
+benchmark:
+  id: BM-08
+  name: Trio Ensemble
+  dimension: cast
+  cast_size: 3
+  status: PASS
+
+purpose: >
+  三人阵容展示用例。验证多角色时的 cast_risk 规则（稳定性封顶、
+  同框动作等级放大、权重分配与对比检查），与 BM-07 duo 用例互补。
+
+input:
+  request: 三位角色并肩展示PV。暖色庆典氛围，三人各展气质。15秒。
+  session_spec:
+    duration: 15s
+    aspect_ratio: "16:9"
+
+expected_routing:
+  task: CREATE_PV
+  cast_mode: trio
+  genre: daily
+  creative_direction: relationship_tension
+  template: genre-daily-15s
+  style_stack:
+    base: modern-cel
+    premium: mobile-game-premium
+    special: fantasy-anime
+
+cast:
+  size: 3
+  formation: trio
+  relationship:
+    type: ally
+    tension: low
+    visual_expression: 并肩列队
+  members:
+    - role: lead
+      screen_weight: 35
+      intro_order: 1
+      anchor_side: center
+    - role: second
+      screen_weight: 20
+      intro_order: 2
+      anchor_side: left
+    - role: support
+      screen_weight: 15
+      intro_order: 3
+      anchor_side: right
+
+contrast_check:
+  dimensions_differing: [hair_color, costume_color, silhouette]
+  count: 3
+  required: 2
+  result: PASS
+
+weight_check:
+  member_sum: 70
+  lead_vs_second_ratio: 1.75
+  rule_lead_gte_1_5x: PASS
+  each_member_has_solo_shot: true
+
+structure:
+  - { time: 0-2s,   beat: HOOK,     detail: 开场氛围建立 }
+  - { time: 2-5s,   beat: LEAD,     detail: 主打角色单人展示 }
+  - { time: 5-9s,   beat: ROTATION, detail: 阵容轮换，各成员独占 }
+  - { time: 9-12s,  beat: ENSEMBLE, detail: 三人列队同框，action_level 1 }
+  - { time: 12-15s, beat: ENDING,   detail: 角色标题 + 记忆点定格 }
+
+expected_components:
+  camera: [beauty-showcase, duo-formation, final-pose]
+  action: [head-turn, signature-pose]
+  expression: [sweet-smile, elegant-smile, composed-gaze]
+  transition: [particle-reveal, title-reveal]
+
+cast_risk_assertions:
+  identity_bleed: high
+  stability_cap: 28
+  ensemble_shot:
+    component: signature-pose
+    base_action_level: 1
+    characters_in_frame: 3
+    effective_level: 3
+    budget_after_uplift: 3
+    verdict: >
+      同框 3 人使有效等级达 3。genre=daily 基线为 2，
+      因此 ENSEMBLE 段必须为静态列队定格（无位移动作），
+      以 action_level 1 的 signature-pose 承载。
+
+risk_budget:
+  max_action_level: 2
+  max_effect_level: 1
+  max_camera_transition: 9
+
+scores:
+  generation_stability: 26
+  character_consistency: 21
+  shot_feasibility: 13
+  visual_impact: 10
+  creative_intent_match: 10
+  art_direction: 4
+  final_score: 84
+  decision: GOOD
+
+notes:
+  - 84 分属 GOOD (75-89) 而非 PASS(>=90)，如实反映 3 人阵容的真实风险
+  - stability 上限 28（cast_size 3），实得 26
+  - 若需提升至 PASS，应降为 duo 阵容或改用 30s

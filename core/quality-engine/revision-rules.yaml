@@ -4,8 +4,8 @@ revision_rules:
   - trigger: core_visual_effect_low
     actions: [clarify_primary_event, strengthen_composition, remove_unrelated_effects]
   - trigger: motion_camera_rhythm_low
-    actions: [align_beat_events, simplify_each_clip, increase_energy_contrast]
+    actions: [align_beat_events, simplify_each_clip, increase_energy_contrast, inject_kinetic_negatives]
   - trigger: creative_intent_match_low
     actions: [restore_user_priority, remove_unrelated_story, strengthen_ending_memory_point]
   - trigger: generation_risk_high
-    actions: [reduce_action_complexity, reduce_effect_level, keep_cut_rhythm]
+    actions: [reduce_action_complexity, reduce_effect_level, keep_cut_rhythm, inject_kinetic_negatives]

@@ -35,3 +35,37 @@ selection_rules:
   - 只能选择一个主要创意方向，可附加一个次要方向
   - 创意方向不能覆盖角色身份锁定和内容类型风险上限
   - 不使用投放、转化、稀有度或活动目标进行选择
+
+# 关键词提示（映射自主线 variation-selector，去商业化重构）：
+# 用于快速匹配用户意图到创意方向；命中即作为候选，仍需通过 selection_rules 复核。
+keyword_hints:
+  - keywords: [皮肤, 时装, 新造型, outfit, 换装]
+    direction: graphic_identity
+  - keywords: [战斗, 技能, 强度, 动作, combat, ability]
+    direction: kinetic_peak
+  - keywords: [剧情, 故事, 情感, 回忆, story, emotional]
+    direction: emotional_closeup
+  - keywords: [神秘, 揭示, 蜕变, 觉醒, reveal, transformation]
+    direction: mystical_reveal
+  - keywords: [双人, 三人, 互动, 并肩, 关系, duo, trio, ensemble]
+    direction: relationship_tension
+  - keywords: [上线, 新角色, 展示, 介绍, release, showcase]
+    direction: graphic_identity
+default_keyword_direction: graphic_identity
+
+# 校验规则（映射自主线 variation-validator，去商业化重构）：
+# 创意方向选择须满足以下三条硬性校验，不满足即重选。
+validation_rules:
+  rule_01:
+    title: 角色 DNA 不可破坏
+    detail: 创意方向只改变展示角度/镜头语言/情绪方向，角色 DNA 保持 100% 锁定
+    reference: core/character-dna/dna-lock-rules.md
+  rule_02:
+    title: 创意方向必须符合角色
+    example_error: 暗黑魔女 + 甜系偶像换装展示
+    detection: { compatibility: LOW }
+    action: auto_adjust
+  rule_03:
+    title: 创作意图一致
+    example_error: 目标为能力爆发展示，却输出纯剧情慢镜头
+    action: reselect_direction
