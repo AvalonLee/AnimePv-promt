@@ -1,5 +1,5 @@
 quality_engine:
-  version: 2.5.0
+  version: 1.0.0
   priority:
   - character_consistency
   - core_visual_effect

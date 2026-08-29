@@ -28,7 +28,7 @@ git push origin HEAD:dev
    ↓
 GitHub 上开 PR：dev -> main
    ↓
-CI 校验通过（4 个校验器）
+CI 校验通过（12 项校验器）
    ↓
 Review 后合并
 ```
@@ -88,13 +88,21 @@ gh api -X PUT repos/AvalonLee/AnimePv-promt/branches/main/protection \
 
 ## 提交前自检
 
-推送前应本地跑通全部校验器：
+推送前应本地跑通全部校验器（与 CI 一致，共 12 项）：
 
 ```bash
 python tools/validate_yaml.py
-python tools/validate_benchmarks.py
 python tools/check_naming.py
+python tools/check_version.py
+python tools/validate_templates.py
+python tools/validate_benchmarks.py
+python tools/validate_cases.py
+python tools/check_effect_first_migration.py
+python tools/validate_platform_adapters.py
+python tools/validate_director_plan.py examples/platform-adapters
+python tools/validate_execution_kernel.py
+python tools/validate_quality_loop.py
 python tools/check_links.py
 ```
 
-四者均需返回退出码 0。
+全部需返回退出码 0（见 `.github/workflows/validate.yml`）。

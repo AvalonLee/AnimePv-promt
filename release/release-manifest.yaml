@@ -2,7 +2,7 @@ release:
   project:
     name: AnimePv-promt
     name_zh: AnimePv-promt
-    version: 2.5.0
+    version: 1.0.0
     codename: 角色表演与生命感镜头
     release_type: Hybrid
     target:
@@ -37,4 +37,4 @@ release:
     score: 95
     decision: APPROVED
     recommendation: READY_FOR_GITHUB_RELEASE
-  git_tag: v2.5.0
+  git_tag: v1.0.0

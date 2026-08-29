@@ -8,7 +8,7 @@
 
 *From character ideas to executable anime PV prompts.*
 
-![Version](https://img.shields.io/badge/version-2.5.0-blue)
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![Codename](https://img.shields.io/badge/codename-%E8%A7%92%E8%89%B2%E8%A1%A8%E6%BC%94%E4%B8%8E%E7%94%9F%E5%91%BD%E6%84%9F%E9%95%9C%E5%A4%B4-8957e5)
 ![AI Skill](https://img.shields.io/badge/AI-Agent%20Skill-purple)
 ![Domain](https://img.shields.io/badge/domain-Anime%20PV-red)

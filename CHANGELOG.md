@@ -4,6 +4,12 @@ All notable changes to AnimePv-promt are documented in this file.
 
 ---
 
+## v1.0.0 — 新项目首版
+
+- 作为独立新项目 **AnimePv-promt** 的首个正式版本，版本号自 v2.5.0 重置为 **v1.0.0**。
+- 全部版本声明点（skill manifest / release manifest / SKILL.md / README 徽章 / 各引擎与协议元数据）同步对齐。
+- 确立分支策略：所有开发推送进入 `dev`，`dev` 通过 Pull Request 并入 `main`；`main` 启用 GitHub Branch Protection 强制。
+
 ## 项目更名 — AnimePv-promt
 
 - 项目由原「AstraForge Studio」正式更名为 **AnimePv-promt**，作为独立新项目发布。
