@@ -1,5 +1,5 @@
 # 动能负向抑制词表（Kinetic Negative Presets）
-# 来源：KINETIC-ENGINE-UPGRADE-PLAN（v1.3.0 动能引擎方案）中规划的 dynamic_negatives.yaml
+# 来源：动能引擎方案（已并入 v2.5.0 实现）中规划的 dynamic_negatives.yaml
 # 目的：抑制"摆拍感 / 缓动 / 静态凝视"等破坏生命感的描述。
 #       与 library/action/kinetic-library.yaml（正向动能组件）配套：
 #       正向组件负责"写什么"，本表负责"禁止写什么"。
