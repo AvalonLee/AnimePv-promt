@@ -25,7 +25,6 @@ SUFFIXES = {".md", ".yaml", ".yml", ".py"}
 ALLOWLIST = {
     "CHANGELOG.md",
     "docs/DEVELOPER_GUIDE.md",
-    "docs/KINETIC-ENGINE-UPGRADE-PLAN.md",
     "tools/README.md",
     "tools/check_naming.py",
 }

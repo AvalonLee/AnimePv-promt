@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# AstraForge Studio - protected branch guard
+# AnimePv-promt - protected branch guard
 #
 # RED LINE: direct pushes to main are forbidden. Push to dev and open a PR.
 #

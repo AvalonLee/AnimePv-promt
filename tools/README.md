@@ -44,8 +44,8 @@ python tools/validate_quality_loop.py
 python tools/check_naming.py
 ```
 
-防止历史项目名 `AnimePV-H3` 回流。`CHANGELOG.md` 与 `docs/DEVELOPER_GUIDE.md`
-因需记录更名历史而在允许清单中。
+防止历史项目名（`AnimePV-H3` / `AstraForge Studio` / `星铸工坊`）回流。
+`CHANGELOG.md`、`docs/DEVELOPER_GUIDE.md` 与本脚本因需记录更名历史或实现检查本身而在允许清单中。
 
 ## check_version.py
 
